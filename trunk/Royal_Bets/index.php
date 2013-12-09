@@ -30,7 +30,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-        <a class="navbar-brand" href="#"><img src=" img/roya100.png">RoyalBets</a>       
+            <a class="navbar-brand" href="#"><img src=" img/roya100.png">RoyalBets</a>       
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -40,21 +40,17 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Inicio</a></li>
-            <li><a href="#about">Información</a></li>
-            <li><a href="#contact">Jugar</a></li>
-            <li><a href="#contact">Cuenta</a></li>
-            <li><a href="#contact">La Empresa</a></li>
+              <li><a href="jugar.php">Jugar</a></li>
+              <li><a href="cuenta.php">Cuenta</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Algo...<b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Información<b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Sub-Item 1</a></li>
-                <li><a href="#">Sub-Item 2</a></li>
-                <li><a href="#">Sub-Item 3</a></li>
+                  <li><a href="informacion.php">¿Cómo jugar?</a></li>
+                  <li><a href="informacion.php">¿Cómo apostar?</a></li>
                 <li class="divider"></li>
-                <li class="dropdown-header">Título/Separador</li>
-                <li><a href="#">Sub-Item 4</a></li>
-                <li><a href="#">Sub-Item 5</a></li>
+                <li class="dropdown-header">La Empresa</li>
+                <li><a href="empresa.php">Quiénes somos</a></li>
+                <li><a href="empresa.php">Contacto</a></li>
               </ul>
             </li>
           </ul>
