@@ -30,7 +30,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-            <img src=" img/roya100.png">
+        <a class="navbar-brand" href="#"><img src=" img/roya100.png">RoyalBets</a>       
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
