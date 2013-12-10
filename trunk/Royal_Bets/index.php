@@ -131,35 +131,35 @@
       <div class="row">
           <div class="col-lg-8">
             <div class="col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+              <h2>Fútbol</h2>
+              <img src=" img/futbol3.jpg">
+              <p><br><a class="btn btn-default" href="#">Apostar &raquo;</a></p>
             </div>
             <div class="col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+              <h2>Beísbol</h2>
+              <img src=" img/beisbol.jpg">
+              <p><br><a class="btn btn-default" href="#">Apostar &raquo;</a></p>
            </div>
             <div class="col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-              <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+              <h2>Baloncesto</h2>
+              <img src=" img/nba.jpg">
+              <p><br><a class="btn btn-default" href="#">Apostar &raquo;</a></p>
             </div>
             <div class="col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+              <h2>NHL</h2>
+              <img src=" img/nfl.jpg">
+              <p><br><a class="btn btn-default" href="#">Apostar &raquo;</a></p>
             </div>
             <div class="col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+              <h2>Tenis</h2>
+              <img src=" img/tenis.jpg">
+              <p><br><a class="btn btn-default" href="#">Apostar &raquo;</a></p>
            </div>
             <div class="col-lg-4">
-              <h2>Heading</h2>
-              <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-              <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
-            </div>               
+              <h2>GP</h2>
+              <img src=" img/gp.jpg">
+              <p><br><a class="btn btn-default" href="#">Apostar &raquo;</a></p>
+           </div>              
               
           </div>
         
