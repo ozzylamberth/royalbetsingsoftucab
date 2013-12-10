@@ -19,8 +19,6 @@
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
-        
-        <script src="jquery.js"></script>
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
@@ -87,31 +85,37 @@
             <form role="form">
                 <div class="form-group">
                   <label for="firstname" class="col-md-2">
-                    First Name:
+                    Nombre:
                   </label>
                   <div class="col-md-10">
-                    <input type="text" class="form-control" id="firstname" placeholder="Enter First Name">
+                    <input type="text" class="form-control" id="firstname" placeholder="Nombre">
                   </div><br/><br/>
                 </div>
 
                 <div class="form-group">
                   <label for="lastname" class="col-md-2">
-                    Last Name:
+                    Apellido:
                   </label>
                   <div class="col-md-10">
-                    <input type="text" class="form-control" id="lastname" placeholder="Enter Last Name">
+                    <input type="text" class="form-control" id="lastname" placeholder="Apellido">
                   </div><br/><br/>
-                </div>           
+                </div> 
+                
+                <div class="form-group">
+                  <label for="cedula" class="col-md-2">
+                    Cedula de identidad:
+                  </label>
+                  <div class="col-md-10">
+                    <input type="text" class="form-control" id="firstname" placeholder="V-12345678">
+                  </div><br/><br/>
+                </div>                
                 
                 <div class="form-group">
                   <label for="emailaddress" class="col-md-2">
-                    Email address:
+                    Correo electrónico:
                   </label>
                   <div class="col-md-10">
-                    <input type="email" class="form-control" id="emailaddress" placeholder="Enter email address">
-                    <p class="help-block">
-                      Example: yourname@domain.com
-                    </p>
+                    <input type="email" class="form-control" id="emailaddress" placeholder="tunombre@tudominio.com">
                   </div><br/><br/>
                 </div>
 
@@ -120,36 +124,48 @@
                     Password:
                   </label>
                   <div class="col-md-10">
-                    <input type="password" class="form-control" id="password" placeholder="Enter Password">
+                    <input type="password" class="form-control" id="password" placeholder="Password">
                     <p class="help-block">
-                      Min: 6 characters (Alphanumeric only)
+                      Min: 6 caracteres (Solo alfanumerico)
                     </p>
                   </div><br/><br/>
                 </div>
 
                 <div class="form-group">
+                  <label for="password2" class="col-md-2">
+                    Confirmar contraseña:
+                  </label>
+                  <div class="col-md-10">
+                    <input type="password" class="form-control" id="password" placeholder="Password">
+                    <p class="help-block">
+                      -
+                    </p>
+                  </div><br/><br/>
+                </div>                
+
+                <div class="form-group">
                   <label for="sex" class="col-md-2">
-                    Sex:
+                    Sexo:
                   </label>
                   <div class="col-md-10">
                     <label class="radio">
                       <input type="radio" name="sex" id="sex" value="male" checked>
-                      Male
+                      Hombre
                     </label>
                     <label class="radio">
                       <input type="radio" name="sex" id="sex" value="female">
-                      Female
+                      Mujer
                     </label>
                   </div><br/><br/>
                 </div>
 
                 <div class="form-group">
                   <label for="country" class="col-md-2">
-                    Country:
+                    País:
                   </label>
                   <div class="col-md-10">
                     <select name="country" id="country" class="form-control">
-                      <option>--Please Select--</option>
+                      <option>--Seleccione su pais--</option>
                       
                       
 <option value="United States">United States</option> 
@@ -395,10 +411,11 @@
 <option value="Zimbabwe">Zimbabwe</option>
 
 
+
                     </select>
                   </div><br/><br/><br/><br/>
                 </div>
-
+<!--
                 <div class="form-group">
                   <label for="uploadimage" class="col-md-2">
                     Upload Image:
@@ -408,6 +425,25 @@
                     <p class="help-block">
                       Allowed formats: jpeg, jpg, gif, png
                     </p>
+                  </div><br/><br/>
+                </div>
+-->
+
+                <div class="form-group">
+                  <label for="telefono" class="col-md-2">
+                    Telefono:
+                  </label>
+                  <div class="col-md-10">
+                    <input type="tel" class="form-control" id="firstname" placeholder="Telefono">
+                  </div><br/><br/>
+                </div>
+
+                <div class="form-group">
+                  <label for="direccion" class="col-md-2">
+                    Dirección:
+                  </label>
+                  <div class="col-md-10">
+                    <input type="text" class="form-control" id="firstname" placeholder="Direccion">
                   </div><br/><br/>
                 </div>
 
