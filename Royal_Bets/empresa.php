@@ -35,7 +35,7 @@ var map;
 function initialize() {
   var mapOptions = {
     zoom: 17,
-    center: new google.maps.LatLng(-34.397, 150.644)
+    center: new google.maps.LatLng(8.297143, -62.712194)
   };
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
@@ -95,8 +95,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
     <div class="jumbotron">
       <div class="container">
         <h1>Royal Bets</h1>
-        <p>bla bla... </p>
-        <p><a class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        <p>Es una empresa fundada 2013 por un grupo de jóvenes desarrolladores en el área de informática.<br> 
+            Nuestra misión es ofrecerle confianza, seguridad y transparencia al cliente al momento de realizar sus transacciones.
+        </p>
       </div>
     </div>
 
@@ -104,13 +105,15 @@ google.maps.event.addDomListener(window, 'load', initialize);
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-lg-8">
-            <h2>Quienes somos</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          
+            <h2>¿Quiénes somos?</h2>
+          <p>
+              Estudiantes de Ingeniería Informática.<br> 
+              Universidad Católica Andrés Bello Extensión Guayana.
+          </p>   
         </div>
         <div class="col-lg-8">
             <h2>Contacto</h2>
-          <p>email: 
+            <p>Email: royalbetsca@gmail.com<br>Teléfono: 0286-9235588<br><br> 
               <br>
               <div id="map-canvas" style="width: 100%; height: 400px;"></div>
           </p>
