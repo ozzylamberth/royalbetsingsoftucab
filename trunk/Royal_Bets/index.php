@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="es">
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -61,7 +62,8 @@
             <div class="form-group">
               <input type="password" placeholder="Contraseña" class="form-control">
             </div>
-            <button type="submit" class="btn btn-success">Entrar</button>
+            <button type="submit" class="btn btn-warning">Entrar</button>
+            <button type="button" class="btn btn-success">Registrar</button>
           </form>
         </div><!--/.navbar-collapse -->
       </div>
@@ -89,32 +91,31 @@
       </ol>
       <div class="carousel-inner">
         <div class="item active">
- <!--         <img data-src="holder.js/900x500/auto/#777:#7a7a7a/text:First slide" alt="First slide">-->
+            <img src="img/vanp3.jpg" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+              <h1>Bienvenido/a!</h1>
+              <p>apostar ahora es más rápido, confiable y sencillo...</p>
             </div>
           </div>
         </div>
         <div class="item">
-  <!--          <img data-src="holder.js/900x500/auto/#666:#6a6a6a/text:Second slide" alt="Second slide">-->
+          <img src="img/money.jpg" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+              <h1>Juega Ahora!</h1>
+              <p>vive, disfruta y gana...</p>
+              <p><a class="btn btn-lg btn-warning" href="#" role="button">Apostar</a></p>
             </div>
           </div>
         </div>
         <div class="item">
-    <!--        <img data-src="holder.js/900x500/auto/#555:#5a5a5a/text:Third slide" alt="Third slide">-->
+            <img src="img/f1.jpg" alt="Third slide">-->
           <div class="container">
             <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+              <h1>Conoce tus resultados</h1>
+              <p>Sé el primero...</p>
+              <p><a class="btn btn-lg btn-warning" href="#" role="button">Resultados</a></p>
             </div>
           </div>
         </div>
@@ -184,7 +185,7 @@
       <hr>
 
       <footer>
-        <p>&copy; Company 2013</p>
+        <p>&copy; Royal Bets | Diseño: HTML5</p>
       </footer>
     </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.js"><\/script>')</script>

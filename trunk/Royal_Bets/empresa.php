@@ -60,7 +60,8 @@
             <div class="form-group">
               <input type="password" placeholder="Contraseña" class="form-control">
             </div>
-            <button type="submit" class="btn btn-success">Entrar</button>
+            <button type="submit" class="btn btn-warning">Entrar</button>
+            <button type="button" class="btn btn-success">Registrar</button>
           </form>
         </div><!--/.navbar-collapse -->
       </div>
@@ -70,8 +71,11 @@
     <div class="jumbotron">
       <div class="container">
         <h1>Royal Bets</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        <p>
+            Fundada en 2013 por un grupo de desarrolladores en el área de informática de la Universidad Católica Andrés Bello.
+            <br>
+            Nuestra empresa tiene como objetivo garantizar seguridad, rapidez y confiabilidad a cada usuario.
+        </p>
       </div>
     </div>
 
@@ -79,14 +83,19 @@
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-lg-8">
-          <h2>Quienes somos</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+          <h2>¿Quiénes somos?</h2>
+          //aquí va la img//
+          <p>Estudiantes de la Facultad de Ingeniería. Escuela de Informática.
+             <br>
+             Universidad Católica Andrés Bello.          
+          </p>
         </div>
         <div class="col-lg-8">
           <h2>Contacto</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+          <p>
+              Email: royalbetsca@gmail.com
+              Teléfono: 0286-9518899
+          </p>
         </div>          
         <div class="col-lg-4">  
             <div class="panel panel-default">
@@ -111,7 +120,7 @@
       <hr>
 
       <footer>
-        <p>&copy; Company 2013</p>
+        <p>&copy; Royal Bets | Diseño: HTML5</p>
       </footer>
     </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
