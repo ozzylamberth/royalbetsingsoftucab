@@ -60,7 +60,8 @@
             <div class="form-group">
               <input type="password" placeholder="Contraseña" class="form-control">
             </div>
-            <button type="submit" class="btn btn-success">Entrar</button>
+            <button type="submit" class="btn btn-warning">Entrar</button>
+            <button type="button" class="btn btn-success">Registrar</button>
           </form>
         </div><!--/.navbar-collapse -->
       </div>
@@ -106,7 +107,7 @@
       <hr>
 
       <footer>
-        <p>&copy; Company 2013</p>
+        <p>&copy; Royal Bets | Diseño: HTML5</p>
       </footer>
     </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
