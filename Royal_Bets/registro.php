@@ -7,15 +7,15 @@
         
 <?php require_once('./modulos/navbar.php'); ?> 
 
-    <!-- Main jumbotron for a primary marketing message or call to action 
+    <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        <h1>Únete a la comunidad</h1>
+        <p>Para jugar con nosotros es necesario que crees una cuenta con nosotros primero. Por favor rellena los siguientes campos, lee los términos y condiciones, haz click en registrar y estarás listo para jugar en RoyalBets.com</p>
+        <!--<p><a class="btn btn-primary btn-lg">Learn more &raquo;</a></p>-->
       </div>
     </div>
--->
+
 <br>
     <div class="container">
       <!-- Example row of columns -->
@@ -392,16 +392,16 @@
                   </div>
                   <div class="col-md-10">
                     <label>
-                      <input type="checkbox">Terms and Conditions</label>
+                      <input type="checkbox">Acepto los terminos y condiciones</label>
                   </div><br/><br/>
                 </div>
 
                 <div class="row">
                   <div class="col-md-2">
-                  </div>
-                  <div class="col-md-10">
+                  </div>                  
+                  <div class="col-md-3">
                     <button type="submit" class="btn btn-info">
-                      Register
+                      Registrar
                     </button>
                   </div>
                 </div>
