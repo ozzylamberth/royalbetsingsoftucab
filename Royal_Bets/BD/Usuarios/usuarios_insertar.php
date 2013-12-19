@@ -14,7 +14,7 @@
         $sex    	= $_POST['sex'];
         $nacimiento	= $_POST['nacimiento'];
         $country	= $_POST['country'];
-        //$city   	= $_POST['city'];
+        $city   	= $_POST['city'];
         $telefono	= $_POST['telefono'];
         $direccion	= $_POST['direccion'];
         echo "Nombre: $firstname <br/>";
@@ -26,14 +26,15 @@
         echo "pais: $country<br/>";
         echo "telefono: $telefono<br/>";
         echo "direccion: $direccion<br/>";
+        echo "ciudad: $city<br/>";
 	// SQL
 	$query = mysql_query("INSERT INTO usuarios
                                     (
-                                    Ci,Nombre,Apellido,Correo,Password,Sexo,Fecha_de_nacimiento,Pais,Telefono,Direccion
+                                    Ci,Nombre,Apellido,Correo,Password,Sexo,Fecha_de_nacimiento,Pais,Telefono,Direccion,Ciudad
                                     )
                                     VALUES
                                     (
-                                    '$cedula','$firstname','$lastname','$emailaddress','$password','$sex','$nacimiento','$country','$telefono','$direccion'
+                                    '$cedula','$firstname','$lastname','$emailaddress','$password','$sex','$nacimiento','$country','$telefono','$direccion','$city'
                                     )
                             ");
         if(!$query){
