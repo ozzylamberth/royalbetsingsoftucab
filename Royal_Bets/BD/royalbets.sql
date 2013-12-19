@@ -1,4 +1,4 @@
-CREATE TABLE Usuario (
+CREATE TABLE Usuarios (
 
     Ci VARCHAR (50), 
     PRIMARY KEY (Ci),
@@ -10,7 +10,8 @@ CREATE TABLE Usuario (
     Ciudad VARCHAR (50),
     Direccion VARCHAR (50),
     Sexo VARCHAR (50),
-    Password VARCHAR (50)
+    Password VARCHAR (50),
+    Correo VARCHAR (50)
 );
 
 
