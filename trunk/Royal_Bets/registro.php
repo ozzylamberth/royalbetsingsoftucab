@@ -72,14 +72,13 @@
                 </div>
                 
                 <div class="form-group">
+                                        <br/><br/>
                   <label for="password2" class="col-md-2">
                     Confirmar contraseña:
                   </label>
                   <div class="col-md-10">
                       <input type="password" class="form-control" name="password2" id="password2" placeholder="Password">
-                    <p class="help-block">
-                      .
-                    </p>
+
                   </div><br/><br/>
                 </div>  
                 
@@ -100,33 +99,25 @@
                 </div>    
                      
                 <div class="form-group">
+                  <br/><br/>
                   <label for="nacimiento" class="col-md-2">
                     Fecha de Nacimiento:
                   </label>
                   <div class="col-md-10">
                       <input type="date" class="form-control" name="nacimiento" id="nacimiento">
-                      <p class="help-block">
-                      .
-                    </p>
                   </div><br/>
                 </div>
                 
                 <div class="form-group">
+                  <br/><br/>
                   <label for="country" class="col-md-2">
                     País:
                   </label>
                   <div class="col-md-10">
                       <?php require_once('./modulos/paises-ciudades/paises.php'); ?>
-                  </div><br/><br/><br/><br/>
+                  </div><br/><br/>
                 </div>
                 
-                <!--
-                <div class="form-group">
-                    
-                            METE AQUI EL PINGASAL DE CIUDADES
-                  
-                </div>
-                -->
 <!--
                 <div class="form-group">
                   <label for="uploadimage" class="col-md-2">
@@ -140,16 +131,15 @@
                   </div><br/><br/>
                 </div>
 -->
-
                 <div class="form-group">
-                    <br/><br/>
-                  <label for="telefono" class="col-md-2">
-                    Telefono:
+                  <label for="city" class="col-md-2">
+                    Ciudad:
                   </label>
                   <div class="col-md-10">
-                      <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Telefono">
+                      <input type="text" class="form-control" id="city" name="city" placeholder="Ciudad">
                   </div><br/><br/>
                 </div>
+
 
                 <div class="form-group">
                   <label for="direccion" class="col-md-2">
@@ -159,6 +149,19 @@
                       <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion">
                   </div><br/><br/>
                 </div>
+
+
+                <div class="form-group">
+
+                  <label for="telefono" class="col-md-2">
+                    Telefono:
+                  </label>
+                  <div class="col-md-10">
+                      <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Telefono">
+                  </div><br/><br/>
+                </div>
+
+
 
                 <div class="checkbox">
                   <div class="col-md-2">
