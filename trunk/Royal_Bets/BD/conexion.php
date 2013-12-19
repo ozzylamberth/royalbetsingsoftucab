@@ -6,7 +6,7 @@
 	$password = "";
 
 	// Abrir la Conexión
-	$conex=@mysql_connect("$host","$user","$passwd");
+	$conex=@mysql_connect("$host","$user","$password");
 
 	if(!$conex)
 	{
