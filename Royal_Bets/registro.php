@@ -116,7 +116,7 @@
                     País:
                   </label>
                   <div class="col-md-10">
-                      <?php require_once('/modulos/paises-ciudades/paises.php'); ?>
+                      <?php require_once('./modulos/paises-ciudades/paises.php'); ?>
                   </div><br/><br/><br/><br/>
                 </div>
                 
