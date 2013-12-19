@@ -46,7 +46,7 @@
                 echo 'Guardo Correctamente';
 
             // Redireccion
-            header('location: localhost/trunk/Royal_Bets/index.php');	
+            //header('location: localhost/trunk/Royal_Bets/index.php');	
         
         }
 ?>
