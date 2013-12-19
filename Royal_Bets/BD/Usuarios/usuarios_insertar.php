@@ -1,9 +1,6 @@
-<?php
-        echo 'entro <br/>';
-        
+<?php   
         // Conexion
         include '../conexion.php';
-        echo 'se conecto <br/>';
 
 	// Recibe las Variables
 	$firstname	= $_POST['firstname'];
@@ -14,33 +11,42 @@
         $sex    	= $_POST['sex'];
         $nacimiento	= $_POST['nacimiento'];
         $country	= $_POST['country'];
-        //$city   	= $_POST['city'];
+        $city   	= $_POST['city'];
         $telefono	= $_POST['telefono'];
         $direccion	= $_POST['direccion'];
-        echo "Nombre: $firstname <br/>";
-        echo "Apellido: $lastname <br/>";
-        echo "Cedula: $cedula<br/>";
-        echo "Cedula: $emailaddress<br/>";
-        echo "password: $password<br/>";
-        echo "fecha de nacimento: $nacimiento<br/>";
-        echo "pais: $country<br/>";
-        echo "telefono: $telefono<br/>";
-        echo "direccion: $direccion<br/>";
-	// SQL
-	$query = mysql_query("INSERT INTO usuarios
-                                    (
-                                    Ci,Nombre,Apellido,Correo,Password,Sexo,Fecha_de_nacimiento,Pais,Telefono,Direccion
-                                    )
-                                    VALUES
-                                    (
-                                    '$cedula','$firstname','$lastname','$emailaddress','$password','$sex','$nacimiento','$country','$telefono','$direccion'
-                                    )
-                            ");
-        if(!$query){
-            echo 'Error al insertar un usuario';
-        }else
-            echo 'guardo';
-	// Redireccion
-	//header('location:index.php');	
+        
+        if (!$firstname || !$lastname || !$cedula || !$emailaddress || !$password || !$sex || !$nacimiento || !$country || !$city || !$telefono || !$direccion){
+            header('location:index.php');            
+        }else{
+        
+            echo "Nombre: $firstname <br/>";
+            echo "Apellido: $lastname <br/>";
+            echo "Cedula: $cedula<br/>";
+            echo "Email: $emailaddress<br/>";
+            echo "password: $password<br/>";
+            echo "fecha de nacimento: $nacimiento<br/>";
+            echo "pais: $country<br/>";
+            echo "telefono: $telefono<br/>";
+            echo "direccion: $direccion<br/>";
 
+            // SQL
+            $query = mysql_query("INSERT INTO usuarios
+                                        (
+                                        Ci,Nombre,Apellido,Fecha_de_nacimiento,Telefono,Pais,Direccion,Sexo,Password,Correo,Ciudad
+                                        )
+                                        VALUES
+                                        (
+                                        '$cedula','$firstname','$lastname','$nacimiento','$telefono','$country','$direccion','$sex','$password','$emailaddress','$city'
+                                        )
+                                ");
+
+            if(!$query){
+                echo 'Error al insertar un usuario';
+            }else
+                echo 'Guardo Correctamente';
+
+            // Redireccion
+            header('location:./index.php');	
+            header($string)
+        }
 ?>
