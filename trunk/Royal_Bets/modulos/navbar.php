@@ -49,10 +49,10 @@
         ?>        
                     <form class="navbar-form navbar-right" action="scripts/usuarios/login.php" method="POST">
                         <div class="form-group">
-                            <input type="text" placeholder="Email" name="email" class="form-control">
+                            <input type="email" placeholder="Email" name="email" class="form-control" required/>
                         </div>
                         <div class="form-group">
-                          <input type="password" placeholder="Contraseña" name="pass" class="form-control">
+                          <input type="password" placeholder="Contraseña" name="pass" class="form-control" required/>
                         </div>
                         <button type="submit" class="btn btn-warning">Entrar</button>
                         <a href="registro.php" class="btn btn-success">Registrar</a>
