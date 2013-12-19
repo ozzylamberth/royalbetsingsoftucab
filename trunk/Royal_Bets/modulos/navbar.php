@@ -24,16 +24,47 @@
           </ul>
         </li>
       </ul>
-      <form class="navbar-form navbar-right">
-        <div class="form-group">
-          <input type="text" placeholder="Email" class="form-control">
-        </div>
-        <div class="form-group">
-          <input type="password" placeholder="Contraseña" class="form-control">
-        </div>
-        <button type="submit" class="btn btn-warning">Entrar</button>
-        <a href="registro.php" class="btn btn-success">Registrar</a>
-      </form>
+        
+        
+        <?php 
+            session_start();
+            
+            if(isset($_SESSION['username'])){
+                
+        ?> 
+        
+                    <form class="navbar-form navbar-right">
+                        
+                        <div class="form-group">
+                            <h4>Bienvenido </h4>
+                        </div>
+                        <div class="form-group">
+                          <a href="registro.php" ><?php echo $_SESSION['nombre']; echo' '; echo $_SESSION['apellido'];?></a>
+                        </div>
+                        <a class="btn btn-xs btn-warning" href="scripts/usuarios/cerrarsesion.php" role="button">Cerrar sesión</a>
+                    </form>            
+        <?php 
+            }else{
+                
+        ?>        
+                    <form class="navbar-form navbar-right" action="scripts/usuarios/login.php" method="POST">
+                        <div class="form-group">
+                            <input type="text" placeholder="Email" name="email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="password" placeholder="Contraseña" name="pass" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-warning">Entrar</button>
+                        <a href="registro.php" class="btn btn-success">Registrar</a>
+                    </form>                
+        <?php 
+            }
+                
+        ?>    
+        
+
+        
+        
     </div><!--/.navbar-collapse -->
   </div>
 </div>
