@@ -69,3 +69,17 @@ CREATE TABLE Consumos (
     Monto VARCHAR (50)
 
 );
+
+CREATE TABLE Mesas (
+
+    Mesa VARCHAR (50), 
+    PRIMARY KEY (Mesa),
+    Descripcion VARCHAR (50),
+    Deporte VARCHAR (50),
+    Capacidad INT
+
+);
+
+
+
+
