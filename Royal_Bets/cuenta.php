@@ -36,7 +36,8 @@
 <?php require_once('./modulos/footer.php'); ?> 
       
       
-    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    </div> <!-- /container -->        
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 
 <?php require_once('./modulos/scriptjs.php'); ?>     
     
