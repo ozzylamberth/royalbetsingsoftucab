@@ -66,21 +66,23 @@
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
-        <div class="col-lg-8">
-            <h2>¿Quiénes somos?</h2>
-          <p>
-              Estudiantes de Ingeniería Informática.<br> 
-              Universidad Católica Andrés Bello Extensión Guayana.
-          </p>   
-        </div>
-        <div class="col-lg-8">
-            <h2>Contacto</h2>
-            <p>Email: royalbetsca@gmail.com<br>Teléfono: 0286-9235588<br><br> 
-              <br>
-              <div id="map-canvas" style="width: 100%; height: 400px;"></div>
-          </p>
-          
-        </div>          
+        <div class="col-lg-8">    
+            <div class="col-lg-8">
+                <h2>¿Quiénes somos?</h2>
+              <p>
+                  Estudiantes de Ingeniería Informática.<br> 
+                  Universidad Católica Andrés Bello Extensión Guayana.
+              </p>   
+            </div>
+            <div class="col-lg-8">
+                <h2>Contacto</h2>
+                <p>Email: royalbetsca@gmail.com<br>Teléfono: 0286-9235588<br><br> 
+                  <br>
+                  <div id="map-canvas" style="width: 100%; height: 400px;"></div>
+              </p>
+
+            </div>
+        </div>       
 
 <?php require_once('./modulos/sidebar.php'); ?>           
           
