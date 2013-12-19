@@ -1,13 +1,12 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
-        <a class="navbar-brand" href="#"><img src=" img/roya100.png">RoyalBets</a>       
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"></a>
+        <a class="navbar-brand" href="index.php"><img src=" img/roya100.png">RoyalBets</a>
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -33,7 +32,7 @@
           <input type="password" placeholder="Contraseña" class="form-control">
         </div>
         <button type="submit" class="btn btn-warning">Entrar</button>
-        <button type="button" class="btn btn-success">Registrar</button>
+        <a href="registro.php" class="btn btn-success">Registrar</a>
       </form>
     </div><!--/.navbar-collapse -->
   </div>
