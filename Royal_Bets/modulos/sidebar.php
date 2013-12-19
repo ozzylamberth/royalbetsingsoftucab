@@ -24,7 +24,7 @@
         </div>
         <div class="panel-body">
             <div class="fb-like-box" data-href="https://www.facebook.com/pages/Royal-Bets-CA/1441390679405942?fref=ts" data-width="325" data-height="430" 
-                 data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="true" data-show-border="true">
+                 data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="true" data-show-border="true">
             </div>
         </div>
     </div>
