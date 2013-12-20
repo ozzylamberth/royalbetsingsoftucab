@@ -27,8 +27,11 @@
                 $_SESSION['nombre']=$sesion['Nombre'];
                 $_SESSION['apellido']=$sesion['Apellido'];
                 echo "correo coincide";
+                
+                header("Location:../../index.php");
             }else{
                 echo "Password incorrecto";
+                
             }
         }else{
             echo "Usuario incorrecto";
@@ -38,6 +41,8 @@
         echo "Debe llenar ambos campos";
     }
     
-    header("Location:../../index.php");
+    
+    
+    
 
 ?>

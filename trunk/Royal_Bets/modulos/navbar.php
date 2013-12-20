@@ -42,6 +42,8 @@
                           <a href="registro.php" ><?php echo $_SESSION['nombre']; echo' '; echo $_SESSION['apellido'];?></a>
                         </div>
                         <a class="btn btn-xs btn-warning" href="scripts/usuarios/cerrarsesion.php" role="button">Cerrar sesión</a>
+                        
+                        
                     </form>            
         <?php 
             }else{
@@ -54,7 +56,7 @@
                         <div class="form-group">
                           <input type="password" placeholder="Contraseña" name="pass" class="form-control" required/>
                         </div>
-                        <button type="submit" class="btn btn-warning">Entrar</button>
+                        <button type="submit" class="btn btn-warning" >Entrar</button>
                         <a href="registro.php" class="btn btn-success">Registrar</a>
                     </form>                
         <?php 
@@ -68,3 +70,23 @@
     </div><!--/.navbar-collapse -->
   </div>
 </div>
+
+<!-- Button trigger modal 
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>-->
+
+<!-- Modal 
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+    </div>
+  </div>
+</div>
+-->
