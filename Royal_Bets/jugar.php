@@ -56,6 +56,51 @@
                         </tr>
                 </tbody>               
             </table>
+             
+            <div class="table-responsive">   
+            <table class="table table-bordered">
+
+                <thead>
+                    <div align="left"><strong>Apuestas Actuales</strong></div>
+                        <tr> 
+                            <th style="width: 20%;">Tipo De Juego</th>
+                                <th style="width: 40%;">Descripción</th>
+                                <th style="width: 25%;">Monto</th>
+                        </tr>
+                </thead>
+                
+                <tbody>
+                        <tr>
+                                <td data-title="Code"> Parley </td>
+                                <td data-title="Company">Barcelona vs. Madrid</td>
+                                <td data-title="Price">                
+                                    <div class="form-group">
+                                        <div class="col-md-11">
+                                            <input class="form-control" placeholder="Bs."> 
+                                        </div>
+                                    </div>
+                                </td>
+                        </tr>
+                        <tr>
+                                <td data-title="Code"> Directa </td>
+                                <td data-title="Company">Manchester vs. Liverpool</td>
+                                <td data-title="Price">                
+                                    <div class="form-group">
+                                        <div class="col-md-11">
+                                            <input class="form-control" placeholder="Bs."> 
+                                        </div>
+                                    </div>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-title="Company"><strong>Total</strong></td>
+                            <td data-title="Price"> Aquí el total </td>
+                        </tr>
+                </tbody>
+                
+            </table>
+        </div>
              <div align="right"> <a class="btn btn-warning"> Apostar </a> </div>
         </div>
         </div>
