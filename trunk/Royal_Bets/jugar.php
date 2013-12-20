@@ -31,7 +31,7 @@
                         <tr>
                                 
                                 <th>Mesa</th>
-                                <th>Descripcion</th>
+                                <th>Descripción</th>
                                 <th>Deporte</th>
                                 <th class="numeric">Capacidad</th>
                         </tr>
