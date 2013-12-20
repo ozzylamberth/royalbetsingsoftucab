@@ -10,7 +10,7 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-          <li><a href="jugar.php">Jugar</a></li>
+          <li><a href="mesas.php">Jugar</a></li>
           <li><a href="cuenta.php">Cuenta</a></li>
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Información<b class="caret"></b></a>
