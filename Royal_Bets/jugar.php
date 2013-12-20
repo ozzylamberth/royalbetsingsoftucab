@@ -25,34 +25,38 @@
 
             
          <div class="table-responsive">   
-            <table class="table table-bordered">
-
-                <thead>
+            <table class="table table-bordered">                
+                <tbody align="center">
+                <div align="center"><strong>Descripción De Los Juegos</strong></div>
                         <tr>
-                                
-                                <th>Mesa</th>
-                                <th>Descripción</th>
-                                <th>Deporte</th>
-                                <th class="numeric">Capacidad</th>
-                        </tr>
-                </thead>
-                
-                <tbody>
-                        <tr>
-                                <td data-title="Code"> Premium </td>
-                                <td data-title="Company">Esta la mesa es para futbol</td>
-                                <td data-title="Price" class="numeric">Real Madrid vs Barcelona</td>
-                                <td data-title="Change" class="numeric">1/100</td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="team1" id="team1" value="local">
+                                    </label>
+                                </td>
+                                <td>Barcelona vs Real Madrid</td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="team1" id="team1" value="visitante">
+                                    </label>
+                                </td>
                         </tr>
                         <tr>
-                                <td data-title="Code"> Platinum </td>
-                                <td data-title="Company">Esta la mesa es para tenis</td>
-                                <td data-title="Price" class="numeric">Federer vs Nadal</td>
-                                <td data-title="Change" class="numeric">2/100</td>
+                                <td>                        
+                                    <label>
+                                        <input type="radio" name="team2" id="team2" value="local">
+                                    </label>
+                                </td>
+                                <td>Venezuela vs Colombia</td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="team2" id="team2" value="visitante">
+                                    </label>
+                                </td>
                         </tr>
-                </tbody>
-                
+                </tbody>               
             </table>
+             <div align="right"> <a class="btn btn-warning"> Apostar </a> </div>
         </div>
         </div>
 
