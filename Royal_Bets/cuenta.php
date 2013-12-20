@@ -1,3 +1,5 @@
+<?php require_once('./scripts/solicitarLogin.php'); ?> 
+
 <?php require_once('./modulos/header.php'); ?> 
 
     <body>

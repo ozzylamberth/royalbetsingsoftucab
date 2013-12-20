@@ -2,6 +2,9 @@
 if(isset($_GET['errorCode']) && isset($_GET['errorType'])){
     $nroError=$_GET['errorCode'];
     $tipoError=$_GET['errorType'];
+    
+    //echo "Nro error: ".$nroError ." ";
+    //echo "Tipo error: ".$tipoError;
 
     
     //Agregar en el switch los errores que hagan falta
@@ -9,14 +12,17 @@ if(isset($_GET['errorCode']) && isset($_GET['errorType'])){
     
     switch ($nroError) {
         case 1:
-            $error = "Usuario incorrecto";
+            $error = "Error: Usuario incorrecto";
             break;
         case 2:
-            $error = "Password incorrecto";
+            $error = "Error: Password incorrecto";
             break;
         case 3:
-            $error = "Login error, intentelo mas tarde";
+            $error = "Error al logearse, intentelo mas tarde";
             break;
+        case 4:
+            $error = "Debes iniciar sesión para poder continuar";
+            break;        
     }
     
     
@@ -32,7 +38,7 @@ if(isset($_GET['errorCode']) && isset($_GET['errorType'])){
 ?>
             <div class="alert alert-danger alert-dismissable">
                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-               <strong>Error!</strong> <?php echo $error; ?>  
+               <?php echo $error; ?>  
             </div>
 <?php
             break;
@@ -40,7 +46,7 @@ if(isset($_GET['errorCode']) && isset($_GET['errorType'])){
 ?>
             <div class="alert alert-info alert-dismissable">
                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-               <strong>Error!</strong> <?php echo $error; ?>  
+               <?php echo $error; ?>  
             </div>
 <?php
             break;
@@ -48,7 +54,7 @@ if(isset($_GET['errorCode']) && isset($_GET['errorType'])){
 ?>
             <div class="alert alert-success alert-dismissable">
                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-               <strong>Error!</strong> <?php echo $error; ?>  
+               <?php echo $error; ?>  
             </div>
 <?php
             break;
@@ -56,7 +62,7 @@ if(isset($_GET['errorCode']) && isset($_GET['errorType'])){
 ?>
             <div class="alert alert-warning alert-dismissable">
                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-               <strong>Error!</strong> <?php echo $error; ?>  
+               <?php echo $error; ?>  
             </div>
 <?php
             break;        
