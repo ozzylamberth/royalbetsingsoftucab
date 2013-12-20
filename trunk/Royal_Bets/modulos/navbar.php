@@ -39,7 +39,7 @@
                             <h4>Bienvenido </h4>
                         </div>
                         <div class="form-group">
-                          <a href="registro.php" ><?php echo $_SESSION['nombre']; echo' '; echo $_SESSION['apellido'];?></a>
+                          <a href="cuenta.php" ><?php echo $_SESSION['nombre']; echo' '; echo $_SESSION['apellido'];?></a>
                         </div>
                         <a class="btn btn-xs btn-warning" href="scripts/usuarios/cerrarsesion.php" role="button">Cerrar sesión</a>
                         
