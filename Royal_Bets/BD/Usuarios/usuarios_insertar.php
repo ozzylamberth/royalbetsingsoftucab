@@ -8,6 +8,7 @@
         $cedula         = $_POST['cedula'];
         $emailaddress	= $_POST['emailaddress'];
         $password	= $_POST['password'];
+        $password2	= $_POST['password2'];
         $sex    	= $_POST['sex'];
         $nacimiento	= $_POST['nacimiento'];
         $country	= $_POST['country'];
@@ -15,38 +16,34 @@
         $telefono	= $_POST['telefono'];
         $direccion	= $_POST['direccion'];
         
-        if (!$firstname || !$lastname || !$cedula || !$emailaddress || !$password || !$sex || !$nacimiento || !$country || !$city || !$telefono || !$direccion){
-            header('location:index.php');            
+        if (!$firstname || !$lastname || !$cedula || !$emailaddress || !$password || !$password2 || !$sex || !$nacimiento || !$country || !$city || !$telefono || !$direccion){
+            header("Location:../../registro.php");   
+            echo'entra todo';
         }else{
-        
-            echo "Nombre: $firstname <br/>";
-            echo "Apellido: $lastname <br/>";
-            echo "Cedula: $cedula<br/>";
-            echo "Email: $emailaddress<br/>";
-            echo "password: $password<br/>";
-            echo "fecha de nacimento: $nacimiento<br/>";
-            echo "pais: $country<br/>";
-            echo "telefono: $telefono<br/>";
-            echo "direccion: $direccion<br/>";
+            if($password == $password2){
 
-            // SQL
-            $query = mysql_query("INSERT INTO usuarios
-                                        (
-                                        Ci,Nombre,Apellido,Fecha_de_nacimiento,Telefono,Pais,Direccion,Sexo,Password,Correo,Ciudad
-                                        )
-                                        VALUES
-                                        (
-                                        '$cedula','$firstname','$lastname','$nacimiento','$telefono','$country','$direccion','$sex','$password','$emailaddress','$city'
-                                        )
-                                ");
+                // SQL
+                $query = mysql_query("INSERT INTO Usuarios
+                                            (
+                                            Ci,Nombre,Apellido,Fecha_de_nacimiento,Telefono,Pais,Direccion,Sexo,Password,Correo,Ciudad
+                                            )
+                                            VALUES
+                                            (
+                                            '$cedula','$firstname','$lastname','$nacimiento','$telefono','$country','$direccion','$sex','$password','$emailaddress','$city'
+                                            )
+                                    ");
 
-            if(!$query){
-                echo 'Error al insertar un usuario';
-            }else
-                echo 'Guardo Correctamente';
+                if(!$query){
+                    echo 'Error al insertar un usuario';
+                }else
+                    echo 'Guardo Correctamente';
 
-            // Redireccion
-            //header('location: localhost/trunk/Royal_Bets/index.php');	
-        
+                // Redireccion
+                header("Location:../../index.php");	
+            }else{
+                header("Location:../../registro.php");
+                echo 'validarPassword()';
+               
+            }
         }
 ?>
