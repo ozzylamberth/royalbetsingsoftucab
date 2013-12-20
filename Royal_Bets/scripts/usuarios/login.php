@@ -1,5 +1,5 @@
 <?php
-
+    
     session_start();
 
     echo 'entro <br/>';
@@ -16,7 +16,6 @@
     
     if(isset($email) && !empty($email) &&
     isset($pass) && !empty($pass)){
-        
         $sel=mysql_query("SELECT Correo,Password,Nombre,Apellido FROM Usuarios WHERE Correo='$email' ",$conex);
         if(mysql_num_rows($sel)){
             
@@ -30,17 +29,18 @@
                 
                 header("Location:../../index.php");
             }else{
-                echo "Password incorrecto";
-                
+                //echo "Password incorrecto";
+                header("Location:../../login.php?errorCode=2&errorType=1");
             }
         }else{
-            echo "Usuario incorrecto";
+            //echo "Usuario incorrecto";
+            header("Location:../../login.php?errorCode=1&errorType=1");
         } 
         
     }else{
-        echo "Debe llenar ambos campos";
+       //echo "Error en login, intentelo mas tarde";
+        header("Location:../../login.php?errorCode=3&errorType=1");
     }
-    
     
     
     

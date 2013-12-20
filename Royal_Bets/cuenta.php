@@ -23,7 +23,7 @@
       <div class="col-lg-8">
         <div class="col-lg-8">
           <h2>Historiales</h2>
-          <p>Saldo: 0.00</p>
+          <p>Saldo actual: 0.00</p>
           <p>Historial de apuestas</p>
           <p>Historial de transacciones</p>
         </div>
