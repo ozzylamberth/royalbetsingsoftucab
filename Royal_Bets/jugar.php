@@ -55,20 +55,16 @@
                                 </td>
                         </tr>
                 </tbody>               
-            </table>
-             
+            </table>  
+        </div>
             <div class="table-responsive">   
             <table class="table table-bordered">
-
-                <thead>
-                    <div align="left"><strong>Apuestas Actuales</strong></div>
-                        <tr> 
-                            <th style="width: 20%;">Tipo De Juego</th>
-                                <th style="width: 40%;">Descripción</th>
-                                <th style="width: 25%;">Monto</th>
-                        </tr>
-                </thead>
-                
+                <div align="center"><strong>Apuestas Actuales</strong></div>
+                    <tr> 
+                        <th>Tipo De Juego</th>
+                        <th>Descripción</th>
+                        <th>Monto</th>
+                    </tr> 
                 <tbody>
                         <tr>
                                 <td data-title="Code"> Parley </td>
@@ -82,15 +78,15 @@
                                 </td>
                         </tr>
                         <tr>
-                                <td data-title="Code"> Directa </td>
-                                <td data-title="Company">Manchester vs. Liverpool</td>
-                                <td data-title="Price">                
+                                <td> Directa </td>
+                                <td>Manchester vs. Liverpool</td> 
+                                <td>
                                     <div class="form-group">
                                         <div class="col-md-11">
                                             <input class="form-control" placeholder="Bs."> 
                                         </div>
                                     </div>
-                                </td>
+                                </td>    
                         </tr>
                         <tr>
                             <td></td>
@@ -101,8 +97,7 @@
                 
             </table>
         </div>
-             <div align="right"> <a class="btn btn-warning"> Apostar </a> </div>
-        </div>
+            <div align="right"> <a class="btn btn-warning"> Apostar </a> </div>
         </div>
 
 <?php require_once('./modulos/sidebar.php'); ?>           
