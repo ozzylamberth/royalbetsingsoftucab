@@ -24,16 +24,38 @@
       <br/><br/>
       <div class="col-lg-8">
         <div class="col-lg-8">
-          <h2>Historiales</h2>
-          <p>Saldo actual: 0.00</p>
-          <p>Historial de apuestas</p>
-          <p>Historial de transacciones</p>
+            <h2>Historiales</h2>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                        <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+                            <li class="active"><a href="#saldo" data-toggle="tab">Red</a></li>
+                            <li><a href="#transacciones" data-toggle="tab">Transacciones</a></li>
+                            <li><a href="#apuestas" data-toggle="tab">Apuestas</a></li>
+                        </ul>
+                        <div id="my-tab-content" class="tab-content">
+                            <div class="tab-pane active" id="saldo">
+                                <h3>Saldo</h3>
+                                <span class="label label-success">999999999.00 Bsf</span>
+                            </div>
+                            <div class="tab-pane" id="transacciones">
+                                <h3>Historial de transacciones</h3>
+                                <p>orange orange orange orange orange</p>
+                            </div>
+                            <div class="tab-pane" id="apuestas">
+                                <h3>Historial de apuestas</h3>
+                                <p>orange orange orange orange orange</p>
+                            </div>            
+                        </div>
+                </div>
+            </div>        
         </div>
         <div class="col-lg-8">
           <h2>Configuración</h2>
           <p>Cambio de clave</p>
           <p>Cambio de correo</p>
-        </div>          
+        </div>
+   
+          
       </div>      
           
 <?php require_once('./modulos/sidebar.php'); ?>           

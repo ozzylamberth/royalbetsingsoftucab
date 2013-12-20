@@ -31,6 +31,19 @@
   .twitter-timeline{
       alignment-adjust: central;
   }
+  
+.label {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 90%;
+  font-weight:lighter;
+  line-height: 1;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+}
 
 
 
