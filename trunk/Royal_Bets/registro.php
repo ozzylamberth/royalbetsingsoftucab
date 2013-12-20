@@ -28,7 +28,7 @@
                     Nombre:
                   </label>
                   <div class="col-md-10">
-                      <input type="text" class="form-control" name="firstname" id="firstname" placeholder="Nombre">
+                      <input title="Introduzca su Nombre" type="text" class="form-control" name="firstname" id="firstname" placeholder="Nombre" required>
                   </div><br/><br/>
                 </div>
 
@@ -37,7 +37,7 @@
                     Apellido:
                   </label>
                   <div class="col-md-10">
-                      <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Apellido">
+                      <input title="Introduzca su Apellido" type="text" class="form-control" name="lastname" id="lastname" placeholder="Apellido" required>
                   </div><br/><br/>
                 </div> 
                 
@@ -46,7 +46,7 @@
                     Cedula de identidad:
                   </label>
                   <div class="col-md-10">
-                      <input type="text" class="form-control" name="cedula" id="cedula" placeholder="V-12345678">
+                      <input title="Introduzca su Cedula" type="text" class="form-control" name="cedula" id="cedula" placeholder="V-12345678" required>
                   </div><br/><br/>
                 </div>                
                 
@@ -55,7 +55,7 @@
                     Correo electrónico:
                   </label>
                   <div class="col-md-10">
-                      <input type="email" class="form-control" name="emailaddress" id="emailaddress" placeholder="tunombre@tudominio.com">
+                      <input title="Introduzca su Correo Electronico" type="email" class="form-control" name="emailaddress" id="emailaddress" placeholder="tunombre@tudominio.com" required>
                   </div><br/><br/>
                 </div>
 
@@ -64,7 +64,7 @@
                     Password:
                   </label>
                   <div class="col-md-10">
-                      <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                      <input title="Introduzca un Password" type="password" class="form-control" name="password" id="password" placeholder="Password" required>
                     <p class="help-block">
                       Min: 6 caracteres (Solo alfanumerico)
                     </p>
@@ -77,7 +77,7 @@
                     Confirmar contraseña:
                   </label>
                   <div class="col-md-10">
-                      <input type="password" class="form-control" name="password2" id="password2" placeholder="Password">
+                      <input title="Repita su Password" type="password" class="form-control" name="password2" id="password2" placeholder="Password" required>
 
                   </div><br/><br/>
                 </div>  
@@ -104,7 +104,7 @@
                     Fecha de Nacimiento:
                   </label>
                   <div class="col-md-10">
-                      <input type="date" class="form-control" name="nacimiento" id="nacimiento">
+                      <input title="Introduzca su fecha de Nacimiento" type="date" class="form-control" name="nacimiento" id="nacimiento" required>
                   </div><br/>
                 </div>
                 
@@ -136,7 +136,7 @@
                     Ciudad:
                   </label>
                   <div class="col-md-10">
-                      <input type="text" class="form-control" id="city" name="city" placeholder="Ciudad">
+                      <input title="Introduzca su Ciudad" type="text" class="form-control" id="city" name="city" placeholder="Ciudad" required>
                   </div><br/><br/>
                 </div>
 
@@ -146,7 +146,7 @@
                     Dirección:
                   </label>
                   <div class="col-md-10">
-                      <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion">
+                      <input title="Introduzca su Direccion" type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion" required>
                   </div><br/><br/>
                 </div>
 
@@ -157,7 +157,7 @@
                     Telefono:
                   </label>
                   <div class="col-md-10">
-                      <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Telefono">
+                      <input title="Introduzca su numero de Telefono" type="tel" class="form-control" id="telefono" name="telefono" placeholder="Telefono" required>
                   </div><br/><br/>
                 </div>
 
