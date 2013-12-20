@@ -36,18 +36,25 @@
                 
         ?> 
         
-                    <form class="navbar-form navbar-right">
+                    <!-- <form class="navbar-form navbar-right">
                         
                         <div class="form-group">
                             <h4>Bienvenido </h4>
                         </div>
                         <div class="form-group">
-                          <a href="cuenta.php" ><?php echo $_SESSION['nombre']; echo' '; echo $_SESSION['apellido'];?></a>
+                          <a href="cuenta.php" > </a>
                         </div>
-                        <a class="btn btn-xs btn-warning" href="scripts/usuarios/cerrarsesion.php" role="button">Cerrar sesión</a>
                         
                         
-                    </form>            
+                        
+                    </form>   -->  
+                    
+                    <p class="navbar-text navbar-right">Bienvenid@ <a href="cuenta.php" class="navbar-link"><?php echo $_SESSION['nombre']; echo' '; echo $_SESSION['apellido'];?></a>
+                        <span class="label label-success">Saldo: 999999999.00</span>
+                        <a class="btn btn-xs btn-danger" href="scripts/usuarios/cerrarsesion.php" role="button">Cerrar sesión</a>
+                    
+                    </p>
+                        
         <?php 
             }else{
                 
