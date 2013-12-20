@@ -168,7 +168,7 @@
                   </div>
                   <div class="col-md-10">
                     <label>
-                      <input type="checkbox">Acepto los terminos y condiciones</label>
+                        <input type="checkbox"><a href="./img/terminosycondiciones.pdf" target="_blank">Acepto los términos y condiciones</a></label>
                   </div><br/><br/>
                 </div>
 
@@ -180,6 +180,8 @@
                       Registrar
                     </button>
                   </div>
+                    <br>
+                    <br>
                 </div>
               </form> 
         </div>
