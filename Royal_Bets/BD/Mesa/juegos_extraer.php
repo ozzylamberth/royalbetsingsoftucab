@@ -19,11 +19,14 @@ $host	= "localhost";
 		echo "No se pudo conectar correctamente con la Base de datos";
 		exit();
 	}
-
-$consultajuegos= "SELECT * FROM juegos";
-
-$datosjuegos= mysql_query($consultajuegos,$conex) or die ("<p> No se ha podido ejecutar"
+if(!isset($_SESSION['username'])){        
+    $idmesa = $_GET['array'];
+    $consultajuegos= "SELECT * FROM juegos WHERE $idmesa";
+    $datosjuegos= mysql_query($consultajuegos,$conex) or die ("<p> No se ha podido ejecutar"
         . "la consulta, compurebe que la sintaxis sea correcta. <p>");
+}else{
+    echo "El ID de mesa es incorrecto, deje de modificarlo por el url";
+}
 
 mysql_close();
 
