@@ -1,4 +1,6 @@
 <?php require_once('./modulos/header.php'); ?>
+<?php require_once('./BD/Mesa/Mesas_extraer.php'); ?>
+
 
     <body>
         <!--[if lt IE 7]>
@@ -24,7 +26,9 @@
         <div class="col-lg-8">
 
             
+            
          <div class="table-responsive">   
+             
             <table class="table table-bordered">
 
                 <thead>
@@ -33,27 +37,52 @@
                                 <th>Mesa</th>
                                 <th>Descripcion</th>
                                 <th>Deporte</th>
-                                <th class="numeric">Capacidad</th>
+                                <th>Capacidad</th>
                         </tr>
+                        
                 </thead>
-                
+        
                 <tbody>
+                      
+                              
+       
+               <?php          
+               
+               
+               
+                  while ($registro= mysql_fetch_row($datos)){
+                      
+                        $contador=0;
+                                foreach ($registro as $clave){
+
+                                 $array[$contador]= $clave;  
+                                 $contador ++;
+                                
+                                }
+                                
+                  
+               
+                 ?>
+                 
                         <tr>
-                                <td data-title="Code"> Premium </td>
-                                <td data-title="Company">Esta la mesa es para futbol</td>
-                                <td data-title="Price" class="numeric">Real Madrid vs Barcelona</td>
-                                <td data-title="Change" class="numeric">1/100</td>
+                                <td data-title="Code"> <?php echo $array [0]; ?>  </td>
+                                <td data-title="Company"><?php echo $array [1]; ?></td>
+                                <td data-title="Price" class="numeric"><?php echo $array [2]; ?></td>
+                                <td data-title="Change" class="numeric"><?php echo $array [3]; ?></td>
                         </tr>
-                        <tr>
-                                <td data-title="Code"> Platinum </td>
-                                <td data-title="Company">Esta la mesa es para tenis</td>
-                                <td data-title="Price" class="numeric">Federer vs Nadal</td>
-                                <td data-title="Change" class="numeric">2/100</td>
-                        </tr>
+                        
+                        
+                  <?php } ?>
+                        
                 </tbody>
+                        
                 
+                        
+                </tbody>
             </table>
         </div>
+            
+            
         </div>
 
 <?php require_once('./modulos/sidebar.php'); ?>           
