@@ -85,6 +85,15 @@ CREATE TABLE Mesas (
 
 );
 
+CREATE TABLE Alertas (
+
+    Id INT NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (Id),
+    Ci VARCHAR (50), 
+    Mensaje VARCHAR (50),
+    Leido BOOLEAN,
+);
+
 
 
 
