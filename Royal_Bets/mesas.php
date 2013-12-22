@@ -29,20 +29,21 @@
             
          <div class="table-responsive">   
              
-            <table class="table table-bordered">
-
+             <table class="table table-bordered" >
+                        
                 <thead>
                         <tr>
                                 
                                 <th>Mesa</th>
-                                <th>Descripcion</th>
+                                <th>Descripción</th>
                                 <th>Deporte</th>
                                 <th>Capacidad</th>
+                                <th>Selección</th>
                         </tr>
                         
                 </thead>
         
-                <tbody>
+                <tbody align="center">
                       
                               
        
@@ -54,18 +55,21 @@
 
                                  $array[$contador]= $clave;  
                                  $contador ++;
+                                 
                                 
                                 }                                                            
                  ?>
                  
                         <tr>
-                                <td data-title="Code"> <?php echo $array [0]; ?>  </td>
-                                <td data-title="Company"><?php echo $array [1]; ?></td>
-                                <td data-title="Price" class="numeric"><?php echo $array [2]; ?></td>
-                                <td data-title="Change" class="numeric"><?php echo $array [3]; ?></td>
-                        </tr>
+                                <td data-title="Mesa"> <?php echo $array [1]; ?>  </td>
+                                <td data-title="Descripcion"><?php echo $array [2]; ?></td>
+                                <td data-title="Deporte" class="numeric"><?php echo $array [3]; ?></td>
+                                <td data-title="Capacidad" class="numeric"><?php echo $array [4]; ?></td>
+                                <td data-title="Capacidad" class="numeric"> <div align="center"> <?php echo "<a href ='juegos.php? array= $array[0]' class='btn btn-primary'> Entrar </a>"; ?>  </div> </td>
+                                
+                        </tr>                                                                                                       
                         
-                        
+                                                                                                      
                   <?php } ?>
                         
                 </tbody>
