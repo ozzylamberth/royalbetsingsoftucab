@@ -1,7 +1,26 @@
 <?php
-include('../Usuarios/conexion.php');
+$host	= "localhost";
+	$db	= "royalbetsbd";
+	$user	= "root";
+	$password = "";
 
-$consultajuegos= "SELECT FROM * juegos";
+	// Abrir la Conexión
+	$conex=@mysql_connect("$host","$user","$password");
+
+	if(!$conex)
+	{
+		echo "Error al Intentar Conectarse con la Base de Datos";
+		exit();
+	}
+
+	// Elegir una Base de Datos
+	if(!@mysql_select_db("$db",$conex))
+	{
+		echo "No se pudo conectar correctamente con la Base de datos";
+		exit();
+	}
+
+$consultajuegos= "SELECT * FROM juegos";
 
 $datosjuegos= mysql_query($consultajuegos,$conex) or die ("<p> No se ha podido ejecutar"
         . "la consulta, compurebe que la sintaxis sea correcta. <p>");
