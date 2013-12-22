@@ -29,7 +29,7 @@
                 <div class="panel-body">
                         <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
                             <li class="active"><a href="#saldo" data-toggle="tab">Red</a></li>
-                            <li><a href="#alertas" data-toggle="tab">Alertas <span class="badge">42</span></a></li>
+                            <li><a href="#alertas" data-toggle="tab">Alertas <span class="badge"><?php echo getNroMensajes($tablaMensajes,$_SESSION['ci']); ?></span></a></li>
                             <li><a href="#transacciones" data-toggle="tab">Transacciones</a></li>
                             <li><a href="#apuestas" data-toggle="tab">Apuestas</a></li>
                         </ul>
@@ -40,7 +40,7 @@
                             </div>
                             <div class="tab-pane" id="alertas">
                                 <h3>Alertas</h3>
-                                <span class="label label-success"><?php echo getSaldo(); ?>   Bsf</span>
+                                <p>orange orange orange orange orange</p>
                             </div>
                             <div class="tab-pane" id="transacciones">
                                 <h3>Historial de transacciones</h3>
