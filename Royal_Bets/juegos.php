@@ -7,7 +7,9 @@
         
 
        
-<?php require_once('./modulos/navbar.php'); ?>         
+<?php 
+    require_once('./modulos/navbar.php');
+?>         
     
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
@@ -30,21 +32,32 @@
                 <div align="center"><strong>Descripción De Los Juegos</strong></div>
                         <tr>
                                 <td>
-                                    <label>
-                                        <input type="radio" name="team1" id="team1" value="local">
-                                    </label>
+                                    <script>
+                                        function activar()
+                                        {
+                                            if (!document.boton_activar.team1.disabled){
+                                               document.money.money2.disabled = false;
+                                            }else{
+                                               document.money.money2.disabled = true; 
+                                            } 
+                                        }
+                                    </script>
+                                    <form name="boton_activar">
+                                            <input type="radio"  name="team1" id="team1" onclick="activar()">
+                                    </form>    
                                 </td>
                                 <td>Barcelona vs Real Madrid</td>
                                 <td>
                                     <label>
                                         <input type="radio" name="team1" id="team1" value="visitante">
                                     </label>
+                                    
                                 </td>
                         </tr>
                         <tr>
                                 <td>                        
                                     <label>
-                                        <input type="radio" name="team2" id="team2" value="local">
+                                        <input  type="radio" name="team2" id="team2" value="local">
                                     </label>
                                 </td>
                                 <td>Venezuela vs Colombia</td>
@@ -56,9 +69,10 @@
                         </tr>
                 </tbody>               
             </table>  
-        </div>
+        </div> 
+
             <div class="table-responsive">   
-            <table class="table table-bordered">
+                <table id="tabla2" class="table table-bordered">
                 <div align="center"><strong>Apuestas Actuales</strong></div>
                     <tr> 
                         <th>Tipo De Juego</th>
@@ -72,7 +86,9 @@
                                 <td data-title="Price">                
                                     <div class="form-group">
                                         <div class="col-md-11">
-                                            <input class="form-control" placeholder="Bs."> 
+                                            <form name="money">
+                                                <input class="form-control" placeholder="Bs." name="money2" disabled> 
+                                            </form>
                                         </div>
                                     </div>
                                 </td>
@@ -97,9 +113,8 @@
                 
             </table>
             <div align="right"> <a class="btn btn-warning"> Apostar </a> </div>
-        </div>
-        </div>
-          
+            </div>
+        </div>             
 <?php require_once('./modulos/sidebar.php'); ?>           
           
       </div>
