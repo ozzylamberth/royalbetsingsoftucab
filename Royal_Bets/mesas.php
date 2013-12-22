@@ -46,10 +46,7 @@
                       
                               
        
-               <?php          
-               
-               
-               
+               <?php                                       
                   while ($registro= mysql_fetch_row($datos)){
                       
                         $contador=0;
@@ -58,10 +55,7 @@
                                  $array[$contador]= $clave;  
                                  $contador ++;
                                 
-                                }
-                                
-                  
-               
+                                }                                                            
                  ?>
                  
                         <tr>

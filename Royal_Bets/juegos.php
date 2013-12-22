@@ -1,5 +1,5 @@
 <?php require_once('./modulos/header.php'); ?>
-
+<?php require_once('./BD/Mesa/juegos_extraer.php'); ?>
     <body>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
@@ -7,10 +7,7 @@
         
 
        
-<?php 
-        include '../BD/conexion.php'; 
-        require_once('./modulos/navbar.php');
-?>         
+<?php require_once('./modulos/navbar.php'); ?>         
     
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
@@ -99,14 +96,9 @@
                 </tbody>
                 
             </table>
-<<<<<<< .mine
-            <div align="right"> <a class="btn btn-warning"> Apostar </a> </div>
-=======
->>>>>>> .r66
-        </div>
             <div align="right"> <a class="btn btn-warning"> Apostar </a> </div>
         </div>
-          
+        </div>
           
 <?php require_once('./modulos/sidebar.php'); ?>           
           
