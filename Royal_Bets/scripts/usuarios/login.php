@@ -2,7 +2,7 @@
     
     session_start();
 
-    echo 'entro <br/>';
+    //echo 'entro <br/>';
 
     // Conexion
     include '../../BD/conexion.php';
