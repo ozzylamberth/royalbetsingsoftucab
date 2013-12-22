@@ -11,14 +11,16 @@ CREATE TABLE Usuarios (
     Direccion VARCHAR (50),
     Sexo VARCHAR (50),
     Password VARCHAR (50),
-    Correo VARCHAR (50)
+    Correo VARCHAR (50),
+    permisos INT
 );
 
 
 CREATE TABLE Transacciones (
 
+    Id INT NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (Id),
     Ci VARCHAR (50), 
-    PRIMARY KEY (Ci),
     Tipo_de_transaccion VARCHAR (50),
     Monto FLOAT,
     Fecha DATE,
@@ -29,9 +31,9 @@ CREATE TABLE Transacciones (
 
 CREATE TABLE Juegos (
 
-    Id VARCHAR (50), 
+    Id INT NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (Id),
-    Id_mesa VARCHAR (50),
+    Id_mesa INT,
     Equipo1 VARCHAR (50),
     Equipo2 VARCHAR (50),
     Apuesta1 VARCHAR (50),
@@ -50,11 +52,12 @@ CREATE TABLE Juegos (
 
 CREATE TABLE Apuestas (
 
+    Id INT NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (Id),
     Id_user VARCHAR (50), 
-    PRIMARY KEY (Id_user),
-    Id_mesa VARCHAR (50),
-    Id_juego VARCHAR (50),
-    Equipo VARCHAR (50),
+    Id_mesa INT,
+    Id_juego INT,
+    Equipo INT,
     Monto FLOAT,
     Fecha DATE,
     Hora TIME
@@ -63,8 +66,9 @@ CREATE TABLE Apuestas (
 
 CREATE TABLE Consumos (
 
+    Id INT NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (Id),
     Id_user VARCHAR (50), 
-    PRIMARY KEY (Id_user),
     Producto VARCHAR (50),
     Monto FLOAT
 
@@ -72,8 +76,9 @@ CREATE TABLE Consumos (
 
 CREATE TABLE Mesas (
 
+    Id INT NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (Id),
     Mesa VARCHAR (50), 
-    PRIMARY KEY (Mesa),
     Descripcion VARCHAR (50),
     Deporte VARCHAR (50),
     Capacidad INT
