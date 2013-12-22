@@ -1,3 +1,5 @@
+<?php require_once('./BD/Usuarios/consultar_saldo.php'); ?> 
+
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
@@ -50,7 +52,10 @@
                     </form>   -->  
                     
                     <p class="navbar-text navbar-right">Bienvenid@ <a href="cuenta.php" class="navbar-link"><?php echo $_SESSION['nombre']; echo' '; echo $_SESSION['apellido'];?></a>
-                        <span class="label label-success">Saldo: 999999999.00</span>
+                        
+                        
+                        <a class="btn btn-xs btn-success" href="./cuenta.php" role="button">Alertas <span class="badge">42</span></a>
+                        <span class="label label-success">Saldo: <span class="badge"><?php echo getSaldo(); ?> Bsf</span></span>
                         <a class="btn btn-xs btn-danger" href="scripts/usuarios/cerrarsesion.php" role="button">Cerrar sesión</a>
                     
                     </p>
