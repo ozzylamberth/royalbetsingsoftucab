@@ -74,7 +74,6 @@ CREATE TABLE Consumos (
     Id_user VARCHAR (50), 
     Producto VARCHAR (50),
     Monto FLOAT
-
 );
 
 CREATE TABLE Mesas (
@@ -94,7 +93,7 @@ CREATE TABLE Alertas (
     PRIMARY KEY (Id),
     Ci VARCHAR (50), 
     Mensaje VARCHAR (50),
-    Leido BOOLEAN,
+    Leido BOOLEAN
 );
 
 
