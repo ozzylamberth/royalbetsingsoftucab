@@ -12,7 +12,8 @@ CREATE TABLE Usuarios (
     Sexo VARCHAR (50),
     Password VARCHAR (50),
     Correo VARCHAR (50),
-    permisos INT
+    Permisos INT,
+    Estado INT
 );
 
 
@@ -45,7 +46,8 @@ CREATE TABLE Juegos (
     Fecha_inicio DATE,
     Fecha_de_final DATE,
     Hora_de_inicio TIME,
-    Hora_de_final TIME
+    Hora_de_final TIME,
+    Estado INT
 );
 
 
@@ -60,7 +62,8 @@ CREATE TABLE Apuestas (
     Equipo INT,
     Monto FLOAT,
     Fecha DATE,
-    Hora TIME
+    Hora TIME,
+    Estado INT
 );
 
 
@@ -81,8 +84,8 @@ CREATE TABLE Mesas (
     Mesa VARCHAR (50), 
     Descripcion VARCHAR (50),
     Deporte VARCHAR (50),
-    Capacidad INT
-
+    Capacidad INT,
+    Estado INT
 );
 
 CREATE TABLE Alertas (
