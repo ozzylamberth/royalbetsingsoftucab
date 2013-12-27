@@ -32,6 +32,7 @@
                     echo 'Exito';
 
                 // Redireccion
+                mysql_close();
                 header("Location:../../gestionmesas.php");	
            
         }

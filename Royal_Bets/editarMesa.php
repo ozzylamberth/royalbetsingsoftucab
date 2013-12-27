@@ -33,7 +33,7 @@
            
             ?>
             
-            <form role="form" method="POST" action="BD/Mesa/mesaActualizar.php">
+            <form role="form" method="POST" action="BD/Mesa/mesaActualizar.php?mesa=<?php echo $renglon['Id'] ?>">
                 <div class="form-group">
                   <label for="nombreMesa" class="col-md-2">
                     Mesa:

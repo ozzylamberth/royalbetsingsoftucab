@@ -10,9 +10,11 @@ include '../conexion.php';
 
 $m = $_GET['mesa'];
 
-$sql="DELETE FROM Mesas WHERE Mesa='$m'";
+$inactivo= 0;
+
+$sql="UPDATE `Mesas` SET `Estado`='$inactivo' WHERE `Mesa`='$m'";
 mysql_query($sql);
-
-
+echo $m;
+mysql_close();
 header("Location:../../gestionmesas.php");
 ?>
