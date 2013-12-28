@@ -78,7 +78,7 @@
                           <input type="password" placeholder="Contraseña" name="pass" class="form-control" required/>
                         </div>
                         <button type="submit" class="btn btn-warning" >Entrar</button>
-                        <a href="registro.php" class="btn btn-success">Registrar</a>
+                        <a href="l.php" class="btn btn-success">Registrar</a>
                     </form>                
         <?php 
             }

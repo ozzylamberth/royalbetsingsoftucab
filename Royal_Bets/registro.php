@@ -15,14 +15,13 @@
         <!--<p><a class="btn btn-primary btn-lg">Learn more &raquo;</a></p>-->
       </div>
     </div>
-
 <br>
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-lg-8">
             
-            <form role="form" method="POST" action="BD/Usuarios/usuarios_insertar.php">
+            <form role="form" method="POST" action="BD/Usuarios/usuarios_insertar.php">           
                 <div class="form-group">
                   <label for="firstname" class="col-md-2">
                     Nombre:
@@ -77,7 +76,7 @@
                     Confirmar contraseña:
                   </label>
                   <div class="col-md-10">
-                      <input title="Repita su Password" type="password" class="form-control" name="password2" id="password2" placeholder="Password" required>
+                      <input title="Repita su Password" type="password" class="form-control" name="password2" id="password2" placeholder="Password"  required>
 
                   </div><br/><br/>
                 </div>  
@@ -171,19 +170,23 @@
                         <input type="checkbox" required><a href="./img/terminosycondiciones.pdf" target="_blank">Acepto los términos y condiciones</a></label>
                   </div><br/><br/>
                 </div>
-
+                
+                <div class="alert alert-danger" id="alertapassword">
+                    <strong>Atención!</strong> las contraseñas ingresadas no coinciden.
+                </div>
+                
                 <div class="row">
                   <div class="col-md-2">
                   </div>                  
                   <div class="col-md-3">
-                      <button type="submit" name="registrar" class="btn btn-info">
+                      <button type="submit" name="registrar" class="btn btn-info" onclick="validarPassword();">
                       Registrar
-                    </button>
+                      </button>
                   </div>
-                    <br>
-                    <br>
                 </div>
               </form> 
+             
+             
         </div>
 
 <?php require_once('./modulos/sidebar.php'); ?>           
