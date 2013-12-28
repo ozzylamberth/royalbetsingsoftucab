@@ -1,3 +1,4 @@
+<script src="js/main.js"></script>
 <?php   
         // Conexion
         include '../conexion.php';
@@ -42,8 +43,6 @@
                 header("Location:../../index.php");	
             }else{
                 header("Location:../../registro.php");
-                echo 'validarPassword()';
-               
             }
         }
 ?>
