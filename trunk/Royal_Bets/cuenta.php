@@ -23,6 +23,7 @@
       <div class="row">
       <br/><br/>
       <div class="col-lg-8">
+        <?php require_once('./scripts/alertas.php'); ?>   
         <div class="col-lg-8">
             <h2>Historiales</h2>
             <div class="panel panel-default">
@@ -55,10 +56,67 @@
             </div>        
         </div>
         <div class="col-lg-8">
+            
           <h2>Configuración</h2>
-          <p>Cambio de clave</p>
-          <p>Cambio de correo</p>
+          <p><a href="#" data-toggle="modal" data-target="#modalClave">Cambio de clave</a></p>
+      
+
+<!-- Modal cambio de clave -->
+<div class="modal fade" id="modalClave" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Cambio de clave</h4>
+      </div>
+      <div class="modal-body">          
+          
+        <form role="form" method="POST" action="scripts/usuarios/cambioClave.php"> 
+            <div class="form-group">
+              <label for="claveActual" class="col-md-2">
+                Clave actual:
+              </label>
+              <div class="col-md-10">
+                  <input title="Clave actual" type="password" class="form-control" name="claveActual" id="firstname" placeholder="Clave Actual" required>
+              </div><br/><br/>
+            </div>
+            
+            <div class="form-group">
+              <label for="claveNueva" class="col-md-2">
+                Clave nueva:
+              </label>
+              <div class="col-md-10">
+                  <input title="Clave nueva" type="password" class="form-control" name="claveNueva" id="firstname" placeholder="Clave nueva" required>
+              </div><br/><br/>
+            </div>
+            
+            <div class="form-group">
+              <label for="claveNueva2" class="col-md-2">
+                Confirme su clave nueva:
+              </label>
+              <div class="col-md-10">
+                  <input title="Clave nueva" type="password" class="form-control" name="claveNueva2" id="firstname" placeholder="Clave nueva" required>
+              </div><br/><br/>
+            </div>  
+            
+            
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-primary">Guardar cambios</button>
+            </div>
+        </form> 
+        
+        
+        
+      </div>
+
+    </div>
+  </div>
+</div>
+          
         </div>
+          
+
    
           
       </div>      

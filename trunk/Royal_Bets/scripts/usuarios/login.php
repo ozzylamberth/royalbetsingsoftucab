@@ -23,10 +23,11 @@
 
             if($pass==$sesion['Password']){
                 $_SESSION['username']=$email;
+                $_SESSION['password']=$pass;
                 $_SESSION['nombre']=$sesion['Nombre'];
                 $_SESSION['apellido']=$sesion['Apellido'];
                 $_SESSION['ci']=$sesion['Ci'];
-                echo "correo coincide";
+                //echo "correo coincide";
                 
                 header("Location:../../index.php");
             }else{
