@@ -22,7 +22,10 @@ if(isset($_GET['errorCode']) && isset($_GET['errorType'])){
             break;
         case 4:
             $error = "Debes iniciar sesión para poder continuar";
-            break;        
+            break; 
+        case 5:
+            $error = "Usuario registrado satisfactoriamente";
+            break; 
     }
     
     
