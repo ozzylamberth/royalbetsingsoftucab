@@ -42,6 +42,156 @@
                             <div class="tab-pane" id="alertas">
                                 <h3>Alertas</h3>
                                 <p>orange orange orange orange orange</p>
+                                
+<div class="table-responsive">                                
+<table id="tablepaging" class="table table-bordered" align="center">
+    <thead>
+        <tr> 
+            <th>Name </th>
+            <th>Major </th>
+            <th>Sex </th>
+            <th>English </th>
+            <th>Tamil </th>
+            <th>Calculus </th>
+            <th>Geometry </th>
+        </tr>
+    </thead>
+<tbody>
+    <tr>
+        <td>Student01 </td>
+        <td>Languages </td>
+        <td>M </td>
+        <td>80 </td>
+        <td>70 </td>
+        <td>75 </td>
+        <td>80 </td>
+    </tr> 
+    <tr>
+        <td>Student02 </td>
+        <td>Languages </td>
+        <td>M </td>
+        <td>80 </td>
+        <td>70 </td>
+        <td>75 </td>
+        <td>80 </td> 
+    </tr>
+
+    <tr>
+    <td>Student01 </td>
+    <td>Languages </td>
+    <td>M </td>
+    <td>80 </td>
+    <td>70 </td>
+    <td>75 </td>
+    <td>80 </td>
+    </tr> 
+    <tr>
+
+    <td>Student02 </td>
+    <td>Languages </td>
+    <td>M </td>
+    <td>80 </td>
+    <td>70 </td>
+    <td>75 </td>
+    <td>80 </td> 
+    </tr>
+
+    <tr>
+    <td>Student01 </td>
+    <td>Languages </td>
+    <td>M </td>
+    <td>80 </td>
+    <td>70 </td>
+    <td>75 </td>
+    <td>80 </td>
+    </tr> 
+    <tr>
+
+    <td>Student02 </td>
+    <td>Languages </td>
+    <td>M </td>
+    <td>80 </td>
+    <td>70 </td>
+    <td>75 </td>
+    <td>80 </td> 
+    </tr>
+
+    <tr>
+    <td>Student01 </td>
+    <td>Languages </td>
+    <td>M </td>
+    <td>80 </td>
+    <td>70 </td>
+    <td>75 </td>
+    <td>80 </td>
+    </tr> 
+    <tr>
+
+    <td>Student02 </td>
+    <td>Languages </td>
+    <td>M </td>
+    <td>80 </td>
+    <td>70 </td>
+    <td>75 </td>
+    <td>80 </td> 
+    </tr>
+
+    <tr>
+    <td>Student01 </td>
+    <td>Languages </td>
+    <td>M </td>
+    <td>80 </td>
+    <td>70 </td>
+    <td>75 </td>
+    <td>80 </td>
+    </tr> 
+    <tr>
+
+    <td>Student02 </td>
+    <td>Languages </td>
+    <td>M </td>
+    <td>80 </td>
+    <td>70 </td>
+    <td>75 </td>
+    <td>80 </td> 
+    </tr>
+
+    <tr>
+    <td>Student01 </td>
+    <td>Languages </td>
+    <td>M </td>
+    <td>80 </td>
+    <td>70 </td>
+    <td>75 </td>
+    <td>80 </td>
+    </tr> 
+    <tr>
+
+    <td>Student02 </td>
+    <td>Languages </td>
+    <td>M </td>
+    <td>80 </td>
+    <td>70 </td>
+    <td>75 </td>
+    <td>80 </td> 
+    </tr>
+
+
+</tbody> 
+</table> 
+    
+</div>
+                                
+<div id="pageNavPosition" style="padding-top: 20px" align="center">
+</div>
+                                
+<script type="text/javascript">
+    var pager = new Pager('tablepaging', 5);
+    pager.init();
+    pager.showPageNav('pager', 'pageNavPosition');
+    pager.showPage(1);
+</script>
+                                
                             </div>
                             <div class="tab-pane" id="transacciones">
                                 <h3>Historial de transacciones</h3>
