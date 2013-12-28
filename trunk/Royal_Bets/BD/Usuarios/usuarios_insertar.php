@@ -40,7 +40,7 @@
                     echo 'Guardo Correctamente';
 
                 // Redireccion
-                header("Location:../../index.php");	
+                header("Location:../../registro.php?errorCode=5&errorType=3");	
             }else{
                 header("Location:../../registro.php");
             }
