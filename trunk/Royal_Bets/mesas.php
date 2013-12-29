@@ -134,7 +134,7 @@
                       
                         $contador=0;
                         
-                        $i;
+                        $i=0;
                                 foreach ($registro as $clave){
 
                                  $array[$contador]= $clave;  
@@ -149,8 +149,7 @@
                                 <td data-title="Descripcion"><?php echo $array [2]; ?></td>
                                 <td data-title="Deporte" class="numeric"><?php  echo $array [3]; ?></td>
                                 <td data-title="Capacidad" class="numeric"><?php echo $array [4]; ?></td>
-                                <td data-title="Capacidad" class="numeric"> <div align="center"> <a href ="juegos.php?array=<?php echo $array[0]; ?>"  class="btn btn-primary"> Entrar </a> </div> </td>
-                                
+                                <td data-title="Capacidad" class="numeric"> <div align="center"> <a href ="juegos.php?array=<?php echo $array[0]; ?>"  class="btn btn-primary"> Entrar </a> </div> </td>                                
                         </tr>         
     
   <!--                      
