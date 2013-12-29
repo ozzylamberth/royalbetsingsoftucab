@@ -23,14 +23,21 @@
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
+          
+          
         <div class="col-lg-8">
-
             
+            <br/><br/>
+ 
+               
             
          <div class="table-responsive">   
-             
+          
+          <!--
              <table class="table table-bordered" >
-                        
+
+                 
+                
                 <thead>
                         <tr>
                                 
@@ -45,9 +52,20 @@
         
                 <tbody align="center">
                       
-                              
+                       
        
-               <?php                                       
+               <?php      
+               
+               /*
+                 require_once("grid.php");
+                        $grid = new Grid("users", array(
+                            "save"=>true,
+                            "delete"=>true
+                                            ));
+                
+               
+               
+               
                   while ($registro= mysql_fetch_row($datos)){
                       
                         $contador=0;
@@ -57,21 +75,29 @@
                                  $contador ++;
                                  
                                 
-                                }                                                            
+                                } 
+              
+               */
+               
                  ?>
                  
                         <tr>
-                                <td data-title="Mesa"> <?php echo $array [1]; ?>  </td>
-                                <td data-title="Descripcion"><?php echo $array [2]; ?></td>
-                                <td data-title="Deporte" class="numeric"><?php echo $array [3]; ?></td>
-                                <td data-title="Capacidad" class="numeric"><?php echo $array [4]; ?></td>
-                                <td data-title="Capacidad" class="numeric"> <div align="center"> <?php echo "<a href ='juegos.php? array= $array[0]' class='btn btn-primary'> Entrar </a>"; ?>  </div> </td>
+                                <td data-title="Mesa"> <?php /*echo $array [1];*/ ?>  </td>
+                                <td data-title="Descripcion"><?php/* echo $array [2]; */?></td>
+                                <td data-title="Deporte" class="numeric"><?php /* echo $array [3]; */?></td>
+                                <td data-title="Capacidad" class="numeric"><?php/* echo $array [4]; */?></td>
+                                <td data-title="Capacidad" class="numeric"> <div align="center"> <?php/* echo "<a href ='juegos.php? array= $array[0]' class='btn btn-primary'> Entrar </a>"; */?>  </div> </td>
                                 
                         </tr>                                                                                                       
                         
                                                                                                       
-                  <?php } ?>
-                        
+                  <?php /*}
+                   *  ?>
+                   */
+                 
+                       ?>
+           
+           
                 </tbody>
                         
                 
@@ -79,13 +105,97 @@
                 </tbody>
             </table>
         </div>
+              </div>
+            -->
             
-            
-        </div>
+<div class="datagrid">
+    
+    <table id="tablepaging" class="table table-bordered" align="center">
+   
+            <thead>
+                        <tr>
+                                
+                                <th>Mesa</th>
+                                <th>Descripción</th>
+                                <th>Deporte</th>
+                                <th>Capacidad</th>
+                                <th>Selección</th>
+                        </tr>
+                        
+                </thead>
 
+               
+<tbody>
+    
+    <?php      
+               
+             
+                  while ($registro= mysql_fetch_row($datos)){
+                      
+                        $contador=0;
+                        
+                        $i;
+                                foreach ($registro as $clave){
+
+                                 $array[$contador]= $clave;  
+                                 $contador ++;                        
+                                } 
+
+                 ?>
+               
+    
+                        <tr>
+                                <td data-title="Mesa"> <?php echo $array [1]; ?>  </td>
+                                <td data-title="Descripcion"><?php echo $array [2]; ?></td>
+                                <td data-title="Deporte" class="numeric"><?php  echo $array [3]; ?></td>
+                                <td data-title="Capacidad" class="numeric"><?php echo $array [4]; ?></td>
+                                <td data-title="Capacidad" class="numeric"> <div align="center"> <a href ="juegos.php?array=<?php echo $array[0]; ?>"  class="btn btn-primary"> Entrar </a> </div> </td>
+                                
+                        </tr>         
+    
+  <!--                      
+<tr class="alt">
+    <td>data</td>
+    <td>data</td>
+    <td>data</td>
+    <td>data</td>
+</tr>
+
+  -->
+                  <?php $i++; } ?>
+
+</tbody>
+
+
+
+    </table>
+
+    
+    <div id="pageNavPosition" style="padding-top: 20px" align="center">
+</div>
+                                
+<script type="text/javascript">
+    var pager = new Pager('tablepaging', 5);
+    pager.init();
+    pager.showPageNav('pager', 'pageNavPosition');
+    pager.showPage(1);
+</script>
+    
+</div>
+
+          <br/>
+            <br/>  
+
+     </div>       
+            
+            
+            
+            
+            
+            
 <?php require_once('./modulos/sidebar.php'); ?>           
           
-      </div>
+      
 
       <hr>
 
