@@ -27,6 +27,7 @@
                 $_SESSION['nombre']=$sesion['Nombre'];
                 $_SESSION['apellido']=$sesion['Apellido'];
                 $_SESSION['ci']=$sesion['Ci'];
+                $_SESSION['sexo']=$sesion['Sexo'];
                 //echo "correo coincide";
                 
                 header("Location:../../index.php");

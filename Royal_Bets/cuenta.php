@@ -24,185 +24,111 @@
       <br/><br/>
       <div class="col-lg-8">
         <?php require_once('./scripts/alertas.php'); ?>   
-        <div class="col-lg-8">
             <h2>Historiales</h2>
             <div class="panel panel-default">
                 <div class="panel-body">
                         <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-                            <li class="active"><a href="#saldo" data-toggle="tab">Red</a></li>
-                            <li><a href="#alertas" data-toggle="tab">Alertas <span class="badge"><?php echo getNroMensajes($tablaMensajes,$_SESSION['ci']); ?></span></a></li>
+                            <li class="active"><a href="#alertas" data-toggle="tab">Alertas <span class="badge"><?php echo $nroMensajes; ?></span></a></li>
                             <li><a href="#transacciones" data-toggle="tab">Transacciones</a></li>
                             <li><a href="#apuestas" data-toggle="tab">Apuestas</a></li>
                         </ul>
                         <div id="my-tab-content" class="tab-content">
-                            <div class="tab-pane active" id="saldo">
-                                <h3>Saldo</h3>
-                                <span class="label label-success"><?php echo getSaldo(); ?>   Bsf</span>
-                            </div>
-                            <div class="tab-pane" id="alertas">
+                            <div class="tab-pane active" id="alertas">
                                 <h3>Alertas</h3>
-                                <p>orange orange orange orange orange</p>
-                                
 <div class="table-responsive">                                
-<table id="tablepaging" class="table table-bordered" align="center">
+<table id="tablaAlertas" class="table table-bordered" align="center">
     <thead>
         <tr> 
-            <th>Name </th>
-            <th>Major </th>
-            <th>Sex </th>
-            <th>English </th>
-            <th>Tamil </th>
-            <th>Calculus </th>
-            <th>Geometry </th>
+            <th>Mensaje</th>
+            <th> </th>
         </tr>
     </thead>
 <tbody>
+    <?php
+        $tablaMensajes=  getTablaMensajes($_SESSION['ci']);
+        $contadorMensajes=0;
+        while($elemento = mysql_fetch_array($tablaMensajes)){
+            if($elemento['Leido']==0){
+    ?> 
     <tr>
-        <td>Student01 </td>
-        <td>Languages </td>
-        <td>M </td>
-        <td>80 </td>
-        <td>70 </td>
-        <td>75 </td>
-        <td>80 </td>
-    </tr> 
-    <tr>
-        <td>Student02 </td>
-        <td>Languages </td>
-        <td>M </td>
-        <td>80 </td>
-        <td>70 </td>
-        <td>75 </td>
-        <td>80 </td> 
+        <td><?php echo $elemento['Mensaje']; ?></td>
+        <td><div align="center"> <a href ="./scripts/usuarios/marcarAlertaLeido.php?id=<?php echo $elemento['Id']; ?>" class='btn-xs btn-primary'> Descartar </a> </div> </td>
     </tr>
-
-    <tr>
-    <td>Student01 </td>
-    <td>Languages </td>
-    <td>M </td>
-    <td>80 </td>
-    <td>70 </td>
-    <td>75 </td>
-    <td>80 </td>
-    </tr> 
-    <tr>
-
-    <td>Student02 </td>
-    <td>Languages </td>
-    <td>M </td>
-    <td>80 </td>
-    <td>70 </td>
-    <td>75 </td>
-    <td>80 </td> 
-    </tr>
-
-    <tr>
-    <td>Student01 </td>
-    <td>Languages </td>
-    <td>M </td>
-    <td>80 </td>
-    <td>70 </td>
-    <td>75 </td>
-    <td>80 </td>
-    </tr> 
-    <tr>
-
-    <td>Student02 </td>
-    <td>Languages </td>
-    <td>M </td>
-    <td>80 </td>
-    <td>70 </td>
-    <td>75 </td>
-    <td>80 </td> 
-    </tr>
-
-    <tr>
-    <td>Student01 </td>
-    <td>Languages </td>
-    <td>M </td>
-    <td>80 </td>
-    <td>70 </td>
-    <td>75 </td>
-    <td>80 </td>
-    </tr> 
-    <tr>
-
-    <td>Student02 </td>
-    <td>Languages </td>
-    <td>M </td>
-    <td>80 </td>
-    <td>70 </td>
-    <td>75 </td>
-    <td>80 </td> 
-    </tr>
-
-    <tr>
-    <td>Student01 </td>
-    <td>Languages </td>
-    <td>M </td>
-    <td>80 </td>
-    <td>70 </td>
-    <td>75 </td>
-    <td>80 </td>
-    </tr> 
-    <tr>
-
-    <td>Student02 </td>
-    <td>Languages </td>
-    <td>M </td>
-    <td>80 </td>
-    <td>70 </td>
-    <td>75 </td>
-    <td>80 </td> 
-    </tr>
-
-    <tr>
-    <td>Student01 </td>
-    <td>Languages </td>
-    <td>M </td>
-    <td>80 </td>
-    <td>70 </td>
-    <td>75 </td>
-    <td>80 </td>
-    </tr> 
-    <tr>
-
-    <td>Student02 </td>
-    <td>Languages </td>
-    <td>M </td>
-    <td>80 </td>
-    <td>70 </td>
-    <td>75 </td>
-    <td>80 </td> 
-    </tr>
-
-
+    <?php
+                $contadorMensajes++;
+            }
+            
+        }
+        if($contadorMensajes==0){
+            echo "<td>No tiene alertas pendientes</td>";
+        }
+    ?>
 </tbody> 
 </table> 
     
 </div>
                                 
-<div id="pageNavPosition" style="padding-top: 20px" align="center">
+<div id="pageNavAlertas" align="center">
 </div>
                                 
 <script type="text/javascript">
-    var pager = new Pager('tablepaging', 5);
-    pager.init();
-    pager.showPageNav('pager', 'pageNavPosition');
-    pager.showPage(1);
-</script>
-                                
+    var pagerAlertas = new Pager('tablaAlertas', 5);
+    pagerAlertas.init();
+    pagerAlertas.showPageNav('pagerAlertas', 'pageNavAlertas');
+    pagerAlertas.showPage(1);
+</script>                                
                             </div>
                             <div class="tab-pane" id="transacciones">
                                 <h3>Historial de transacciones</h3>
-                                <p>orange orange orange orange orange</p>
+<div class="table-responsive">                                
+<table id="tablaTransacciones" class="table table-bordered" align="center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tipo de transaccion </th>
+            <th>Monto </th>
+            <th>Fecha </th>
+            <th>Hora </th>
+        </tr>
+    </thead>
+<tbody>
+    <?php
+        $tablaTransacciones =  getTablaTransacciones($_SESSION['ci']);
+        $contadorTransacciones=0;
+        while($elemento = mysql_fetch_array($tablaTransacciones)){
+    ?> 
+    
+    <tr>
+        <td><?php echo $elemento['Id']; ?></td>
+        <td><?php echo $elemento['Tipo_de_transaccion']; ?></td>
+        <td><?php echo $elemento['Monto']; ?> Bsf</td>
+        <td><?php echo $elemento['Fecha']; ?></td>
+        <td><?php echo $elemento['Hora']; ?></td>
+    </tr>
+    
+    <?php
+        }
+    ?>
+</tbody> 
+</table> 
+    
+</div>
+                                
+<div id="pageNavTransacciones" style="padding-top: 20px" align="center">
+</div>
+                                
+<script type="text/javascript">
+    var pager = new Pager('tablaTransacciones', 5);
+    pager.init();
+    pager.showPageNav('pager', 'pageNavTransacciones');
+    pager.showPage(1);
+</script>
                             </div>
                             <div class="tab-pane" id="apuestas">
                                 <h3>Historial de apuestas</h3>
                                 <p>orange orange orange orange orange</p>
                             </div>            
                         </div>
-                </div>
             </div>        
         </div>
         <div class="col-lg-8">
