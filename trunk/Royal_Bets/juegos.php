@@ -17,7 +17,7 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Jugar!! <?php echo $idmesa; ?> </h1>
+        <h1>Jugar!! </h1>
         <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
         <p><a class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
       </div>
@@ -28,20 +28,23 @@
       <div class="row">
         <div class="col-lg-8"> 
          <div class="table-responsive"> 
-
+               <?php
+                    $cont=0;
+                    while ($registro1= mysql_fetch_row($datosjuegos)){
+                              $contador1=0;
+                              $cont++;
+                              foreach ($registro1 as $clave1){
+                                $array1[$contador1]= $clave1;  
+                                $contador1++;
+                              }
+                              if($cont==1){  
+                 ?>
              <table class="table table-bordered" >  
                 <div align="center" id="titulo"><strong>Descripción De Los Juegos</strong></div>
                 <tbody align="center">
                       
-               <?php 
-                  while ($registro1= mysql_fetch_row($datosjuegos)){
-                            $contador1=0;
-                                foreach ($registro1 as $clave1){
-                                 $array1[$contador1]= $clave1;  
-                                 $contador1++;
-                                }
-                                
-                 ?>
+                    <?php } ?>      
+                <form role="form" method="POST" action="">
                         <tr>
                             <form>
                                 <td> 
@@ -54,13 +57,14 @@
                                     <input type="radio" name="<?php echo $array1[0]; ?>" id="<?php echo $array1[0]; ?>">
                                 </td>
                             </form>                                   
-                        </tr>                                                                                                       
-                    <?php } ?>                                                                               
-                        
+                        </tr> 
+                         
+                    <?php }if( $cont!=0){ ?>                                                                                                      
                 </tbody>         
             </table>
-             <div align="right"> <a class="btn btn-warning">Apostar</a> </div>
-         
+             <div align="right"> <a type="submit" class="btn btn-warning">Apostar</a> </div>
+             </form>
+                          <?php }else{echo "NO HAY JUEGOS DISPONIBLES"; } ?>
         </div>
 
         </div>
