@@ -16,7 +16,7 @@
     
     if(isset($email) && !empty($email) &&
     isset($pass) && !empty($pass)){
-        $sel=mysql_query("SELECT Correo,Password,Nombre,Apellido,Ci FROM Usuarios WHERE Correo='$email' ",$conex);
+        $sel=mysql_query("SELECT Correo,Password,Nombre,Apellido,Ci,Sexo,Permisos FROM Usuarios WHERE Correo='$email' ",$conex);
         if(mysql_num_rows($sel)){
             
             $sesion=mysql_fetch_array($sel);
@@ -28,6 +28,7 @@
                 $_SESSION['apellido']=$sesion['Apellido'];
                 $_SESSION['ci']=$sesion['Ci'];
                 $_SESSION['sexo']=$sesion['Sexo'];
+                $_SESSION['permisos']=$sesion['Permisos'];
                 //echo "correo coincide";
                 
                 header("Location:../../index.php");

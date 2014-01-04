@@ -191,10 +191,17 @@
 </div>
           
         </div>
-          
-
-   
-          
+ 
+        <?php         
+            if($_SESSION['permisos']==255){
+        ?>    
+        <div class="col-lg-8">
+            <h2>Area administrativa</h2>
+            <p><a href="./admin/index.php">Entrar al area administrativa</a></p>
+        </div>    
+        <?php 
+            }
+        ?>    
       </div>      
           
 <?php require_once('./modulos/sidebar.php'); ?>           
