@@ -28,7 +28,8 @@
       <div class="row">
         <div class="col-lg-8"> 
          <div class="table-responsive"> 
-               <?php
+             <table class="table table-bordered" > 
+              <?php
                     $cont=0;
                     while ($registro1= mysql_fetch_row($datosjuegos)){
                               $contador1=0;
@@ -39,35 +40,35 @@
                               }
                               if($cont==1){  
                  ?>
-             <table class="table table-bordered" >  
+              
                 <div align="center" id="titulo"><strong>Descripción De Los Juegos</strong></div>
                 <tbody align="center">
-                      
-                    <?php } ?>      
-                <form role="form" method="POST" action="">
+                    <form role="form" method="POST" action="">    <!-- form del submit boton apostar -->     
+                    <?php } ?>                 
                         <tr>
                             <form>
                                 <td> 
                                     <input type="radio" name="<?php echo $array1[0]; ?>" id="<?php echo $array1[0]; ?>">
                                 </td>
-                                <td data-title="Descripcion"><?php echo $array1[2]; ?></td>
+                                <td data-title="Local"><?php echo $array1[2]; ?></td>
                                 <td><strong>vs.</strong></td>
-                                <td data-title="Deporte" class="numeric"><?php echo $array1[3]; ?></td>
+                                <td data-title="Visitante" class="numeric"><?php echo $array1[3]; ?></td>
                                 <td>
                                     <input type="radio" name="<?php echo $array1[0]; ?>" id="<?php echo $array1[0]; ?>">
                                 </td>
                             </form>                                   
                         </tr> 
                          
-                    <?php }if( $cont!=0){ ?>                                                                                                      
+                    <?php }if($cont!=0){ ?>                                                                                                      
                 </tbody>         
             </table>
              <div align="right"> <a type="submit" class="btn btn-warning">Apostar</a> </div>
              </form>
-                          <?php }else{echo "NO HAY JUEGOS DISPONIBLES"; } ?>
+                          <?php }else{  ?>
+                          <div align='center'> <?php echo "NO HAY JUEGOS DISPONIBLES";?> </div> </table> <?php }?>
         </div>
-
         </div>
+  
 
 <?php require_once('./modulos/sidebar.php'); ?>           
           
