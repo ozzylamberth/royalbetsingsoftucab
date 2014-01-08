@@ -21,19 +21,18 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/carousel.css">
 
-        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-        <script src="js/main.js"></script>
-        <script type="text/javascript" src="/js/vendor/jquery-1.10.1.js"></script> 
-        <script type="text/javascript" src="/js/vendor/jquery.tablesorter.min.js"></script> 
-        <script type="text/javascript">
-            $(document).ready(function() 
-        { 
-            $("#tablaMesas").tablesorter(); 
-        } 
-        ); 
-        </script>
-    </head>
 
+        <script src="__jquery.tablesorter/jquery-latest.js" type="text/javascript"></script> 
+        <script src="__jquery.tablesorter/jquery.tablesorter.js" type="text/javascript"></script> 
+         
+    </head>
+    <script> type="text/javascript" >
+        $(document).ready(function() 
+    { 
+        $("#tabla").tablesorter(); 
+    } 
+); </script>
+ </script>
 
     <body>
         <!--[if lt IE 7]>
@@ -96,44 +95,55 @@
         </div>";*/
                 
       
-        require_once("./BD/conexion.php");
+        require_once("../BD/conexion.php");
         $sql = "select * from Mesas";
         $datos = mysql_query($sql,$conex);    
         
-            echo "<div class=\"table-responsive\">";   
-            echo "<table id=\"tablaMesas\" class=\"tablesorter\" align=\"center\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"1\"> "; 
+           // echo "<div >";   
+            echo '<table id=tabla class="tablesorter" > '; //border=\"1\" align=\"center\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"1\"
             echo "<thead>
                 <tr>
                                 
                                 <th>Mesa</th>
                                 <th>Descripcion</th>
                                 <th>Deporte</th>
-                                <th >Capacidad</th>
+                                <th>Capacidad</th>
+                                
+                                
                 </tr>
-                </thead>";
+                </thead>
+                <tbody> ";
+            
         while( $renglon = mysql_fetch_array($datos)){
-            echo "<tr>";
+          
+            
             if ($renglon['Estado']){
+                echo "<tr>";
             echo "<td>".$renglon['Mesa']."</td>";
             echo "<td>". $renglon['Descripcion']."</td>";
             echo "<td>". $renglon['Deporte']."</td>";
             echo "<td>". $renglon['Capacidad']."</td>";
-           //echo' </td><a href="editarMesas.php" Editar</a></td>';?>
-           <td><a href="editarMesa.php?mesa=<?php echo $renglon['Mesa'] ?>"/>Editar</a>
-               &nbsp&nbsp<a href="./BD/Mesa/mesaBorrar.php?mesa=<?php echo $renglon['Mesa'] ?>"/>Borrar</a></td><?php
+           ?>
+            <td><a href="editarMesa.php?mesa=<?php echo $renglon['Mesa'] ?>"/>Editar</a>
+               &nbsp&nbsp<a href="../BD/Mesa/mesaBorrar.php?mesa=<?php echo $renglon['Mesa'] ?>"/>Borrar</a></td><?php
+            echo "</tr>";
             }
+           
         }
-        echo "</table>";
+        echo "</tbody>"
+        . " </table>";
         mysql_close();
         ?>
           
         
         
           
-          
+    </div>
+      </div>
+    </div>
       
-      </div>
-      </div>
+    
+    
 
       <div class="row">
         <div class="span6" style="text-align:center">
@@ -145,12 +155,12 @@
       </div>
 </div>
 
-<?php require_once('./modulos/footer.php'); ?>
+<?php require_once('../modulos/footer.php'); ?>
       
       
     </div> <!-- /container -->
 
-<?php require_once('./modulos/scriptjs.php'); ?>     
+<?php require_once('../modulos/scriptjs.php'); ?>     
     
     </body>
 </html>

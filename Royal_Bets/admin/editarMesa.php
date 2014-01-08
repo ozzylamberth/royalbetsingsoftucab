@@ -10,8 +10,8 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Crear Una mesa</h1>
-        <p>Para crear una mesa solo rellena los siguientes campos y listo yeah baby</p>
+        <h1>Editar Mesa</h1>
+       
       </div>
     </div>
 
@@ -20,14 +20,26 @@
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-lg-12">
+            <?php
+            require_once("../BD/conexion.php");
+            $m = $_GET['mesa'];
+            $sql = "SELECT * FROM Mesas WHERE Mesa='$m'";
+            $datos = \mysql_query($sql); 
             
-            <form role="form" method="POST" action="BD/Mesa/mesasInsertar.php">
+            $renglon = mysql_fetch_row($datos,MYSQL_ASSOC);
+            $id = $renglon['Id'];
+            echo $id;
+           //echo $renglon['Id'];
+           
+            ?>
+            
+            <form role="form" method="POST" action="../BD/Mesa/mesaActualizar.php?mesa=<?php echo $renglon['Id'] ?>">
                 <div class="form-group">
                   <label for="nombreMesa" class="col-md-2">
                     Mesa:
                   </label>
                   <div class="col-md-10">
-                      <input title="Introduzca el nombre de la mesa" type="text" class="form-control" name="nombreMesa" id="nombreMesa" placeholder="Nombre de la Mesa" required>
+                      <input title="Introduzca el nombre de la mesa" type="text" class="form-control" name="nombreMesa" id="nombreMesa" placeholder="<?php echo $renglon['Mesa']?>" required>
                   </div><br/><br/>
                 </div>
 
@@ -36,7 +48,7 @@
                     Descripcion:
                   </label>
                   <div class="col-md-10">
-                      <input title="Descripcion" type="text" class="form-control" name="descripcion" id="descripcion" placeholder="Ingrese una breve descripcion acerca de esta mesa" required>
+                      <input title="Descripcion" type="text" class="form-control" name="descripcion" id="descripcion" placeholder="<?php echo $renglon['Descripcion']?>" required>
                   </div><br/><br/>
                 </div> 
                 
@@ -45,7 +57,7 @@
                     Deporte:
                   </label>
                   <div class="col-md-10">
-                      <input title="Deporte" type="text" class="form-control" name="deporte" id="deporte" placeholder="Aqui se cambiara luego por un select y option y todo eso" required>
+                      <input title="Deporte" type="text" class="form-control" name="deporte" id="deporte" placeholder="<?php echo $renglon['Deporte']?>" required>
                   </div><br/><br/>
                 </div>                
                 
@@ -54,7 +66,7 @@
                     Capacidad:
                   </label>
                   <div class="col-md-10">
-                      <input title="Capacidad" type="capacidad" class="form-control" name="capacidad" id="capacidad" placeholder="Ingrese aqui la capacidad de personas para esta mesa" required>
+                      <input title="Capacidad" type="capacidad" class="form-control" name="capacidad" id="capacidad" placeholder="<?php echo $renglon['Capacidad']?>" required>
                   </div><br/><br/>
                 </div>
 
@@ -67,8 +79,8 @@
                   <div class="col-md-2">
                   </div>                  
                   <div class="col-md-3">
-                      <button type="submit" name="Crear" class="btn btn-info">
-                        Crear
+                      <button type="submit" name="Actualizar" class="btn btn-info">
+                        Actualizar
                       </button>
                   </div>
                     <br>
@@ -83,7 +95,7 @@
       <hr>
 
 
-<?php require_once('./modulos/footer.php'); ?>       
+<?php require_once('../modulos/footer.php'); ?>       
       
     </div> <!-- /container -->
     
