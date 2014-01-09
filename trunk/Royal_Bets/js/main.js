@@ -86,21 +86,21 @@ function Pager(tableName, itemsPerPage) {
 }
 
     function seleccion(cantidad){
-
-        window.alert(cantidad);
-        
+        var txt = "";
         for(cont=1; cont<=cantidad ; cont++){
             var id_L="L"+cont;
-            var id_V="V"+cont;
-            //if (datos_juegos[cont]){               
-                if ((document.getElementById(id_L).checked) || (document.getElementById(id_V).checked)){
+            var id_V="V"+cont; 
+            
+            if ((document.getElementById(id_L).checked) || (document.getElementById(id_V).checked)){
                     if (document.getElementById(id_L).checked) {
-                        window.alert(document.getElementById(id_L).value);
+                        //window.alert(document.getElementById(id_L).value);
+                        txt = txt + document.getElementById(id_L).value + '\r\n';
                     }else{
-                        window.alert(document.getElementById(id_V).value);
+                        //window.alert(document.getElementById(id_V).value);
+                        txt = txt + document.getElementById(id_V).value + '\r\n';
                     }         
-                }       
-            }
-        //}      
+             }       
+         }
+         document.getElementById("order").value = txt;
     }
 

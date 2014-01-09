@@ -63,8 +63,10 @@
                         
                 </tbody>         
             </table>
-             <div align="right"> <button type="submit" class="btn btn-warning" onclick="seleccion(<?php echo $cont; ?>);">Meter en el carrito</button> </div>
-             </form>
+             <textarea id="order" cols="100" rows="4" disabled="disabled"> </textarea>
+             <br>
+             <br>
+             <div align="right"> <button type="submit" class="btn btn-warning" onclick="seleccion(<?php echo $cont; ?>);">Agregar al carrito</button> </div>
                           <?php }else{  ?>
                           <div align='center'> <?php echo "NO HAY JUEGOS DISPONIBLES";?> </div> </table> <?php }?>
         </div>
