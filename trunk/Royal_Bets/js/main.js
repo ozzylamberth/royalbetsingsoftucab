@@ -84,3 +84,23 @@ function Pager(tableName, itemsPerPage) {
     }
 
 }
+
+    function seleccion(cantidad){
+
+        window.alert(cantidad);
+        
+        for(cont=1; cont<=cantidad ; cont++){
+            var id_L="L"+cont;
+            var id_V="V"+cont;
+            //if (datos_juegos[cont]){               
+                if ((document.getElementById(id_L).checked) || (document.getElementById(id_V).checked)){
+                    if (document.getElementById(id_L).checked) {
+                        window.alert(document.getElementById(id_L).value);
+                    }else{
+                        window.alert(document.getElementById(id_V).value);
+                    }         
+                }       
+            }
+        //}      
+    }
+
