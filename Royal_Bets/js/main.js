@@ -86,25 +86,48 @@ function Pager(tableName, itemsPerPage) {
 }
 
     function seleccion(cantidad){
-        var txt = "";
+        var txt_L = "";
+        var txt_V = "";
+        
         for(cont=1; cont<=cantidad ; cont++){
             var id_L="L"+cont;
             var id_V="V"+cont; 
             var id_C="C"+cont;
+            var scrollbox = document.getElementById('scrollbox');
+            var local = document.createElement('div');
+            var visit = document.createElement('div');
             var costo=0;
+            
+            local.setAttribute('local', "local_carrito");
+            visit.setAttribute('visit', "visit_carrito");
+            
             if ((document.getElementById(id_L).checked) || (document.getElementById(id_V).checked)){
                     if (document.getElementById(id_L).checked) {
                         //window.alert(document.getElementById(id_L).value);
-                        txt = txt + document.getElementById(id_L).value +'\n';
+                        txt_L = txt_L + document.getElementById(id_L).value +'\n';
                         costo = document.getElementById(id_C).value;
                     }else{
                         //window.alert(document.getElementById(id_V).value);
-                        txt = txt + document.getElementById(id_V).value +'\n';
+                        txt_V = txt_V + document.getElementById(id_V).value +'\n';
                         costo = document.getElementById(id_C).value;
                     }         
              }       
          }
-         document.getElementById("order").value = txt; 
+
+         local.innerHTML = txt_L;
+         visit.innerHTML = txt_V;
          
+         scrollbox.appendChild(local);
+         scrollbox.appendChild(visit);
+    
     }
 
+function agrega(){
+    var scrollbox = document.getElementById('scrollbox');
+    var elemento = document.createElement('div');
+    
+    elemento.setAttribute('id', "elemento_carrito");
+    elemento.innerHTML = 'New element has been added!';
+    
+    scrollbox.appendChild(elemento);
+}
