@@ -76,7 +76,9 @@
                 <button type="submit" class="btn btn-warning" onclick="">Remover</button>
             </div>
             <br>
-                <div id="scrollbox" class="col-md-6"></div> 
+            <div class="col-md-6">
+                <p id="scrollbox"></p>
+            </div> 
         </div>
  
 
