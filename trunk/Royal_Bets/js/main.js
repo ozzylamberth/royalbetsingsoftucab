@@ -1,6 +1,6 @@
 function validarPassword(){
 	if(document.getElementById("password").value != document.getElementById("password2").value){
-            document.getElementById('alertapassword').style.display = 'block'
+            document.getElementById('alertapassword').style.display = 'block';
             document.getElementById("password").value = "";
             document.getElementById("password2").value = "";
         }
@@ -90,17 +90,21 @@ function Pager(tableName, itemsPerPage) {
         for(cont=1; cont<=cantidad ; cont++){
             var id_L="L"+cont;
             var id_V="V"+cont; 
-            
+            var id_C="C"+cont;
+            var costo=0;
             if ((document.getElementById(id_L).checked) || (document.getElementById(id_V).checked)){
                     if (document.getElementById(id_L).checked) {
                         //window.alert(document.getElementById(id_L).value);
-                        txt = txt + document.getElementById(id_L).value + '\r\n';
+                        txt = txt + document.getElementById(id_L).value +'\n';
+                        costo = document.getElementById(id_C).value;
                     }else{
                         //window.alert(document.getElementById(id_V).value);
-                        txt = txt + document.getElementById(id_V).value + '\r\n';
+                        txt = txt + document.getElementById(id_V).value +'\n';
+                        costo = document.getElementById(id_C).value;
                     }         
              }       
          }
-         document.getElementById("order").value = txt;
+         document.getElementById("order").value = txt; 
+         
     }
 
