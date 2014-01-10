@@ -114,8 +114,8 @@ function Pager(tableName, itemsPerPage) {
              }       
          }
 
-         local.innerHTML = txt_L;
-         visit.innerHTML = txt_V;
+         local.innerHTML = local.innerHTML + txt_L;
+         visit.innerHTML = visit.innerHTML + txt_V;
          
          scrollbox.appendChild(local);
          scrollbox.appendChild(visit);
