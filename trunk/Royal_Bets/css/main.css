@@ -63,10 +63,20 @@
     cursor:pointer;
 }
 
-#order{
+#col1{
     width: 100%;
-    height: 10%;
+    height: 150px;
     line-height: 3em;
     padding: 10px;
+    overflow: auto;
+    border: 1px solid #dddddd;
+}
+
+#scrollbox{
+    width: 100%;
+    height: 150px;
+    line-height: 3em;
+    padding: 10px;
+    overflow: auto;
     border: 1px solid #dddddd;
 }

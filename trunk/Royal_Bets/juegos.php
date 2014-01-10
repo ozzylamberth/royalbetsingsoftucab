@@ -66,15 +66,19 @@
                         
                 </tbody>         
             </table>
-             <textarea id="order" cols="100" rows="4" disabled="disabled"> </textarea>
-             <br>
-             <br>
-             <div align="right"> <button type="submit" class="btn btn-warning" onclick="seleccion(<?php echo $cont; ?>);">Agregar al carrito</button> </div>
-                          <?php }else{  ?>
+                         <?php }else{  ?>
                           <div align='center'> <?php echo "NO HAY JUEGOS DISPONIBLES";?> </div> </table> <?php }?>
+            </div>
+            <div align="right"> 
+                <button type="submit" class="btn btn-warning" onclick="seleccion(<?php echo $cont; ?>);">Agregar</button> 
+                <br>
+                <br>
+                <button type="submit" class="btn btn-warning" onclick="">Remover</button>
+            </div>
+            <br>
+                <div id="scrollbox" class="col-md-6"></div> 
         </div>
-        </div>
-  
+ 
 
 <?php require_once('./modulos/sidebar.php'); ?>           
           
