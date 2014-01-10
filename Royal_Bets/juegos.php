@@ -56,6 +56,9 @@
                                 <td>
                                     <input type="radio" name="<?php echo $array1[0]; ?>" id="V<?php echo $array1[0]; ?>" value="<?php echo $array1[3]; ?>">
                                 </td>
+                                <td>
+                                    <input id="C<?php echo $array1[0]; ?>"> </input>
+                                </td>
                             </form>                                   
                         </tr> 
                          
