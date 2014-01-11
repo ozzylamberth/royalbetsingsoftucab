@@ -6,7 +6,7 @@
         <![endif]-->
         
 
-       
+        <script> window.alert("<?php echo $GLOBALS['cont']; ?>");  </script>       
 <?php 
     require_once('./modulos/navbar.php');
 ?>         
@@ -65,12 +65,12 @@
                     <?php }if($cont!=0){ ?> 
                         
                 </tbody>         
-            </table>
-            <textarea id="carrito2" cols="100" rows="4" disabled=disabled>  </textarea> 
+            </table>            
+            <textarea id="carrito" cols="80" rows="4" disabled="disabled">  </textarea> 
                          <?php }else{  ?>
                  <div align='center'> <?php echo "NO HAY JUEGOS DISPONIBLES";?> </div> </table> <?php }?>
-            <div align="right"> 
-                <button type="submit" class="btn btn-warning" onclick="seleccion(<?php echo $cont ?>)">Agregar</button> 
+            <div align="right">
+                <button type="submit" class="btn btn-warning" onclick="seleccion(<?php echo $cont ?>)">Agregar al Carrito</button>                 
             </div>
          
             </div>
