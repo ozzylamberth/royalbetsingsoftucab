@@ -1,4 +1,4 @@
-<?php require_once('./modulos/header.php'); ?> 
+e<?php require_once('./modulos/header.php'); ?> 
 
     <body>
         <!--[if lt IE 7]>
