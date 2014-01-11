@@ -54,10 +54,10 @@
                                 <td><strong>vs.</strong></td>
                                 <td data-title="Visitante" class="numeric"><?php echo $array1[3]; ?></td>
                                 <td>
-                                    <input type="radio" name="<?php echo $array1[0]; ?>" id="V<?php echo $array1[0]; ?>" value="<?php echo $array1[3]; ?>">
+                                    <input type="radio" name="<?php echo $array1[0]; ?>" id="V<?php echo $array1[0]; ?>" value="<?php echo $array1[3]; ?>" > </input>
                                 </td>
                                 <td>
-                                    <input id="C<?php echo $array1[0]; ?>"> </input>
+                                    <input type="numeric" id="C<?php echo $array1[0]; ?>"> </input>
                                 </td>
                             </form>                                   
                         </tr> 
@@ -66,19 +66,14 @@
                         
                 </tbody>         
             </table>
+            <textarea id="carrito2" cols="100" rows="4" disabled=disabled>  </textarea> 
                          <?php }else{  ?>
-                          <div align='center'> <?php echo "NO HAY JUEGOS DISPONIBLES";?> </div> </table> <?php }?>
-            </div>
+                 <div align='center'> <?php echo "NO HAY JUEGOS DISPONIBLES";?> </div> </table> <?php }?>
             <div align="right"> 
-                <button type="submit" class="btn btn-warning" onclick="seleccion(<?php echo $cont; ?>);">Agregar</button> 
-                <br>
-                <br>
-                <button type="submit" class="btn btn-warning" onclick="">Remover</button>
+                <button type="submit" class="btn btn-warning" onclick="seleccion(<?php echo $cont ?>)">Agregar</button> 
             </div>
-            <br>
-            <div class="col-md-6">
-                <p id="scrollbox"></p>
-            </div> 
+         
+            </div>
         </div>
  
 
