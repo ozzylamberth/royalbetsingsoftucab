@@ -1,3 +1,5 @@
+
+
 function validarPassword(){
 	if(document.getElementById("password").value != document.getElementById("password2").value){
             document.getElementById('alertapassword').style.display = 'block';
@@ -88,28 +90,28 @@ function Pager(tableName, itemsPerPage) {
     for(i=0;i<=10;i++){
         arreglobd[i]=[];
     }
+    var cantidad;
     function seleccion(cantidad){
+        var txt="";
         for(cont=1,juegos=0; cont<=cantidad ;cont++){
             var id_L="L"+cont;
             var id_V="V"+cont; 
             var id_C="C"+cont;
-            var txt="";
             if ((document.getElementById(id_L).checked) || (document.getElementById(id_V).checked)){
                     if (document.getElementById(id_L).checked) {
                         arreglobd[juegos][0]=document.getElementById(id_L).value; 
                         arreglobd[juegos][1]=document.getElementById(id_C).value;
-                        txt = txt + arreglobd[juegos][0] + "------" + arreglobd[juegos][1]  + '\n';                        
+                        txt = txt + arreglobd[juegos][0] + "............" + arreglobd[juegos][1]  + '\r\n';                        
                         juegos++;
                     }else{
-                        arreglobd[juegos][0]=document.getElementById(id_L).value; 
+                        arreglobd[juegos][0]=document.getElementById(id_V).value; 
                         arreglobd[juegos][1]=document.getElementById(id_C).value; 
-                        txt = txt + arreglobd[juegos][0] + "------" + arreglobd[juegos][1]  + '\n';
+                        txt = txt + arreglobd[juegos][0] + "............" + arreglobd[juegos][1]  + '\r\n';
                         juegos++;
                     }         
              }       
          }
-
-         document.getElementById("carrito2").value = txt;
+         document.getElementById('carrito').value = txt;
 
          
         /* var productosJSON = JSON.stringify(arreglobd);
