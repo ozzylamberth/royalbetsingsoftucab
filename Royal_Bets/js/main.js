@@ -84,50 +84,41 @@ function Pager(tableName, itemsPerPage) {
     }
 
 }
-
+    var arreglobd=[];
+    for(i=0;i<=10;i++){
+        arreglobd[i]=[];
+    }
     function seleccion(cantidad){
-        var txt_L = "";
-        var txt_V = "";
-        
-        for(cont=1; cont<=cantidad ; cont++){
+        for(cont=1,juegos=0; cont<=cantidad ;cont++){
             var id_L="L"+cont;
             var id_V="V"+cont; 
             var id_C="C"+cont;
-            var scrollbox = document.getElementById('scrollbox');
-            var local = document.createElement('div');
-            var visit = document.createElement('div');
-            var costo=0;
-            
-            local.setAttribute('local', "local_carrito");
-            visit.setAttribute('visit', "visit_carrito");
-            
+            var txt="";
             if ((document.getElementById(id_L).checked) || (document.getElementById(id_V).checked)){
                     if (document.getElementById(id_L).checked) {
-                        //window.alert(document.getElementById(id_L).value);
-                        txt_L = txt_L + document.getElementById(id_L).value +'\n';
-                        costo = document.getElementById(id_C).value;
+                        arreglobd[juegos][0]=document.getElementById(id_L).value; 
+                        arreglobd[juegos][1]=document.getElementById(id_C).value;
+                        txt = txt + arreglobd[juegos][0] + "------" + arreglobd[juegos][1]  + '\n';                        
+                        juegos++;
                     }else{
-                        //window.alert(document.getElementById(id_V).value);
-                        txt_V = txt_V + document.getElementById(id_V).value +'\n';
-                        costo = document.getElementById(id_C).value;
+                        arreglobd[juegos][0]=document.getElementById(id_L).value; 
+                        arreglobd[juegos][1]=document.getElementById(id_C).value; 
+                        txt = txt + arreglobd[juegos][0] + "------" + arreglobd[juegos][1]  + '\n';
+                        juegos++;
                     }         
              }       
          }
 
-         local.innerHTML = local.innerHTML + txt_L;
-         visit.innerHTML = visit.innerHTML + txt_V;
-         
-         scrollbox.appendChild(local);
-         scrollbox.appendChild(visit);
-    
-    }
+         document.getElementById("carrito2").value = txt;
 
-function agrega(){
-    var scrollbox = document.getElementById('scrollbox');
-    var elemento = document.createElement('div');
+         
+        /* var productosJSON = JSON.stringify(arreglobd);
+         
+         $.post('juegos.php', {productos: productosJSON}, 
+         function(respuesta) {
+             console.log(respuesta);
+         }).error(
+                 function(){
+        console.log('Error al ejecutar la petición'); });*/
+  }
     
-    elemento.setAttribute('id', "elemento_carrito");
-    elemento.innerHTML = 'New element has been added!';
-    
-    scrollbox.appendChild(elemento);
-}
