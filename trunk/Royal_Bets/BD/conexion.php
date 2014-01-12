@@ -4,7 +4,6 @@
 	$db	= "royalbetsbd";
 	$user	= "root";
 	$password = "";
-
 	// Abrir la Conexión
 	$conex=@mysql_connect("$host","$user","$password");
 
