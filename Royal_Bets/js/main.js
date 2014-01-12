@@ -112,7 +112,6 @@ function Pager(tableName, itemsPerPage) {
              }       
          }
          document.getElementById('carrito').value = txt;
-
          
         /* var productosJSON = JSON.stringify(arreglobd);
          
@@ -124,3 +123,4 @@ function Pager(tableName, itemsPerPage) {
         console.log('Error al ejecutar la petición'); });*/
   }
     
+
