@@ -39,6 +39,27 @@
                 }else
                     echo 'Guardo Correctamente';
 
+                $datos_tiempo = date("g-i-A"); 
+                list($hour, $minuto, $ampm)=explode('-',$datos_tiempo);
+                $fecha = date("Y-m-d");
+                
+                $hora = $hour.":".$minuto." ".$ampm;
+                
+                $queryt =  mysql_query("INSERT INTO Transacciones
+                                            (
+                                            Ci,Tipo_de_transaccion,Monto,Saldo,Fecha,Hora
+                                            )
+                                            VALUES
+                                            (
+                                            '$cedula','Iniciar','0','0','$fecha','$hora'
+                                            )
+                                      ");
+                
+                if(!$queryt){
+                    echo 'Error al crear Transaccion';
+                }else
+                    echo 'Guardo Correctamente';
+                
                 // Redireccion
                 header("Location:../../registro.php?errorCode=5&errorType=3");	
             }else{

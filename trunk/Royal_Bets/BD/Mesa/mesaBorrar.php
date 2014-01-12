@@ -16,5 +16,5 @@ $sql="UPDATE `Mesas` SET `Estado`='$inactivo' WHERE `Mesa`='$m'";
 mysql_query($sql);
 echo $m;
 mysql_close();
-header("Location: /Royal_Bets/admin/gestionmesas.php");
+header("Location:../../gestionmesas.php");
 ?>

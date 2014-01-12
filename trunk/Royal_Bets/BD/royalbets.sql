@@ -25,7 +25,7 @@ CREATE TABLE Transacciones (
     Tipo_de_transaccion VARCHAR (50),
     Monto FLOAT,
     Fecha DATE,
-    Hora TIME,
+    Hora VARCHAR,
     Saldo FLOAT
 );
 

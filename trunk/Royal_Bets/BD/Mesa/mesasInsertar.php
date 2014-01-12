@@ -33,7 +33,7 @@
 
                 // Redireccion
                 mysql_close();
-                header("Location: /Royal_Bets/admin/gestionmesas.php");	
+                header("Location:../../gestionmesas.php");	
            
         }
 ?>

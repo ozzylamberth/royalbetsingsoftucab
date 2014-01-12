@@ -1,6 +1,6 @@
 
-<select tittle="Seleccione su Pais" name="country" id="country" class="form-control" required>
-    <option>--Seleccione su pais--</option>
+
+    <option value="--Seleccione su pais--">--Seleccione su pais--</option>
     <option value="United States">United States</option> 
     <option value="United Kingdom">United Kingdom</option> 
     <option value="Afghanistan">Afghanistan</option> 
@@ -243,4 +243,3 @@
     <option value="Zambia">Zambia</option> 
     <option value="Zimbabwe">Zimbabwe</option>
 
-</select>
