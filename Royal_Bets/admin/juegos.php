@@ -25,10 +25,10 @@ e<?php require_once('./modulos/header.php'); ?>
 
                
             
-         <div class="table-responsive">   
+         <div class="table-responsive" align="center">   
           
           
-             <table class="table table-bordered" >
+             <table class="table table-bordered" align="center" >
                  
                  
 
@@ -39,11 +39,12 @@ e<?php require_once('./modulos/header.php'); ?>
             <thead>
                         <tr>
                                 
-                                <th>Equipo 1</th>
-                                <th>Equipo 2</th>
-                                <th>Logro 1</th>
-                                <th>Logro 2</th>
-                                <th>resul</th>
+                                <th>Logro</th>
+                                <th>Informacion</th>
+                                <th> Logro</th>   
+                                <th>Resultado</th>  
+                                <th>Estado</th>   
+                                <th>equis</th>
                         </tr>
                         
                 </thead>
@@ -64,16 +65,18 @@ e<?php require_once('./modulos/header.php'); ?>
                                  $array[$contador]= $clave;  
                                  $contador ++;                        
                                 } 
+                                $vari = "vs";
 
                  ?>
                
     
                         <tr>
-                                <td data-title="Equipo 1"> <?php echo $array [2]; ?>  </td>
-                                <td data-title="Equipo 2"><?php echo $array [3]; ?></td>
-                                <td data-title="Logro 1" class="numeric"><?php  echo $array [4]; ?></td>
-                                <td data-title="Logro 2" class="numeric"><?php echo $array [5]; ?></td>
-                                <td data-title="resul" class="date"> <div align="center"> <a href ="juegos.php?array=<?php echo $array[6]; ?>"  class="btn btn-primary"> Entrar </a> </div> </td>                                
+                                 <td data-title="Logro" class="numeric"> <div align="center"> <?php echo $array [4]; ?></td>
+                                 <td data-title="Informacion"> <div align="center"> <?php echo $array [2]; echo " ";  echo $vari; echo " ";  echo $array [3]; ?>  </td>
+                                <td data-title=" Logro" class="numeric"> <div align="center"> <?php  echo $array [5]; ?></td>
+                                <td data-title="Resultado" class="numeric"> <div align="center"> <?php echo $array [6]; echo " "; echo "-"; echo ""; echo $array[7]; ?></td>
+                                <td data-title="Estado" class="numeric"> <div align="center"> <?php echo $array [12]; ?></td>
+                                <td data-title="equis" class="date"> <div align="center"> <a href ="juegos.php?array=<?php echo $array[6]; ?>"  class="btn btn-primary"> Entrar </a> </div> </td>                                
                         </tr>         
     
             <?php $i++; } ?>
