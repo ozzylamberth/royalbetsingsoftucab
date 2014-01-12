@@ -11,60 +11,94 @@
     require_once('./modulos/navbar.php');
 ?>         
     
-        
-        
-        
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Jugar!! </h1>
+        <h1>Jugar!!</h1>
         <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
         <p><a class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
       </div>
-    </div> 
+    </div>
 
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
-        <div class="col-lg-8"> 
-         <div class="table-responsive"> 
-             <table class="table table-bordered" > 
-              <?php
-                    $cont=0;
-                    while ($registro1= mysql_fetch_row($datosjuegos)){
-                              $contador1=0;
-                              $cont++;
-                              foreach ($registro1 as $clave1){
-                                $array1[$contador1]= $clave1;  
-                                $contador1++;
-                              }
-                              if($cont==1){  
-                 ?>
-              
-                <div align="center" id="titulo"><strong>Descripción De Los Juegos</strong></div>
+        <div class="col-lg-8">
+
+            
+         <div class="table-responsive">   
+            <table class="table table-bordered">                
                 <tbody align="center">
-                    <form role="form" method="POST" action="">    <!-- form del submit boton apostar -->     
-                    <?php } ?>                 
+                <div align="center"><strong>Descripción De Los Juegos</strong></div>
                         <tr>
-                            <form>
                                 <td>
-                                    <input type="radio" name="<?php echo $array1[0]; ?>" id="L<?php echo $array1[0]; ?>" value="<?php echo $array1[2]; ?>">
+                                    <script>
+                                        function activar()
+                                        {
+                                            if (!document.boton_activar.team1.disabled){
+                                               document.money.money2.disabled = false;
+                                            }else{
+                                               document.money.money2.disabled = true; 
+                                            } 
+                                        }
+                                    </script>
+                                    <form name="boton_activar">
+                                            <input type="radio"  name="team1" id="team1" onclick="activar()">
+                                    </form>    
                                 </td>
-                                <td data-title="Local"><?php echo $array1[2]; ?></td>
-                                <td><strong>vs.</strong></td>
-                                <td data-title="Visitante" class="numeric"><?php echo $array1[3]; ?></td>
+                                <td>Barcelona vs Real Madrid</td>
                                 <td>
                                     <input type="radio" name="<?php echo $array1[0]; ?>" id="V<?php echo $array1[0]; ?>" value="<?php echo $array1[3]; ?>" > </input>
                                 </td>
+                                <td>Venezuela vs Colombia</td>
                                 <td>
                                     <input type="numeric" id="C<?php echo $array1[0]; ?>"> </input>
                                 </td>
-                            </form>                                   
-                        </tr> 
-                         
-                    <?php }if($cont!=0){ ?> 
-                        
-                </tbody>         
+                        </tr>
+                </tbody>               
+            </table>  
+        </div> 
+
+            <div class="table-responsive">   
+                <table id="tabla2" class="table table-bordered">
+                <div align="center"><strong>Apuestas Actuales</strong></div>
+                    <tr> 
+                        <th>Tipo De Juego</th>
+                        <th>Descripción</th>
+                        <th>Monto</th>
+                    </tr> 
+                <tbody>
+                        <tr>
+                                <td data-title="Code"> Parley </td>
+                                <td data-title="Company">Barcelona vs. Madrid</td>
+                                <td data-title="Price">                
+                                    <div class="form-group">
+                                        <div class="col-md-11">
+                                            <form name="money">
+                                                <input class="form-control" placeholder="Bs." name="money2" disabled> 
+                                            </form>
+                                        </div>
+                                    </div>
+                                </td>
+                        </tr>
+                        <tr>
+                                <td> Directa </td>
+                                <td>Manchester vs. Liverpool</td> 
+                                <td>
+                                    <div class="form-group">
+                                        <div class="col-md-11">
+                                            <input class="form-control" placeholder="Bs."> 
+                                        </div>
+                                    </div>
+                                </td>    
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-title="Company"><strong>Total</strong></td>
+                            <td data-title="Price"> Aquí el total </td>
+                        </tr>
+                </tbody>
+                
             </table>            
             <textarea id="carrito" cols="80" rows="4" disabled="disabled">  </textarea> 
                          <?php }else{  ?>
@@ -87,6 +121,7 @@
       
       
     </div> <!-- /container -->
+
 <?php require_once('./modulos/scriptjs.php'); ?> 
     
     </body>

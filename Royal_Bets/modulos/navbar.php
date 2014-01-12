@@ -1,7 +1,7 @@
 <?php require_once('./BD/Usuarios/consultar_saldo.php'); ?>
 <?php 
 
-    require_once('./BD/Usuarios/cuenta.php'); 
+    require_once('./BD/Usuarios/consultar_alertas.php'); 
     
 ?>
 
@@ -37,6 +37,7 @@
         <?php 
             if (session_status() !== PHP_SESSION_ACTIVE) {
                 session_start();
+
             }
             
             if(isset($_SESSION['username'])){
@@ -56,15 +57,10 @@
                         
                     </form>   -->  
                     
-                    <p class="navbar-text navbar-right">Bienvenid<?php 
-                    if(strcmp($_SESSION['sexo'],"male")){
-                        echo "o";
-                    }else{
-                        echo "a";
-                    }?>  <a href="cuenta.php" class="navbar-link"><?php echo $_SESSION['nombre']; echo' '; echo $_SESSION['apellido'];?></a>
+                    <p class="navbar-text navbar-right">Bienvenid@ <a href="cuenta.php" class="navbar-link"><?php echo $_SESSION['nombre']; echo' '; echo $_SESSION['apellido'];?></a>
                         
                         
-                        <a class="btn btn-xs btn-success" href="./cuenta.php" role="button">Alertas <span class="badge"><?php echo $nroMensajes=getNroMensajes($tablaMensajes); ?></span></a>
+                        <a class="btn btn-xs btn-success" href="./cuenta.php" role="button">Alertas <span class="badge"><?php echo getNroMensajes($tablaMensajes,$_SESSION['ci']); ?></span></a>
                         <span class="label label-success">Saldo: <span class="badge"><?php echo getSaldo(); ?> Bsf</span></span>
                         <a class="btn btn-xs btn-danger" href="scripts/usuarios/cerrarsesion.php" role="button">Cerrar sesión</a>
                     

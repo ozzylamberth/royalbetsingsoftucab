@@ -25,16 +25,7 @@ if(isset($_GET['errorCode']) && isset($_GET['errorType'])){
             break; 
         case 5:
             $error = "Usuario registrado satisfactoriamente";
-            break;
-        case 6:
-            $error = "Error: Campos vacios";
-            break;
-        case 7:
-            $error = "Error: Clave actual incorrecta";
-            break;
-        case 8:
-            $error = "Error: Claves nuevas son diferentes";
-            break;        
+            break; 
     }
     
     
