@@ -19,6 +19,32 @@ e<?php require_once('./modulos/header.php'); ?>
 
   <div class="container">
        <div class="col-lg-8">
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
            <form role="form" method="POST" action="../BD/admin/nuevojuego.php">           
                 <div class="form-group">
                   <label for="equipo1" class="col-md-2">
