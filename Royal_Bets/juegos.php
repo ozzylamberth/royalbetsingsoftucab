@@ -76,7 +76,7 @@
                 <ul id="texto-alineado">
                     <li><strong>Equipos </strong></li>
                     <li><strong>Monto De Apuesta </strong></li>
-                    <li><strong>Total Bs.</strong></li>
+                    <li><strong>TOTAL</strong></li>
                     <textarea id="equiposTA" cols="80" rows="4" disabled="disabled"></textarea>
                     <textarea id="montoTA" cols="80" rows="4" disabled="disabled"></textarea>
                     <textarea id="total" cols="80" rows="4" disabled="disabled"></textarea>
