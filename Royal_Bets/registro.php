@@ -22,13 +22,13 @@
         <div class="col-lg-8">
             <?php require_once('./scripts/alertas.php'); ?>
             
-            <form role="form" method="POST" action="BD/Usuarios/usuarios_insertar.php">           
+            <form role="form" method="POST" action="BD/Usuarios/usuarios_insertar.php">              
                 <div class="form-group">
                   <label for="firstname" class="col-md-2">
                     Nombre:
                   </label>
                   <div class="col-md-10">
-                      <input title="Introduzca su Nombre" type="text" class="form-control" name="firstname" id="firstname" placeholder="Nombre" pattern="[a-zA-Z]+" required>
+                      <input title="Introduzca su Nombre" type="text" class="form-control" name="firstname" id="firstname" placeholder="Nombre" pattern="[a-zA-Z ]+" required>
                   </div><br/><br/>
                 </div>
 
@@ -37,7 +37,7 @@
                     Apellido:
                   </label>
                   <div class="col-md-10">
-                      <input title="Introduzca su Apellido" type="text" class="form-control" name="lastname" id="lastname" placeholder="Apellido" pattern="[a-zA-Z]+" required>
+                      <input title="Introduzca su Apellido" type="text" class="form-control" name="lastname" id="lastname" placeholder="Apellido" pattern="[a-zA-Z ]+" required>
                   </div><br/><br/>
                 </div> 
                 
@@ -46,7 +46,7 @@
                     Cedula de identidad:
                   </label>
                   <div class="col-md-10">
-                      <input title="Introduzca su Cedula" type="text" class="form-control" name="cedula" id="cedula" placeholder="V-12345678" required>
+                      <input title="Introduzca su Cedula en el fomato: (v ó e)-12345678" type="text" class="form-control" name="cedula" id="cedula" placeholder="v-12345678" pattern="[ve]+[-]+[0-9]+" required>
                   </div><br/><br/>
                 </div>                
                 
@@ -60,15 +60,16 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="password" class="col-md-2">
-                    Password:
-                  </label>
-                  <div class="col-md-10">
-                      <input title="Introduzca un Password" type="password" class="form-control" name="password" id="password" placeholder="Password" required>
-                    <p class="help-block">
-                      Min: 6 caracteres (Solo alfanumerico)
-                    </p>
-                  </div><br/><br/>
+                    <label for="password" class="col-md-2">
+                      Password:
+                    </label>
+                    <div class="col-md-10">
+                        <input title="Introduzca un Password" type="password" class="form-control" name="password" id="password" placeholder="Password" pattern="[a-zA-Z0-9]+" required>
+                      <p class="help-block">
+                        Min: 6 caracteres (Solo alfanumerico)
+                      </p>
+                    </div>
+                    
                 </div>
                 
                 <div class="form-group">
@@ -77,22 +78,27 @@
                     Confirmar contraseña:
                   </label>
                   <div class="col-md-10">
-                      <input title="Repita su Password" type="password" class="form-control" name="password2" id="password2" placeholder="Password"  required>
+                      <input title="Repita su Password" type="password" class="form-control" name="password2" id="password2" placeholder="Password" pattern="[a-zA-Z0-9]+" required>
 
-                  </div><br/><br/>
-                </div>  
+                  </div><br/><br><br>
+                </div> 
                 
+                <div class="alert alert-danger alert-dismissable" id="alertapassword2">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <strong>Atención!</strong> la contraseña debe tener mínimo 6 caracteres.
+                </div>
+                <br>
                 <div class="form-group">
                     <label for="sex" class="col-md-2">
                         Sexo:
                     </label>
                     <div class="col-md-10">
                         <label class="radio">
-                            <input type="radio" name="sex" id="sex" value="male" checked>
+                            <input type="radio" name="sex" id="sex" value="male" required>
                             Hombre
                         </label>
                         <label class="radio">
-                            <input type="radio" name="sex" id="sex" value="female">
+                            <input type="radio" name="sex" id="sex" value="female" required>
                             Mujer
                         </label>
                     </div><br /><br />
@@ -104,7 +110,7 @@
                     Fecha de Nacimiento:
                   </label>
                   <div class="col-md-10">
-                      <input title="Introduzca su fecha de Nacimiento" type="date" class="form-control" name="nacimiento" id="nacimiento" required>
+                      <input title="Introduzca su fecha de Nacimiento en el formato: DD/MM/YYYY" type="date" class="form-control" name="nacimiento" id="nacimiento" placeholder="DD/MM/YYYY" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" required>
                   </div><br/>
                 </div>
                 
@@ -138,7 +144,7 @@
                     Ciudad:
                   </label>
                   <div class="col-md-10">
-                      <input title="Introduzca su Ciudad" type="text" class="form-control" id="city" name="city" placeholder="Ciudad" pattern="[a-zA-Z]+" required>
+                      <input title="Introduzca su Ciudad" type="text" class="form-control" id="city" name="city" placeholder="Ciudad" pattern="[a-zA-Z ]+" required>
                   </div><br/><br/>
                 </div>
 
@@ -148,7 +154,7 @@
                     Dirección:
                   </label>
                   <div class="col-md-10">
-                      <input title="Introduzca su Direccion" type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion" pattern="[a-zA-Z0-9]+" required>
+                      <input title="Introduzca su Direccion" type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion" pattern="[a-zA-Z0-9 ]+" required>
                   </div><br/><br/>
                 </div>
 
@@ -174,7 +180,8 @@
                   </div><br/><br/>
                 </div>
                 
-                <div class="alert alert-danger" id="alertapassword">
+                <div class="alert alert-danger alert-dismissable" id="alertapassword">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                     <strong>Atención!</strong> las contraseñas ingresadas no coinciden.
                 </div>
                 
@@ -186,13 +193,8 @@
                       Registrar
                       </button>
                   </div>
-                </div>
-              </form> 
-            <form act>
-            <button>
-                
-            </button>
-                </form>
+                </div>  
+              </form>
         </div>
 
 <?php require_once('./modulos/sidebar.php'); ?>           

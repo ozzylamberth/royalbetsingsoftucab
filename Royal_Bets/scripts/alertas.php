@@ -25,7 +25,16 @@ if(isset($_GET['errorCode']) && isset($_GET['errorType'])){
             break; 
         case 5:
             $error = "Usuario registrado satisfactoriamente";
-            break; 
+            break;
+        case 6:
+            $error = "Complete todos los campos";
+            break;
+        case 7:
+            $error = "Atención, Usted no se puede registrar a Royal Bets, es menor de 18 años";
+            break;
+        case 8:
+            $error = "El usuario que intenta registrar ya existe";
+            break;
     }
     
     
