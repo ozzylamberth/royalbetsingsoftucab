@@ -4,7 +4,7 @@ CREATE TABLE Usuarios (
     PRIMARY KEY (Ci),
     Nombre VARCHAR (50),
     Apellido VARCHAR (50),
-    Fecha_de_nacimiento DATE,
+    Fecha_de_nacimiento VARCHAR (50),
     Telefono VARCHAR (50),
     Pais VARCHAR (50),
     Ciudad VARCHAR (50),
@@ -25,8 +25,8 @@ CREATE TABLE Transacciones (
     Ci VARCHAR (50), 
     Tipo_de_transaccion VARCHAR (50),
     Monto FLOAT,
-    Fecha DATE,
-    Hora VARCHAR,
+    Fecha VARCHAR (10),
+    Hora VARCHAR (10),
     Saldo FLOAT
 );
 
