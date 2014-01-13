@@ -1,6 +1,6 @@
 
 
-    <option value="--Seleccione su pais--">--Seleccione su pais--</option>
+    <option value="">--Seleccione su pais--</option>
     <option value="United States">United States</option> 
     <option value="United Kingdom">United Kingdom</option> 
     <option value="Afghanistan">Afghanistan</option> 

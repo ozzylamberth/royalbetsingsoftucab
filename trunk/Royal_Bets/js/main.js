@@ -1,18 +1,35 @@
 
 
-function validarPassword(){
+function validar(){
+    
+    // Validar que password1 sea igual a password2
 	if(document.getElementById("password").value != document.getElementById("password2").value){
             document.getElementById('alertapassword').style.display = 'block';
             document.getElementById("password").value = "";
             document.getElementById("password2").value = "";
+        }else{
+            // Validar que el password sea al menos de 6 caracteres
+            var pass = document.getElementById("password").value + "";
+            if (pass.length < 6){
+                document.getElementById('alertapassword2').style.display = 'block';
+                document.getElementById("password").value = "";
+                document.getElementById("password2").value = "";
+            }
         }
+            
         if((document.getElementById("password2").value != NULL) && (document.getElementById("password").value != NULL)){
-            document.getElementById('alertapassword').style.display = 'none'
+            document.getElementById('alertapassword').style.display = 'none';
         }
+        
+        
+        
+               
+    
 }
 
 window.onload = function(){/*hace que se cargue la función lo que predetermina que div estará oculto hasta llamar a la función nuevamente*/
     document.getElementById('alertapassword').style.display = 'none';/* "contenido_a_mostrar" es el nombre de la etiqueta DIV que deseamos mostrar */
+    document.getElementById('alertapassword2').style.display = 'none';
 }
 
 //Funcion para las tablas
