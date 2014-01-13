@@ -14,6 +14,7 @@ CREATE TABLE Usuarios (
     Correo VARCHAR (50),
     Permisos INT,
     Estado INT
+
 );
 
 
