@@ -47,16 +47,16 @@
                         <tr>
                             <form>
                                 <td>
-                                    <input type="radio" name="<?php echo $array1[0]; ?>" id="L<?php echo $array1[0]; ?>" value="<?php echo $array1[2]; ?>">
+                                    <input type="radio" name="<?php echo $array1[0]; ?>" id="L<?php echo $array1[0]; ?>" value="<?php echo $array1[2]; ?>" required>
                                 </td>
                                 <td data-title="Local"><?php echo $array1[2]; ?></td>
                                 <td><strong>vs.</strong></td>
                                 <td data-title="Visitante" class="numeric"><?php echo $array1[3]; ?></td>
                                 <td>
-                                    <input type="radio" name="<?php echo $array1[0]; ?>" id="V<?php echo $array1[0]; ?>" value="<?php echo $array1[3]; ?>" > </input>
+                                    <input type="radio" name="<?php echo $array1[0]; ?>" id="V<?php echo $array1[0]; ?>" value="<?php echo $array1[3]; ?>" required>
                                 </td>
                                 <td>
-                                    <input type="numeric" id="C<?php echo $array1[0]; ?>"> </input>
+                                    <input type="numeric" id="C<?php echo $array1[0]; ?>" placeholder="Bs." required>
                                 </td>
                             </form>                                   
                         </tr> 
@@ -65,15 +65,66 @@
                         
                 </tbody>         
             </table>            
-            <textarea id="carrito" cols="80" rows="4" disabled="disabled">  </textarea> 
             <div align="right">
                 <button type="submit" class="btn btn-warning" onclick="seleccion(<?php echo $cont ?>)">Agregar al Carrito </button>                 
             </div>
                          <?php }else{  ?>
                  <div align='center'> <?php echo "NO HAY JUEGOS DISPONIBLES";?> </div> </table> <?php }?>         
             </div>
+            <br>
+            <div>
+                <ul id="texto-alineado">
+                    <li><strong>Equipos </strong></li>
+                    <li><strong>Monto De Apuesta </strong></li>
+                    <li><strong>Total Bs.</strong></li>
+                    <textarea id="equiposTA" cols="80" rows="4" disabled="disabled"></textarea>
+                    <textarea id="montoTA" cols="80" rows="4" disabled="disabled"></textarea>
+                    <textarea id="total" cols="80" rows="4" disabled="disabled"></textarea>
+                </ul> 
+            </div> 
         </div>
+          <script>
+            var arreglobd=[];
+            for(i=0;i<=10;i++){
+                arreglobd[i]=[];
+            }
+            var cantidad;
+            function seleccion(cantidad){
+                var txt="";
+                var txt2="";
+                var txt3="";
+                var total=0;
 
+                for(cont=1,juegos=0; cont<=cantidad ;cont++){
+                    var id_L="L"+cont;
+                    var id_V="V"+cont; 
+                    var id_C="C"+cont;
+
+                    if ((document.getElementById(id_L).checked) || (document.getElementById(id_V).checked)){
+                            if (document.getElementById(id_L).checked) {
+                                arreglobd[juegos][0]=document.getElementById(id_L).value; 
+                                arreglobd[juegos][1]=document.getElementById(id_C).value;
+                                txt += arreglobd[juegos][0] + '\r\n'; 
+                                txt2 += arreglobd[juegos][1] + " Bs." + '\r\n';
+                                total += parseFloat(arreglobd[juegos][1]); 
+                                juegos++;
+                            }else{
+                                arreglobd[juegos][0]=document.getElementById(id_V).value; 
+                                arreglobd[juegos][1]=document.getElementById(id_C).value; 
+                                txt += arreglobd[juegos][0] + '\r\n'; 
+                                txt2 += arreglobd[juegos][1] + " Bs." + '\r\n';
+                                total += parseFloat(arreglobd[juegos][1]); 
+                                juegos++;
+                            }         
+                     }
+                 }
+
+                 document.getElementById('equiposTA').value = txt ;
+                 document.getElementById('montoTA').value = txt2 ;
+                 document.getElementById('total').value =  total.toString();
+
+            }
+          </script>
 
 <?php require_once('./modulos/sidebar.php'); ?>           
           
