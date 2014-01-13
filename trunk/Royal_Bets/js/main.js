@@ -103,53 +103,6 @@ function Pager(tableName, itemsPerPage) {
     }
 
 }
-    var arreglobd=[];
-    for(i=0;i<=10;i++){
-        arreglobd[i]=[];
-    }
-    var cantidad;
-    function seleccion(cantidad){
-        var txt="";
-        var txt2="";
-        var txt3="";
-        var total=0;
-        
-        for(cont=1,juegos=0; cont<=cantidad ;cont++){
-            var id_L="L"+cont;
-            var id_V="V"+cont; 
-            var id_C="C"+cont;
-            
-            if ((document.getElementById(id_L).checked) || (document.getElementById(id_V).checked)){
-                    if (document.getElementById(id_L).checked) {
-                        arreglobd[juegos][0]=document.getElementById(id_L).value; 
-                        arreglobd[juegos][1]=document.getElementById(id_C).value;
-                        txt += arreglobd[juegos][0] + '\r\n'; 
-                        txt2 += arreglobd[juegos][1] + " Bs." + '\r\n';
-                        total += parseFloat(arreglobd[juegos][1]); 
-                        juegos++;
-                    }else{
-                        arreglobd[juegos][0]=document.getElementById(id_V).value; 
-                        arreglobd[juegos][1]=document.getElementById(id_C).value; 
-                        txt += arreglobd[juegos][0] + '\r\n'; 
-                        txt2 += arreglobd[juegos][1] + " Bs." + '\r\n';
-                        total += parseFloat(arreglobd[juegos][1]); 
-                        juegos++;
-                    }         
-             }
-         }
-         
-         document.getElementById('equiposTA').value = txt ;
-         document.getElementById('montoTA').value = txt2 ;
-         document.getElementById('total').value =  total.toString();
-         
-        /* var productosJSON = JSON.stringify(arreglobd);
-         
-         $.post('juegos.php', {productos: productosJSON}, 
-         function(respuesta) {
-             console.log(respuesta);
-         }).error(
-                 function(){
-        console.log('Error al ejecutar la petición'); });*/
-  }
+
     
 
