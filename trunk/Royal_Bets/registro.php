@@ -120,9 +120,7 @@
                     País:
                   </label>
                   <div class="col-md-10">
-                      <select tittle="Seleccione su Pais" name="country" id="country" class="form-control" required>
                       <?php require_once('./modulos/paises-ciudades/paises.php'); ?>
-                      </select>    
                   </div><br/><br/>
                 </div>
                 
@@ -165,7 +163,7 @@
                     Telefono:
                   </label>
                   <div class="col-md-10">
-                      <input title="Introduzca su numero de Telefono" type="tel" class="form-control" id="telefono" name="telefono" placeholder="Telefono" pattern="[0-9]+" required>
+                      <input title="Introduzca su numero de Telefono" type="tel" class="form-control" id="telefono" name="telefono" placeholder="Telefono" required>
                   </div><br/><br/>
                 </div>
 
@@ -189,7 +187,7 @@
                   <div class="col-md-2">
                   </div>                  
                   <div class="col-md-3">
-                      <button type="submit" name="registrar" class="btn btn-info" onclick="validar();">
+                      <button type="submit" name="registrar" class="btn btn-info" onclick="validarPassword();">
                       Registrar
                       </button>
                   </div>
