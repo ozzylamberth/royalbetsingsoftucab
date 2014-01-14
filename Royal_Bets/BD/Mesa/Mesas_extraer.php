@@ -20,14 +20,21 @@ $host	= "localhost";
 		echo "No se pudo conectar correctamente con la Base de datos";
 		exit();
 	}
+        
+$filtro="Todos";        
+        
+ if(isset($_GET['filter'])){   
+     
+$filtro= $_GET['filter'];
 
+ }
+ 
 $tabla= "mesas";
 
 $consulta= "SELECT * FROM $tabla";
 
 $datos= mysql_query($consulta,$conex) or die ("<p> No se ha podido ejecutar"
         . "la consulta, compurebe que la sintaxis sea correcta. <p>");
-
 
 
 
