@@ -13,7 +13,8 @@ CREATE TABLE Usuarios (
     Password VARCHAR (50),
     Correo VARCHAR (50),
     Permisos INT,
-    Estado INT
+    Estado INT,
+    id_mesa INT
 
 );
 
