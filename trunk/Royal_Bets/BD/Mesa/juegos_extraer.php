@@ -9,7 +9,6 @@ if(!isset($_SESSION['username'])){
 }else{
     echo "El ID de mesa es incorrecto, deje de modificarlo por el url";
 }
-
 mysql_close();
 
 

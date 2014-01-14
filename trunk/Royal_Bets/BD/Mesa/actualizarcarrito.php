@@ -8,6 +8,6 @@
         $_SESSION['carrito'][$_SESSION['juegos']][1]=$_POST["costo"]; 
          
 
-        echo "equipo: ".$_SESSION['carrito'][$_SESSION['juegos']][0]." costo: ".$_SESSION['carrito'][$_SESSION['juegos']][1];
+        
         $_SESSION['juegos']++;
 ?>
