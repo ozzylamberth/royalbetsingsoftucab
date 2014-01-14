@@ -44,7 +44,9 @@ e<?php require_once('./modulos/header.php'); ?>
                                 <th> Logro</th>   
                                 <th>Resultado</th>  
                                 <th>Estado</th>   
-                                <th>equis</th>
+                                <th>Fecha Inicio</th> 
+                                <th>Hora Inicio/fin</th> 
+                               
                         </tr>
                         
                 </thead>
@@ -76,7 +78,9 @@ e<?php require_once('./modulos/header.php'); ?>
                                 <td data-title=" Logro" class="numeric"> <div align="center"> <?php  echo $array [5]; ?></td>
                                 <td data-title="Resultado" class="numeric"> <div align="center"> <?php echo $array [6]; echo " "; echo "-"; echo ""; echo $array[7]; ?></td>
                                 <td data-title="Estado" class="numeric"> <div align="center"> <?php echo $array [12]; ?></td>
-                                <td data-title="equis" class="date"> <div align="center"> <a href ="juegos.php?array=<?php echo $array[6]; ?>"  class="btn btn-primary"> Entrar </a> </div> </td>                                
+                                <td data-title="Fecha Inicio" class="date"> <div align="center"> <?php echo $array [8]; ?></td>
+                                <td data-title="Hora Inicio/Fin" class="time"> <div align="center"> <?php echo $array [10]; echo "/"; echo $array [11];?></td>
+                            <!--    <td data-title="equis" class="date"> <div align="center"> <a href ="juegos.php?array=  <?php  ?> "  class="btn btn-primary"> Entrar </a> </div> </td>            -->                    
                         </tr>         
     
             <?php $i++; } ?>
