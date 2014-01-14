@@ -1,5 +1,9 @@
 <?php
-    
+
+    if(isset($_GET['idMesa'])){
+        $idMesa=$_GET['idMesa'];
+    }
+        
     session_start();
 
     //echo 'entro <br/>';
@@ -31,19 +35,37 @@
                 $_SESSION['permisos']=$sesion['Permisos'];
                 //echo "correo coincide";
                 
-                header("Location:../../index.php");
+                if(isset($_GET['idMesa'])){
+                    header("Location:../../juegos.php?idMesa=".$idMesa);
+                }else{
+                    header("Location:../../index.php");
+                }
+                
             }else{
                 //echo "Password incorrecto";
-                header("Location:../../login.php?errorCode=2&errorType=1");
+                if(isset($_GET['idMesa'])){
+                    header("Location:../../login.php?errorCode=2&errorType=1&idMesa=".$idMesa);
+                }else{
+                    header("Location:../../login.php?errorCode=2&errorType=1");
+                }
+                
             }
         }else{
             //echo "Usuario incorrecto";
-            header("Location:../../login.php?errorCode=1&errorType=1");
+            if(isset($_GET['idMesa'])){
+                header("Location:../../login.php?errorCode=1&errorType=1&idMesa=".$idMesa);
+            }else{
+                header("Location:../../login.php?errorCode=1&errorType=1");
+            }
         } 
         
     }else{
        //echo "Error en login, intentelo mas tarde";
-        header("Location:../../login.php?errorCode=3&errorType=1");
+        if(isset($_GET['idMesa'])){
+            header("Location:../../login.php?errorCode=3&errorType=1&idMesa=".$idMesa);
+        }else{
+            header("Location:../../login.php?errorCode=3&errorType=1");
+        }        
     }
     
     
