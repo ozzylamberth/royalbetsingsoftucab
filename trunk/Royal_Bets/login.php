@@ -1,4 +1,4 @@
-<?php require_once('./modulos/header.php'); ?> 
+<?php require_once('./modulos/header.php'); ?>
 
     <body>
         <!--[if lt IE 7]>
@@ -24,7 +24,19 @@
         <?php require_once('./scripts/alertas.php'); ?>       
             
           <h2>Login</h2>
+            <?php
+                if(isset($_GET['idMesa'])){
+                    $idMesa=$_GET['idMesa'];
+            ?>  
+                <form class="col-lg-4" action="scripts/usuarios/login.php?idMesa=<?php echo $idMesa;?>" method="POST">
+            <?php                    
+                }else{
+            ?>
             <form class="col-lg-4" action="scripts/usuarios/login.php" method="POST">
+            <?php
+                }
+            ?>                    
+                    
                 <div class="form-group">
                     <input type="email" placeholder="Email" name="email" class="form-control" required/>
                 </div>
@@ -32,7 +44,17 @@
                   <input type="password" placeholder="Contraseña" name="pass" class="form-control" required/>
                 </div>
                 <button type="submit" class="btn btn-warning" >Entrar</button>
+            <?php
+                if(isset($_GET['idMesa'])){
+            ?>                 
+                <a href="registro.php?idMesa=<?php echo $idMesa;?>" class="btn btn-success">Registrar</a>
+            <?php
+                }else{
+            ?>
                 <a href="registro.php" class="btn btn-success">Registrar</a>
+            <?php                
+                }
+            ?>                     
             </form>   
           
           
