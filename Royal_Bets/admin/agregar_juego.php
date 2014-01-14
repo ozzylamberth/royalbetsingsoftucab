@@ -22,27 +22,40 @@ e<?php require_once('./modulos/header.php'); ?>
                 
                     
            
-           <form role="form" method="POST" action="../BD/admin/nuevojuego.php">           
+           <form role="form" method="POST" action="../BD/admin/nuevojuego.php">  
+               
                 <div class="form-group">
+                     <div class="col-md-10">
                   <label for="equipo1" class="col-md-2">
                     Primer equipo:
-                  </label>
-                  <div class="col-md-10">
+                  </label>                
                       <input title="Introduzca el nombre del primer equipo" type="text" class="form-control" name="equipo1" id="firstname" placeholder="Equipo" required>
-                  </div><br/><br/>
+                 <label for="logro1" class="col-md-2">
+                    Logro:
+                  </label>   
+                      <input title="Valor del equipo" type="text" class="form-control" name="logro1" id="lastname" placeholder="#" required>
+                     </div><br/><br/>
                 </div>
 
+               
                 <div class="form-group">
-                  <label for="equipo2" class="col-md-2">
+                     <div class="col-md-10">
+                  <label for="equipo2" class="col-md-2">                     
                     Segundo equipo:
                   </label>
-                  <div class="col-md-10">
                       <input title="Introduzca el nombre del segundo equipo" type="text" class="form-control" name="equipo2" id="lastname" placeholder="Equipo" required>
-                  </div><br/><br/>
+                 <label for="logro2" class="col-md-2">
+                    Logro:
+                  </label>   
+                      <input title="Valor del equipo" type="text" class="form-control" name="logro2" id="lastname" placeholder="#" required>
+                
+                     
+                     </div><br/><br/>
                 </div> 
                 
+               
                 <div class="form-group">
-                  <br/><br/>
+                 
                   <label for="fechaini" class="col-md-2">
                     Fecha de inicio:
                   </label>
@@ -52,7 +65,7 @@ e<?php require_once('./modulos/header.php'); ?>
                 </div>               
                 
                 <div class="form-group">
-                  <br/><br/>
+                  
                   <label for="fechafin" class="col-md-2">
                     Fecha de final:
                   </label>
@@ -64,7 +77,7 @@ e<?php require_once('./modulos/header.php'); ?>
           
 
                 <div class="form-group">
-                    <br/><br/>
+                   
                   <label for="horaini" class="col-md-2">
                     Hora de inicio:
                   </label>
@@ -75,7 +88,7 @@ e<?php require_once('./modulos/header.php'); ?>
                 
             
                 <div class="form-group">
-                    <br/><br/>
+                   
                   <label for="horafin" class="col-md-2">
                     Hora de fin:
                   </label>
