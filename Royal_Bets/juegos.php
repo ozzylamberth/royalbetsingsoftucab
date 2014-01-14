@@ -49,7 +49,11 @@
                 }
             }
             
-       
+        function confirmarCarrito(){
+            if (juegos>0){
+                
+            }
+        }
         function seleccion(cantidad){
                 var txt="";
                 var txt2="";
@@ -64,31 +68,44 @@
                                 arreglobd[1][juegos]=document.getElementById(id_C).value;
                                 txt += arreglobd[0][juegos] + '\r\n'; 
                                 txt2 += arreglobd[1][juegos] + " Bs." + '\r\n';
-                                total += parseFloat(arreglobd[1][juegos]);                               
-                                $.ajax ({
+                                if ((arreglobd[1][juegos]>=0) && (arreglobd[1][juegos]<=999999)){
+                                    total += parseFloat(arreglobd[1][juegos]); 
+                                    $.ajax ({
                                         type: "POST",
                                         url: "./BD/Mesa/actualizarcarrito.php" ,
                                         data: { equipo: arreglobd[0][juegos], costo: arreglobd[1][juegos]}
 
                                     }).done(function(msg){      });
                                     juegos++;
+                                }else{
+                                    window.alert("Ingreso un monto inválido");
+                                    document.getElementById(id_C).value = "";
+                                }    
                             }else{ 
                                 arreglobd[0][juegos]=document.getElementById(id_V).value; 
                                 arreglobd[1][juegos]=document.getElementById(id_C).value; 
                                 txt += arreglobd[0][juegos] + '\r\n'; 
                                 txt2 += arreglobd[1][juegos] + " Bs." + '\r\n';
-                                total += parseFloat(arreglobd[1][juegos]); 
-                                $.ajax ({
+                                if ((arreglobd[1][juegos]>=0) && (arreglobd[1][juegos]<=999999)){
+                                    total += parseFloat(arreglobd[1][juegos]);
+                                    $.ajax ({
                                         type: "POST",
                                         url: "./BD/Mesa/actualizarcarrito.php" ,
                                         data: { equipo: arreglobd[0][juegos], costo: arreglobd[1][juegos]}
 
                                     }).done(function(msg){      });
-                                juegos++;
+                                    juegos++;
+                                }else{
+                                    window.alert("Ingreso un monto inválido");
+                                    document.getElementById(id_C).value = "";
+                                }    
                             }         
                      }
                  } 
-                    actualizar();
+                 if (juegos>0){
+                    actualizar();     
+                 } 
+                    
             }
         </script>
 
@@ -104,7 +121,7 @@
         <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
         <p><a class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
       </div>
-    </div> <!-- CHIKIIIITOOOOOO!!!! -->
+    </div> 
     
     <div class="container">
       <!-- Example row of columns -->
@@ -139,7 +156,7 @@
                                     <input type="radio" name="<?php echo $cont; ?>" id="V<?php echo $cont; ?>" value="<?php echo $array1[3]; ?>" required>
                                 </td>
                                 <td>
-                                    <input type="numeric" id="C<?php echo $cont; ?>" placeholder="Bs." required>
+                                    <input title="Máx. 999999" type="numeric" id="C<?php echo $cont; ?>" placeholder="Bs." required>
                                 </td>                                  
                         </tr> 
                          
@@ -165,13 +182,11 @@
                     <textarea id="total" cols="80" rows="4" disabled="disabled"></textarea>
                 </ul> 
             </div> 
+            <br>
+            <div align="right">
+                <button type="submit" class="btn btn-warning"  onclick="seleccion(<?php echo $cont ?>)"> Apostar </button>                 
+            </div>
         </div>
-
-          <script>
-              actualizar();
-             
-
-          </script>
 
 <?php require_once('./modulos/sidebar.php'); ?>           
           
