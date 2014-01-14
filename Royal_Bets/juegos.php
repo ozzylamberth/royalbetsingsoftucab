@@ -1,6 +1,6 @@
 <?php require_once('./modulos/header.php'); ?>
 <?php require_once('./BD/Mesa/juegos_extraer.php'); ?> 
-<?php // require_once('./BD/Mesa/carrito.php'); ?>
+<?php //require_once('./BD/Mesa/carrito.php'); ?>
 <?php //require_once('./BD/Mesa/actualizarcarrito.php')?>
     <body>
 
@@ -16,8 +16,6 @@
                         echo "var javascript_array = ". $js_array . ";";
                         echo "var juegos = ". $js_juegos . ";";
             ?>
-                window.alert(javascript_array);
-                window.alert(juegos);
                 
                 var lineaTexto="";
                 var array;
@@ -27,69 +25,71 @@
                 
             </script>     
         <script>
-            var arreglobd=[];
-           /* for(i=0,j=0;i<2;i++){
+            var arreglobd=[2];
+            for(i=0;i<2;i++){
                 arreglobd[i]=[];
-                if (arreglobd[i][] % 2){
-                    
-                }
-            }*/
+            }
             
-            for(i=0;i<;i++)
+            for(i=0,cont=0;i<juegos;i++){
+                for(j=0;j<2;j++,cont++){
+                    arreglobd[j][i] = array[cont];                   
+                }
+            }
             
             function actualizar(){
                 var monto=0;
-                for (i=0; i< <?php echo $_SESSION['juegos'] ?>; i++){
-                    document.getElementById('equiposTA').value += arreglobd[i][0] + '\r\n';
-                    document.getElementById('montoTA').value += arreglobd[i][1] + " Bs." + '\r\n';
-                    monto += parseFloat(arreglobd[i][1]);
+                document.getElementById('total').value =  "";
+                document.getElementById('montoTA').value = "";
+                document.getElementById('equiposTA').value = ""; 
+                for (i=0; i<juegos; i++){
+                    document.getElementById('equiposTA').value += arreglobd[0][i] + '\r\n';
+                    document.getElementById('montoTA').value += arreglobd[1][i] + " Bs." + '\r\n';
+                    monto += parseFloat(arreglobd[1][i]);
                     document.getElementById('total').value =  monto.toString();  
                 }
             }
             
        
-//        function seleccion(cantidad){
-//                var txt="";
-//                var txt2="";
-//                var total=0;
-//                for(cont=1; cont <= cantidad ;cont++){
-//                    var id_L="L"+cont;
-//                    var id_V="V"+cont; 
-//                    var id_C="C"+cont;
-//                    if ((document.getElementById(id_L).checked) || (document.getElementById(id_V).checked)){
-//                            if (document.getElementById(id_L).checked) {
-//                                arreglobd[juegos][0]=document.getElementById(id_L).value; 
-//                                arreglobd[juegos][1]=document.getElementById(id_C).value;
-//                                txt += arreglobd[juegos][0] + '\r\n'; 
-//                                txt2 += arreglobd[juegos][1] + " Bs." + '\r\n';
-//                                total += parseFloat(arreglobd[juegos][1]);                               
-//                                $.ajax ({
-//                                        type: "POST",
-//                                        url: "./BD/Mesa/actualizarcarrito.php" ,
-//                                        data: { equipo: arreglobd[juegos][0], costo: arreglobd[juegos][1]}
-//
-//                                    }).done(function(msg){ window.alert(msg);     });
-//                                    juegos++;
-//                            }else{              
-//                                arreglobd[juegos][0]=document.getElementById(id_V).value; 
-//                                arreglobd[juegos][1]=document.getElementById(id_C).value; 
-//                                txt += arreglobd[juegos][0] + '\r\n'; 
-//                                txt2 += arreglobd[juegos][1] + " Bs." + '\r\n';
-//                                total += parseFloat(arreglobd[juegos][1]); 
-//                                $.ajax ({
-//                                        type: "POST",
-//                                        url: "./BD/Mesa/actualizarcarrito.php" ,
-//                                        data: { equipo: arreglobd[juegos][0], costo: arreglobd[juegos][1]}
-//
-//                                    }).done(function(msg){ window.alert(msg);     });
-//                                juegos++;
-//                            }         
-//                     }
-//                 }
-//                 document.getElementById('equiposTA').value = txt ;
-//                 document.getElementById('montoTA').value = txt2 ;
-//                 document.getElementById('total').value =  total.toString();
-//            }
+        function seleccion(cantidad){
+                var txt="";
+                var txt2="";
+                var total=0;
+                for(cont=1; cont <= cantidad ;cont++){
+                    var id_L="L"+cont;
+                    var id_V="V"+cont; 
+                    var id_C="C"+cont; 
+                    if ((document.getElementById(id_L).checked) || (document.getElementById(id_V).checked)){
+                            if (document.getElementById(id_L).checked) {
+                                arreglobd[0][juegos]=document.getElementById(id_L).value; 
+                                arreglobd[1][juegos]=document.getElementById(id_C).value;
+                                txt += arreglobd[0][juegos] + '\r\n'; 
+                                txt2 += arreglobd[1][juegos] + " Bs." + '\r\n';
+                                total += parseFloat(arreglobd[1][juegos]);                               
+                                $.ajax ({
+                                        type: "POST",
+                                        url: "./BD/Mesa/actualizarcarrito.php" ,
+                                        data: { equipo: arreglobd[0][juegos], costo: arreglobd[1][juegos]}
+
+                                    }).done(function(msg){      });
+                                    juegos++;
+                            }else{ 
+                                arreglobd[0][juegos]=document.getElementById(id_V).value; 
+                                arreglobd[1][juegos]=document.getElementById(id_C).value; 
+                                txt += arreglobd[0][juegos] + '\r\n'; 
+                                txt2 += arreglobd[1][juegos] + " Bs." + '\r\n';
+                                total += parseFloat(arreglobd[1][juegos]); 
+                                $.ajax ({
+                                        type: "POST",
+                                        url: "./BD/Mesa/actualizarcarrito.php" ,
+                                        data: { equipo: arreglobd[0][juegos], costo: arreglobd[1][juegos]}
+
+                                    }).done(function(msg){      });
+                                juegos++;
+                            }         
+                     }
+                 } 
+                    actualizar();
+            }
         </script>
 
 <?php 
@@ -130,16 +130,16 @@
                     <?php } ?>                 
                         <tr>
                                 <td>
-                                    <input type="radio" name="<?php echo $array1[0]; ?>" id="L<?php echo $array1[0]; ?>" value="<?php echo $array1[2]; ?>" required>
+                                    <input type="radio" name="<?php echo $cont; ?>" id="L<?php echo $cont; ?>" value="<?php echo $array1[2]; ?>" required>
                                 </td>
                                 <td data-title="Local"><?php echo $array1[2]; ?></td>
                                 <td><strong>vs.</strong></td>
                                 <td data-title="Visitante" class="numeric"><?php echo $array1[3]; ?></td>
                                 <td>
-                                    <input type="radio" name="<?php echo $array1[0]; ?>" id="V<?php echo $array1[0]; ?>" value="<?php echo $array1[3]; ?>" required>
+                                    <input type="radio" name="<?php echo $cont; ?>" id="V<?php echo $cont; ?>" value="<?php echo $array1[3]; ?>" required>
                                 </td>
                                 <td>
-                                    <input type="numeric" id="C<?php echo $array1[0]; ?>" placeholder="Bs." required>
+                                    <input type="numeric" id="C<?php echo $cont; ?>" placeholder="Bs." required>
                                 </td>                                  
                         </tr> 
                          
@@ -147,7 +147,7 @@
                 </tbody>         
             </table>            
             <div align="right">
-                <button type="submit" class="btn btn-warning"  onclick="seleccion(<?php echo $cont ?>)"> Agregar al Carrito </button>                 
+                <button type="submit" class="btn btn-warning"  onclick="seleccion(<?php echo $cont ?>)"> <?php echo $cont ?> Agregar al Carrito </button>                 
             </div>
             <!--</form>-->
      
