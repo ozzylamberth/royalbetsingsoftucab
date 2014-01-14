@@ -56,12 +56,7 @@
                         
                     </form>   -->  
                     
-                    <p class="navbar-text navbar-right">Bienvenid<?php 
-                    if(strcmp($_SESSION['sexo'],"male")){
-                        echo "o";
-                    }else{
-                        echo "a";
-                    }?>  <a href="cuenta.php" class="navbar-link"><?php echo $_SESSION['nombre']; echo' '; echo $_SESSION['apellido'];?></a>
+                    <p class="navbar-text navbar-right">Bienvenido <a href="cuenta.php" class="navbar-link"><?php echo $_SESSION['nombre']; echo' '; echo $_SESSION['apellido'];?></a>
                         
                         
                         <a class="btn btn-xs btn-success" href="./cuenta.php" role="button">Alertas <span class="badge"><?php echo $nroMensajes=getNroMensajes($tablaMensajes); ?></span></a>
