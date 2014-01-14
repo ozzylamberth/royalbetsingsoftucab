@@ -147,7 +147,7 @@
                 </tbody>         
             </table>            
             <div align="right">
-                <button type="submit" class="btn btn-warning"  onclick="seleccion(<?php echo $cont ?>)"> <?php echo $cont ?> Agregar al Carrito </button>                 
+                <button type="submit" class="btn btn-warning"  onclick="seleccion(<?php echo $cont ?>)">  Agregar al Carrito </button>                 
             </div>
             <!--</form>-->
      
