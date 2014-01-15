@@ -63,7 +63,8 @@ CREATE TABLE Apuestas (
     Monto FLOAT,
     Fecha DATE,
     Hora TIME,
-    Estado INT
+    Estado INT,
+    Grupo INT
 );
 
 

@@ -90,6 +90,7 @@
                     data: { equipo: 10}
 
                 }).done(function(msg){     });
+                
             }
         }
         
