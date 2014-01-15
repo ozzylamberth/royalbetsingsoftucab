@@ -36,13 +36,8 @@
                 }
             }
             
-            function actualizar(cantidad){          //Disabled de los jueg
-                if(juegos===0){
-                    document.getElementById("remover").hidden=true;
-                    document.getElementById("botonApostar").hidden=true;
-                }
-                for(i=0;i<juegos;i++){
-      
+            function actualizar(cantidad){          
+                for(i=0;i<juegos;i++){      
                     for(cont=1; cont <= cantidad ;cont++){
                     var id_L="L"+cont;
                     var id_V="V"+cont;
@@ -216,7 +211,7 @@
                  <div align='center'> <?php echo "NO HAY JUEGOS DISPONIBLES";?> </div> </table> <?php }?>  
             </div>
             <br>
-         
+         <?php if($_SESSION['juegos']!=0){ ?>
         <div class="table-responsive"> 
              <!--<form>-->
              <table class="table table-bordered" style="width: 400px;"> 
@@ -246,10 +241,12 @@
                 
             </div>
           <br>
+          
             <div align="left">               
-                <button hidden="false" id="botonApostar"  class="btn btn-warning" onclick="validarCarrito()"> Apostar </button>                                
-                <button hidden="false" id="remover"  class="btn btn-warning" onclick="Borrar()"> Remover del Carrito </button>                       
+                <button id="botonApostar"  class="btn btn-warning" onclick="validarCarrito()"> Apostar </button>                                
+                <button id="remover"  class="btn btn-warning" onclick="Borrar()"> Remover del Carrito </button>                       
             </div>
+         <?php }?>   
          </div>
           
           <script> actualizar(<?php echo $cont ?>);  </script>
