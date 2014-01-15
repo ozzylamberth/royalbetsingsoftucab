@@ -20,7 +20,7 @@ $datos = mysql_query($sql);
 while ($renglonConsulta = mysql_fetch_assoc($datos)){
     $id = $renglonConsulta['Id'];
     $Ci = $renglonConsulta['Id_user'];
-    $sqlSaldo = "SELECT Id,Saldo FROM `Transacciones` WHERE `Ci`='$Ci' ORDER BY Id DESC";
+    $sqlSaldo = "SELECT * FROM `Transacciones` WHERE `Ci`='$Ci' ORDER BY Id DESC";
     $datosSaldo = mysql_query($sqlSaldo);
     if (!$datosSaldo)
             echo "no entro bien x.x con el saldo";
@@ -28,8 +28,13 @@ while ($renglonConsulta = mysql_fetch_assoc($datos)){
     $Array = mysql_fetch_assoc($datosSaldo);
     echo $Array['Saldo'];
     //echo $saldo."epale";
-    if (isset($_REQUEST[$renglonConsulta['Id']]) and ($Array['Saldo'] >= $renglonConsulta['Monto']))
+    if (isset($_REQUEST[$renglonConsulta['Id']]) and ($Array['Saldo'] >= $renglonConsulta['Monto'])){
+        
+        $Tipo = "Descuento Credito"; $Monto = $renglonConsulta['Monto']; $Fecha = $renglonConsulta['Fecha']; $Hora = $renglonConsulta['Hora']; $nuevoSaldo = $Array['Saldo'] - $Monto;
+        $sqlTransaccion = "INSERT INTO `Transacciones`(`Ci`, `Tipo_de_transaccion`, `Monto`, `Fecha`, `Hora`, `Saldo`) VALUES ('$Ci','$Tipo','$Monto','$Fecha','$Hora','$nuevoSaldo')";
+        mysql_query($sqlTransaccion);
         $Estado = 1;
+    }
     else
         $Estado = -1;
     
