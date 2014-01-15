@@ -36,34 +36,54 @@
                 }
             }
             
-            function actualizar(){          //Refrescar la pag     
-                if (juegos>0){
-                    document.getElementById('botonApostar').hidden = false;
+            function actualizar(cantidad){          //Disabled de los jueg
+                if(juegos===0){
+                    document.getElementById("remover").hidden=true;
+                    document.getElementById("botonApostar").hidden=true;
                 }
+                for(i=0;i<juegos;i++){
+      
+                    for(cont=1; cont <= cantidad ;cont++){
+                    var id_L="L"+cont;
+                    var id_V="V"+cont;
+                    var id_C="C"+cont;     
+                        if(document.getElementById(id_L).value===arreglobd[0][i] || document.getElementById(id_V).value===arreglobd[0][i]){
+                            if(document.getElementById(id_L).value===arreglobd[0][i]){
+                                document.getElementById(id_L).disabled=true; 
+                                document.getElementById(id_V).disabled=true;
+                                document.getElementById(id_C).disabled=true;
+                            }else{
+                                document.getElementById(id_L).disabled=true; 
+                                document.getElementById(id_V).disabled=true;
+                                document.getElementById(id_C).disabled=true;
+                            }
+                        }
+                    }                                                     
+                }   
             }
+            
         function Borrar(){            
-//            for(i=0,remover=-1;i<juegos;i++){
-//                if(arreglobd[0][i]===document.getElementById('borrar').value){
-//                    remover = i;
-//                    for(j=i;j<juegos;j++){
-//                        for(k=0;k<2;k++){
-//                            arreglobd[k][j]=arreglobd[k][j+1];
-//                        }
-//                    }
-//                    $.ajax ({
-//                        type: "POST",
-//                        url: "./BD/Mesa/removercarrito.php" ,
-//                        data: { remover:remover }
-//                    }).done(function(msg){     });
-//                    
-//                    juegos--;
-//                    //actualizar();
-//                }                   
-//            }
-//            if(remover===-1){
-//                window.alert("No existe el equipo");
-//            }
-                       
+            for(i=0,remover=-1;i<juegos;i++){
+                if(document.getElementById(i).checked){
+                    remover = i;
+                    for(j=i;j<juegos;j++){
+                        for(k=0;k<2;k++){
+                            arreglobd[k][j]=arreglobd[k][j+1];
+                        }
+                    }
+                    $.ajax ({
+                        type: "POST",
+                        url: "./BD/Mesa/removercarrito.php" ,
+                        data: { remover:remover }
+                    }).done(function(msg){     });
+                    
+                    juegos--;
+                    setTimeout("location.reload(true);",1);;
+                }                   
+            }
+            if(remover===-1){
+                window.alert("No existe el equipo");
+            }                      
         }
         
         function validarCarrito(){
@@ -85,9 +105,6 @@
                     var id_C="C"+cont; 
                     if ((document.getElementById(id_L).checked) || (document.getElementById(id_V).checked) && (document.getElementById(id_C).value>0)){
                             if (document.getElementById(id_L).checked) {
-                                document.getElementById(id_L).checked=false;
-                                document.getElementById(id_L).disabled=true;
-                                document.getElementById(id_V).disabled=true;
                                 arreglobd[0][juegos]=document.getElementById(id_L).value; 
                                 arreglobd[1][juegos]=document.getElementById(id_C).value;
                                 if ((arreglobd[1][juegos]>0) && (arreglobd[1][juegos]<=999999)){
@@ -103,9 +120,6 @@
                                     document.getElementById(id_C).value = "";
                                 }
                             }else{ 
-                                document.getElementById(id_V).checked=false;
-                                document.getElementById(id_V).disabled=true;
-                                document.getElementById(id_L).disabled=true;
                                 arreglobd[0][juegos]=document.getElementById(id_V).value; 
                                 arreglobd[1][juegos]=document.getElementById(id_C).value; 
                                 if ((arreglobd[1][juegos]>0) && (arreglobd[1][juegos]<=999999)){
@@ -123,7 +137,7 @@
                             }         
                      }
                  } 
-                    //actualizar();     
+                    setTimeout("location.reload(true);",1);     
                     
             }
 
@@ -169,9 +183,9 @@
                                 <td>
                                     <input type="radio" name="<?php echo $cont; ?>" id="L<?php echo $cont; ?>" value="<?php echo $array1[2]; ?>" required>
                                 </td>
-                                <td data-title="Local"><?php echo $array1[2]; ?></td>
+                                <td data-title="Local" ><?php echo $array1[2]; ?></td>
                                 <td><strong>vs.</strong></td>
-                                <td data-title="Visitante" class="numeric"><?php echo $array1[3]; ?></td>
+                                <td data-title="Visitante" ><?php echo $array1[3]; ?></td>
                                 <td>
                                     <input type="radio" name="<?php echo $cont; ?>" id="V<?php echo $cont; ?>" value="<?php echo $array1[3]; ?>" required>
                                 </td>
@@ -218,11 +232,12 @@
           </div>
          
             <div align="left">               
-                <button hidden="true" id="botonApostar" type="submit" class="btn btn-warning" onclick="validarCarrito()"> Apostar </button>                 
+                <button hidden="false" id="botonApostar"  class="btn btn-warning" onclick="validarCarrito()"> Apostar </button>                                
+                <button hidden="false" id="remover"  class="btn btn-warning" onclick="Borrar()"> Remover del Carrito </button>                       
             </div>
          </div>
           
-          <script> //actualizar();  </script>
+          <script> actualizar(<?php echo $cont ?>);  </script>
 
 <?php require_once('./modulos/sidebar.php'); ?>           
           
