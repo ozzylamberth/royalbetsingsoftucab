@@ -55,7 +55,7 @@
                         }
                     }                                                     
                 } 
-                calcularTotal(cantidad);
+                calcularTotal();
             }
             
         function Borrar(){            
@@ -93,14 +93,14 @@
             }
         }
         
-        function calcularTotal(cantidad){
+        function calcularTotal(){
             var total=0;
-            for (i=0; i<cantidad; i++){
+            for (i=0; i<juegos; i++){
                 
                 total += parseFloat(arreglobd[1][i]);
                 
             } 
-            document.getElementById('mTotal').innerHTML = total.toString();
+            document.getElementById('mTotal').innerHTML = total.toString() + " Bs.";
             
         }
         
@@ -136,7 +136,7 @@
                                     juegos++;
                                 } 
                             }         
-                     }else{
+                     }else if (document.getElementById(id_C).value!== ""){
                         window.alert("Ingreso un monto inválido");
                         document.getElementById(id_C).value = "";
                     }
