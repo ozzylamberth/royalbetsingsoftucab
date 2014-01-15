@@ -82,24 +82,20 @@
             }                      
         }
         
+        function delayer(){
+            window.location = "BD/Mesa/cargarApuesta.php";
+        }
         function validarCarrito(){
             if (confirm("¿Está seguro que las apuestas almacenadas en el carrito son correctas?. Si selecciona 'Aceptar' dichas apuestas se cargaran a su cuenta.")){
-            $.ajax ({
-                    type: "POST",
-                    url: "./BD/Mesa/cargarApuesta.php" ,
-                    data: { equipo: 10}
-
-                }).done(function(msg){     });
+                setTimeout('delayer()', 1)
                 
             }
         }
         
         function calcularTotal(){
             var total=0;
-            for (i=0; i<juegos; i++){
-                
-                total += parseFloat(arreglobd[1][i]);
-                
+            for (i=0; i<juegos; i++){               
+                total += parseFloat(arreglobd[1][i]);               
             } 
             document.getElementById('mTotal').innerHTML = total.toString() + " Bs.";
             
@@ -110,36 +106,33 @@
                     var id_L="L"+cont;
                     var id_V="V"+cont; 
                     var id_C="C"+cont; 
-                    
                     if ((document.getElementById(id_L).checked) || (document.getElementById(id_V).checked) && (document.getElementById(id_C).value>0) && (document.getElementById(id_C).value<=999999)){
                             if (document.getElementById(id_L).checked) {
                                 arreglobd[0][juegos]=document.getElementById(id_L).value; 
                                 arreglobd[1][juegos]=document.getElementById(id_C).value;
-                                if ((arreglobd[1][juegos]>0) && (arreglobd[1][juegos]<=999999)){
                                     $.ajax ({
                                         type: "POST",
                                         url: "./BD/Mesa/actualizarcarrito.php" ,
                                         data: { equipo: arreglobd[0][juegos], costo: arreglobd[1][juegos]}
 
                                     }).done(function(msg){      });
-                                    juegos++;
-                                }
+                                    juegos++;                               
                             }else{ 
                                 arreglobd[0][juegos]=document.getElementById(id_V).value; 
                                 arreglobd[1][juegos]=document.getElementById(id_C).value; 
-                                if ((arreglobd[1][juegos]>0) && (arreglobd[1][juegos]<=999999)){
                                     $.ajax ({
                                         type: "POST",
                                         url: "./BD/Mesa/actualizarcarrito.php" ,
                                         data: { equipo: arreglobd[0][juegos], costo: arreglobd[1][juegos]}
 
                                     }).done(function(msg){      });
-                                    juegos++;
-                                } 
+                                    juegos++;                                
                             }         
                      }else if (document.getElementById(id_C).value!== ""){
-                        window.alert("Ingreso un monto inválido");
-                        document.getElementById(id_C).value = "";
+                         if(document.getElementById(id_C).value!==""){
+                            window.alert("Ingreso un monto inválido");
+                            document.getElementById(id_C).value = "";    
+                         }
                     }
                  } 
                     setTimeout("location.reload(true);",1);     

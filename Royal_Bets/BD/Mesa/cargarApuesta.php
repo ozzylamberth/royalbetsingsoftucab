@@ -1,19 +1,23 @@
-<script>
-    window.alert("hol1a");
+<script>           
+        function delayer(){
+            window.location = "./login.php";
+        }
+        function validarCarrito(){
+                setTimeout('delayer()', 1);          
+        }
+    validarCarrito();   
 </script>
 
 <?php
+    include(dirname(dirname(__FILE__)).'/conexion.php');
     
-  
-    header("Location:../../login.php");
-    $hola = $_POST["equipo"];
-    
-    if(isset($_SESSION['username'])){
-        header("Location:../../login.php");
-    }else{
-        header("Location:../../login.php");}
+    if(isset($_SESSION['username'])){  //Subimos a la base de datos
         
-        echo "hola";
-        ?>
+    }else{  //Logeamos y despues subimos a la base de datos
+        
+    }
+        
+    
+ ?>
 
 	
