@@ -54,7 +54,8 @@
                             }
                         }
                     }                                                     
-                }   
+                }
+                calcularTotal();
             }
             
         function Borrar(){            
@@ -92,14 +93,13 @@
             }
         }
         
-        function calcularTotal(cantidad){
-            for (i=1; i<=cantidad; i++){
-                var total=0;
-                
+        function calcularTotal(){
+            var total=0;
+            for (i=0; i<juegos; i++){                               
                 total += parseFloat(arreglobd[1][i]);
             } 
             document.getElementById('mTotal').innerHTML = total.toString();
-            window.alert(total.toString());
+            window.alert(total);
         }
         
         function seleccion(cantidad){
@@ -143,7 +143,7 @@
                      }
                  } 
                     setTimeout("location.reload(true);",1);     
-                    calcularTotal(cantidad);
+                    
             }
 
         </script>
@@ -246,6 +246,7 @@
                 <button id="botonApostar"  class="btn btn-warning" onclick="validarCarrito()"> Apostar </button>                                
                 <button id="remover"  class="btn btn-warning" onclick="Borrar()"> Remover del Carrito </button>                       
             </div>
+          
          <?php }?>   
          </div>
           
