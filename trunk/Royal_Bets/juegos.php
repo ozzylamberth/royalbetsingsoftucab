@@ -97,12 +97,22 @@
             }
         }
         
-        function seleccion(cantidad){
+        function calcularTotal(cantidad){
+            for (i=1; i<=cantidad; i++){
+                var total=0;
                 
+                total += parseFloat(arreglobd[1][i]);
+            } 
+            document.getElementById('mTotal').innerHTML = total.toString();
+            window.alert(total.toString());
+        }
+        
+        function seleccion(cantidad){
                 for(cont=1; cont <= cantidad ;cont++){
                     var id_L="L"+cont;
                     var id_V="V"+cont; 
                     var id_C="C"+cont; 
+                    
                     if ((document.getElementById(id_L).checked) || (document.getElementById(id_V).checked) && (document.getElementById(id_C).value>0)){
                             if (document.getElementById(id_L).checked) {
                                 arreglobd[0][juegos]=document.getElementById(id_L).value; 
@@ -138,7 +148,7 @@
                      }
                  } 
                     setTimeout("location.reload(true);",1);     
-                    
+                    calcularTotal(cantidad);
             }
 
         </script>
@@ -206,10 +216,12 @@
                  <div align='center'> <?php echo "NO HAY JUEGOS DISPONIBLES";?> </div> </table> <?php }?>  
             </div>
             <br>
-
+         
         <div class="table-responsive"> 
              <!--<form>-->
              <table class="table table-bordered" style="width: 400px;"> 
+                 <strong style='padding-left: 110px ;'>Equipos</strong>
+                 <strong style='padding-left: 125px ;'>Monto</strong> 
               <?php
                     $conta=0;
                     for ($i=0; $i<$_SESSION['juegos']; $i++){
@@ -217,20 +229,23 @@
                               $conta++;                    
                  ?>       
                  <tbody>
-                        <tr>
-                        <strong></strong>
-                            <td align="center" style="width: 50px; ">
-                                <input id="<?php echo $i; ?>" type="radio" required/>   
-                                </td>
-                                <td align="center" style="width: 80px; "> <?php echo $_SESSION['carrito'][$i][0]; ?></td>
-                                <td align="right" style="width: 50px; "><?php echo $_SESSION['carrito'][$i][1]." Bs."; ?></td>                                 
+                     <tr>
+                        <td align="center" style="width: 50px; ">
+                            <input id="<?php echo $i; ?>" type="radio" required/>   
+                            </td>
+                            <td align="center" style="width: 80px; "> <?php echo $_SESSION['carrito'][$i][0]; ?></td>
+                            <td align="right" style="width: 50px; "><?php echo $_SESSION['carrito'][$i][1]." Bs."; ?></td>                                 
                         </tr> 
   
                     <?php } ?>   
                  </tbody>       
             </table>            
           </div>
-         
+          <strong>Total</strong>
+            <div id='mTotal' align='left' style='border: 1px solid #dddddd; width: 150px; height: 25px;'>
+                
+            </div>
+          <br>
             <div align="left">               
                 <button hidden="false" id="botonApostar"  class="btn btn-warning" onclick="validarCarrito()"> Apostar </button>                                
                 <button hidden="false" id="remover"  class="btn btn-warning" onclick="Borrar()"> Remover del Carrito </button>                       
