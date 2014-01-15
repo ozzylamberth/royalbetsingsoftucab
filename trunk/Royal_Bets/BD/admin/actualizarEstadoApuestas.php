@@ -19,7 +19,16 @@ $datos = mysql_query($sql);
         
 while ($renglonConsulta = mysql_fetch_assoc($datos)){
     $id = $renglonConsulta['Id'];
-    if (isset($_REQUEST[$renglonConsulta['Id']]))
+    $Ci = $renglonConsulta['Id_user'];
+    $sqlSaldo = "SELECT Id,Saldo FROM `Transacciones` WHERE `Ci`='$Ci' ORDER BY Id DESC";
+    $datosSaldo = mysql_query($sqlSaldo);
+    if (!$datosSaldo)
+            echo "no entro bien x.x con el saldo";
+    
+    $Array = mysql_fetch_assoc($datosSaldo);
+    echo $Array['Saldo'];
+    //echo $saldo."epale";
+    if (isset($_REQUEST[$renglonConsulta['Id']]) and ($Array['Saldo'] >= $renglonConsulta['Monto']))
         $Estado = 1;
     else
         $Estado = -1;
