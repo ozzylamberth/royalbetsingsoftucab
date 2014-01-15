@@ -41,8 +41,7 @@
                     document.getElementById('botonApostar').hidden = false;
                 }
             }
-        function Borrar(){
-            window.alert(" hola");
+        function Borrar(){            
 //            for(i=0,remover=-1;i<juegos;i++){
 //                if(arreglobd[0][i]===document.getElementById('borrar').value){
 //                    remover = i;
@@ -196,26 +195,29 @@
 
         <div class="table-responsive"> 
              <!--<form>-->
-             <table class="table table-bordered" > 
+             <table class="table table-bordered" style="width: 400px;"> 
               <?php
                     $conta=0;
                     for ($i=0; $i<$_SESSION['juegos']; $i++){
                               $contCa=0;
                               $conta++;                    
-                 ?>             
+                 ?>       
+                 <tbody>
                         <tr>
-                                <td>
-                                    <div align="center"> <a class="btn btn-primary" onclick="Borrar()"> Remover </a> </div>
+                        <strong></strong>
+                            <td align="center" style="width: 50px; ">
+                                <input id="<?php echo $i; ?>" type="radio" required/>   
                                 </td>
-                                <td> <?php echo $_SESSION['carrito'][$i][0]; ?></td>
-                                <td><?php echo $_SESSION['carrito'][$i][1]; ?></td>                                 
+                                <td align="center" style="width: 80px; "> <?php echo $_SESSION['carrito'][$i][0]; ?></td>
+                                <td align="right" style="width: 50px; "><?php echo $_SESSION['carrito'][$i][1]." Bs."; ?></td>                                 
                         </tr> 
   
-                    <?php } ?>              
+                    <?php } ?>   
+                 </tbody>       
             </table>            
           </div>
          
-            <div align="right">               
+            <div align="left">               
                 <button hidden="true" id="botonApostar" type="submit" class="btn btn-warning" onclick="validarCarrito()"> Apostar </button>                 
             </div>
          </div>
