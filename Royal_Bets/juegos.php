@@ -58,12 +58,20 @@
                 var txt="";
                 var txt2="";
                 var total=0;
+                var scrollbox = document.getElementById('scrollbox');
+                var newElement = document.createElement('div');
+
+               
                 for(cont=1; cont <= cantidad ;cont++){
                     var id_L="L"+cont;
                     var id_V="V"+cont; 
                     var id_C="C"+cont; 
+                    newElement.setAttribute('id_L', "id_L");
+                    nuevo.setAttribute('boton', "boton");
+                    
                     if ((document.getElementById(id_L).checked) || (document.getElementById(id_V).checked)){
                             if (document.getElementById(id_L).checked) {
+                                newElement.innerHTML = document.getElementById(id_L).value + " " + document.getElementById(id_C).value + " Bs.";
                                 arreglobd[0][juegos]=document.getElementById(id_L).value; 
                                 arreglobd[1][juegos]=document.getElementById(id_C).value;
                                 txt += arreglobd[0][juegos] + '\r\n'; 
@@ -80,8 +88,10 @@
                                 }else{
                                     window.alert("Ingreso un monto inválido");
                                     document.getElementById(id_C).value = "";
-                                }    
+                                }
+                                scrollbox.appendChild(newElement);
                             }else{ 
+                                newElement.innerHTML = document.getElementById(id_V).value + " " + document.getElementById(id_C).value + " Bs.";
                                 arreglobd[0][juegos]=document.getElementById(id_V).value; 
                                 arreglobd[1][juegos]=document.getElementById(id_C).value; 
                                 txt += arreglobd[0][juegos] + '\r\n'; 
@@ -98,7 +108,8 @@
                                 }else{
                                     window.alert("Ingreso un monto inválido");
                                     document.getElementById(id_C).value = "";
-                                }    
+                                } 
+                                scrollbox.appendChild(newElement);
                             }         
                      }
                  } 
@@ -106,6 +117,14 @@
                     actualizar();     
                  } 
                     
+            }
+            function addElement() {
+                var scrollbox = document.getElementById('scrollbox');
+                var newElement = document.createElement('div');
+                
+                newElement.setAttribute('id', "some-id-for-new-element");
+                newElement.innerHTML = 'New element has been added!';
+                scrollbox.appendChild(newElement);
             }
         </script>
 
@@ -171,22 +190,40 @@
                          <?php }else{  ?>
                  <div align='center'> <?php echo "NO HAY JUEGOS DISPONIBLES";?> </div> </table> <?php }?>  
             </div>
-            <br>
-            <div>
-                <ul id="texto-alineado">
-                    <li><strong>Equipos </strong></li>
-                    <li><strong>Monto De Apuesta </strong></li>
-                    <li><strong>TOTAL</strong></li>
-                    <textarea id="equiposTA" cols="80" rows="4" disabled="disabled"></textarea>
-                    <textarea id="montoTA" cols="80" rows="4" disabled="disabled"></textarea>
-                    <textarea id="total" cols="80" rows="4" disabled="disabled"></textarea>
-                </ul> 
-            </div> 
+
             <br>
             <div align="right">
                 <button type="submit" class="btn btn-warning"  onclick="seleccion(<?php echo $cont ?>)"> Apostar </button>                 
             </div>
-        </div>
+        
+        <div class="table-responsive"> 
+             <!--<form>-->
+             <table class="table table-bordered" > 
+              <?php
+                    $conta=0;
+                    $_SESSION['carrito'][0][0] = "Barcelona";
+                    $_SESSION['carrito'][0][1] = "BarcelonaM";
+                    $_SESSION['carrito'][1][0] = "BarcelonaH";
+                    $_SESSION['carrito'][1][1] = "BarcelonaK";
+                    for ($i=0; $i<2; $i++){
+                              $contCa=0;
+                              $conta++;
+                     
+                 ?>
+                             
+                        <tr>
+                                <td>Hola
+                                    <div align="center"> <a class="btn btn-primary"> Entrar </a> </div>
+                                </td>
+                                <td> Hola <?php echo $_SESSION['carrito'][$i][0]; ?></td>
+                                <td> Hola <?php echo $_SESSION['carrito'][$i][1]; ?></td>                                 
+                        </tr> 
+  
+                    <?php } ?>              
+            </table>            
+          </div>
+          </div>  
+          
 
 <?php require_once('./modulos/sidebar.php'); ?>           
           
