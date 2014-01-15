@@ -36,48 +36,61 @@
                 }
             }
             
-            function actualizar(){
-                var monto=0;
-                document.getElementById('total').value =  "";
-                document.getElementById('montoTA').value = "";
-                document.getElementById('equiposTA').value = ""; 
-                for (i=0; i<juegos; i++){
-                    document.getElementById('equiposTA').value += arreglobd[0][i] + '\r\n';
-                    document.getElementById('montoTA').value += arreglobd[1][i] + " Bs." + '\r\n';
-                    monto += parseFloat(arreglobd[1][i]);
-                    document.getElementById('total').value =  monto.toString();  
+            function actualizar(){          //Refrescar la pag     
+                if (juegos>0){
+                    document.getElementById('botonApostar').hidden = false;
                 }
             }
-            
-        function confirmarCarrito(){
-            if (juegos>0){
-                
+        function Borrar(){
+            for(i=0,remover=-1;i<juegos;i++){
+                if(arreglobd[0][i]===document.getElementById('borrar').value){
+                    remover = i;
+                    for(j=i;j<juegos;j++){
+                        for(k=0;k<2;k++){
+                            arreglobd[k][j]=arreglobd[k][j+1];
+                        }
+                    }
+                    $.ajax ({
+                        type: "POST",
+                        url: "./BD/Mesa/removercarrito.php" ,
+                        data: { remover:remover }
+                    }).done(function(msg){     });
+                    
+                    juegos--;
+                    actualizar();
+                }                   
+            }
+            if(remover===-1){
+                window.alert("No existe el equipo");
+            }
+                       
+        }
+        
+        function validarCarrito(){
+            if (confirm("¿Está seguro que las apuestas almacenadas en el carrito son correctas?. Si selecciona 'Aceptar' dichas apuestas se cargaran a su cuenta.")){
+            $.ajax ({
+                    type: "POST",
+                    url: "./BD/Mesa/cargarApuesta.php" ,
+                    data: { equipo: 10}
+
+                }).done(function(msg){     });
             }
         }
+        
         function seleccion(cantidad){
-                var txt="";
-                var txt2="";
-                var total=0;
-                var scrollbox = document.getElementById('scrollbox');
-                var newElement = document.createElement('div');
-
-               
+                
                 for(cont=1; cont <= cantidad ;cont++){
                     var id_L="L"+cont;
                     var id_V="V"+cont; 
                     var id_C="C"+cont; 
-                    newElement.setAttribute('id_L', "id_L");
-                    nuevo.setAttribute('boton', "boton");
-                    
-                    if ((document.getElementById(id_L).checked) || (document.getElementById(id_V).checked)){
+                    if ((document.getElementById(id_L).checked) || (document.getElementById(id_V).checked) && (document.getElementById(id_C).value>0)){
                             if (document.getElementById(id_L).checked) {
-                                newElement.innerHTML = document.getElementById(id_L).value + " " + document.getElementById(id_C).value + " Bs.";
+                                document.getElementById(id_L).checked=false;
+                                document.getElementById(id_L).disabled=true;
+                                document.getElementById(id_V).disabled=true;
                                 arreglobd[0][juegos]=document.getElementById(id_L).value; 
                                 arreglobd[1][juegos]=document.getElementById(id_C).value;
-                                txt += arreglobd[0][juegos] + '\r\n'; 
-                                txt2 += arreglobd[1][juegos] + " Bs." + '\r\n';
-                                if ((arreglobd[1][juegos]>=0) && (arreglobd[1][juegos]<=999999)){
-                                    total += parseFloat(arreglobd[1][juegos]); 
+                                if ((arreglobd[1][juegos]>0) && (arreglobd[1][juegos]<=999999)){
                                     $.ajax ({
                                         type: "POST",
                                         url: "./BD/Mesa/actualizarcarrito.php" ,
@@ -89,15 +102,13 @@
                                     window.alert("Ingreso un monto inválido");
                                     document.getElementById(id_C).value = "";
                                 }
-                                scrollbox.appendChild(newElement);
                             }else{ 
-                                newElement.innerHTML = document.getElementById(id_V).value + " " + document.getElementById(id_C).value + " Bs.";
+                                document.getElementById(id_V).checked=false;
+                                document.getElementById(id_V).disabled=true;
+                                document.getElementById(id_L).disabled=true;
                                 arreglobd[0][juegos]=document.getElementById(id_V).value; 
                                 arreglobd[1][juegos]=document.getElementById(id_C).value; 
-                                txt += arreglobd[0][juegos] + '\r\n'; 
-                                txt2 += arreglobd[1][juegos] + " Bs." + '\r\n';
-                                if ((arreglobd[1][juegos]>=0) && (arreglobd[1][juegos]<=999999)){
-                                    total += parseFloat(arreglobd[1][juegos]);
+                                if ((arreglobd[1][juegos]>0) && (arreglobd[1][juegos]<=999999)){
                                     $.ajax ({
                                         type: "POST",
                                         url: "./BD/Mesa/actualizarcarrito.php" ,
@@ -109,23 +120,13 @@
                                     window.alert("Ingreso un monto inválido");
                                     document.getElementById(id_C).value = "";
                                 } 
-                                scrollbox.appendChild(newElement);
                             }         
                      }
                  } 
-                 if (juegos>0){
-                    actualizar();     
-                 } 
+                    //actualizar();     
                     
             }
-            function addElement() {
-                var scrollbox = document.getElementById('scrollbox');
-                var newElement = document.createElement('div');
-                
-                newElement.setAttribute('id', "some-id-for-new-element");
-                newElement.innerHTML = 'New element has been added!';
-                scrollbox.appendChild(newElement);
-            }
+
         </script>
 
 <?php 
@@ -175,7 +176,7 @@
                                     <input type="radio" name="<?php echo $cont; ?>" id="V<?php echo $cont; ?>" value="<?php echo $array1[3]; ?>" required>
                                 </td>
                                 <td>
-                                    <input title="Máx. 999999" type="numeric" id="C<?php echo $cont; ?>" placeholder="Bs." required>
+                                    <input title="Máx. 999999999" type="numeric" id="C<?php echo $cont; ?>" placeholder="Bs." required>
                                 </td>                                  
                         </tr> 
                          
@@ -183,47 +184,43 @@
                 </tbody>         
             </table>            
             <div align="right">
-                <button type="submit" class="btn btn-warning"  onclick="seleccion(<?php echo $cont ?>)">  Agregar al Carrito </button>                 
+                <button type="submit" class="btn btn-warning"  onclick="seleccion(<?php echo $cont ?>)">  Agregar al Carrito </button>                              
             </div>
             <!--</form>-->
      
                          <?php }else{  ?>
                  <div align='center'> <?php echo "NO HAY JUEGOS DISPONIBLES";?> </div> </table> <?php }?>  
             </div>
-
             <br>
-            <div align="right">
-                <button type="submit" class="btn btn-warning"  onclick="seleccion(<?php echo $cont ?>)"> Apostar </button>                 
-            </div>
-        
+
         <div class="table-responsive"> 
              <!--<form>-->
              <table class="table table-bordered" > 
               <?php
                     $conta=0;
-                    $_SESSION['carrito'][0][0] = "Barcelona";
-                    $_SESSION['carrito'][0][1] = "BarcelonaM";
-                    $_SESSION['carrito'][1][0] = "BarcelonaH";
-                    $_SESSION['carrito'][1][1] = "BarcelonaK";
-                    for ($i=0; $i<2; $i++){
+                    for ($i=0; $i<$_SESSION['juegos']; $i++){
                               $contCa=0;
                               $conta++;
                      
-                 ?>
-                             
+                 ?>             
                         <tr>
-                                <td>Hola
-                                    <div align="center"> <a class="btn btn-primary"> Entrar </a> </div>
+                                <td>
+                                    <div align="center"> <a class="btn btn-primary"> Remover </a> </div>
                                 </td>
-                                <td> Hola <?php echo $_SESSION['carrito'][$i][0]; ?></td>
-                                <td> Hola <?php echo $_SESSION['carrito'][$i][1]; ?></td>                                 
+                                <td> <?php echo $_SESSION['carrito'][$i][0]; ?></td>
+                                <td><?php echo $_SESSION['carrito'][$i][1]; ?></td>                                 
                         </tr> 
   
                     <?php } ?>              
             </table>            
           </div>
-          </div>  
+         
+            <div align="right">               
+                <button hidden="true" id="botonApostar" type="submit" class="btn btn-warning" onclick="validarCarrito()"> Apostar </button>                 
+            </div>
+         </div>
           
+          <script> //actualizar();  </script>
 
 <?php require_once('./modulos/sidebar.php'); ?>           
           
