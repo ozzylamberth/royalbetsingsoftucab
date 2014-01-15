@@ -54,8 +54,8 @@
                             }
                         }
                     }                                                     
-                }
-                calcularTotal();
+                } 
+                calcularTotal(cantidad);
             }
             
         function Borrar(){            
@@ -93,13 +93,15 @@
             }
         }
         
-        function calcularTotal(){
+        function calcularTotal(cantidad){
             var total=0;
-            for (i=0; i<juegos; i++){                               
+            for (i=0; i<cantidad; i++){
+                
                 total += parseFloat(arreglobd[1][i]);
+                
             } 
             document.getElementById('mTotal').innerHTML = total.toString();
-            window.alert(total);
+            
         }
         
         function seleccion(cantidad){
@@ -108,7 +110,7 @@
                     var id_V="V"+cont; 
                     var id_C="C"+cont; 
                     
-                    if ((document.getElementById(id_L).checked) || (document.getElementById(id_V).checked) && (document.getElementById(id_C).value>0)){
+                    if ((document.getElementById(id_L).checked) || (document.getElementById(id_V).checked) && (document.getElementById(id_C).value>0) && (document.getElementById(id_C).value<=999999)){
                             if (document.getElementById(id_L).checked) {
                                 arreglobd[0][juegos]=document.getElementById(id_L).value; 
                                 arreglobd[1][juegos]=document.getElementById(id_C).value;
@@ -120,9 +122,6 @@
 
                                     }).done(function(msg){      });
                                     juegos++;
-                                }else{
-                                    window.alert("Ingreso un monto inválido");
-                                    document.getElementById(id_C).value = "";
                                 }
                             }else{ 
                                 arreglobd[0][juegos]=document.getElementById(id_V).value; 
@@ -135,12 +134,12 @@
 
                                     }).done(function(msg){      });
                                     juegos++;
-                                }else{
-                                    window.alert("Ingreso un monto inválido");
-                                    document.getElementById(id_C).value = "";
                                 } 
                             }         
-                     }
+                     }else{
+                        window.alert("Ingreso un monto inválido");
+                        document.getElementById(id_C).value = "";
+                    }
                  } 
                     setTimeout("location.reload(true);",1);     
                     
