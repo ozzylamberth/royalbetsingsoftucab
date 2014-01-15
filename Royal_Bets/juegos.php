@@ -42,27 +42,28 @@
                 }
             }
         function Borrar(){
-            for(i=0,remover=-1;i<juegos;i++){
-                if(arreglobd[0][i]===document.getElementById('borrar').value){
-                    remover = i;
-                    for(j=i;j<juegos;j++){
-                        for(k=0;k<2;k++){
-                            arreglobd[k][j]=arreglobd[k][j+1];
-                        }
-                    }
-                    $.ajax ({
-                        type: "POST",
-                        url: "./BD/Mesa/removercarrito.php" ,
-                        data: { remover:remover }
-                    }).done(function(msg){     });
-                    
-                    juegos--;
-                    actualizar();
-                }                   
-            }
-            if(remover===-1){
-                window.alert("No existe el equipo");
-            }
+            window.alert(" hola");
+//            for(i=0,remover=-1;i<juegos;i++){
+//                if(arreglobd[0][i]===document.getElementById('borrar').value){
+//                    remover = i;
+//                    for(j=i;j<juegos;j++){
+//                        for(k=0;k<2;k++){
+//                            arreglobd[k][j]=arreglobd[k][j+1];
+//                        }
+//                    }
+//                    $.ajax ({
+//                        type: "POST",
+//                        url: "./BD/Mesa/removercarrito.php" ,
+//                        data: { remover:remover }
+//                    }).done(function(msg){     });
+//                    
+//                    juegos--;
+//                    //actualizar();
+//                }                   
+//            }
+//            if(remover===-1){
+//                window.alert("No existe el equipo");
+//            }
                        
         }
         
@@ -200,12 +201,11 @@
                     $conta=0;
                     for ($i=0; $i<$_SESSION['juegos']; $i++){
                               $contCa=0;
-                              $conta++;
-                     
+                              $conta++;                    
                  ?>             
                         <tr>
                                 <td>
-                                    <div align="center"> <a class="btn btn-primary"> Remover </a> </div>
+                                    <div align="center"> <a class="btn btn-primary" onclick="Borrar()"> Remover </a> </div>
                                 </td>
                                 <td> <?php echo $_SESSION['carrito'][$i][0]; ?></td>
                                 <td><?php echo $_SESSION['carrito'][$i][1]; ?></td>                                 
