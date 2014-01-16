@@ -1,6 +1,6 @@
 <?php require_once('./modulos/header.php'); ?>
 <?php require_once('./BD/Mesa/juegos_extraer.php'); ?> 
-<?php //require_once('./BD/Mesa/carrito.php'); ?>
+<?php require_once('./BD/Mesa/carrito.php'); ?>
 <?php //require_once('./BD/Mesa/actualizarcarrito.php')?>
     <body>
 
