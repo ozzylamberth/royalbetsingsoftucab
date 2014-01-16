@@ -101,9 +101,7 @@
             
         }
 
-        
         function seleccion(cantidad){
-            if ((juegos===1) || ((juegos>1) && (juegos<=12))){
                 for(cont=1; cont <= cantidad ;cont++){
                     var id_L="L"+cont;
                     var id_V="V"+cont; 
@@ -143,11 +141,12 @@
                             document.getElementById(id_C).value = "";    
                          }
                     }
-                 } 
-                    setTimeout("location.reload(true);",1);     
-                }else{
-                    window.alert("Recuerde: En apuestas de tipo 'Directa' debe elegir sólo un equipo. Para 'Parlay' puede seleccionar de 2 a 12 equipos.")
-                }
+                 }
+                 if ((juegos===1) || ((juegos>1) && (juegos<=12))){
+                    setTimeout("location.reload(true);",1); 
+                 }else{
+                    window.alert("Recuerde: Para apostar debe seleccionar un equipo con su monto respectivo. En apuestas de tipo 'Directa' debe elegir sólo un equipo. Para 'Parlay' puede seleccionar de 2 a 12 equipos.");
+                 }            
             }
 
         </script>
