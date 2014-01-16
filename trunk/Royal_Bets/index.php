@@ -32,7 +32,7 @@
             <img src="img/vanp3.jpg" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Bienvenido/a!</h1>
+              <h1>Bienvenido!</h1>
               <p>apostar ahora es más rápido, confiable y sencillo...</p>
             </div>
           </div>
@@ -94,8 +94,8 @@
               <p><br><?php echo "<a class='btn btn-default' href='mesas.php?filter=Tenis'> Apostar &raquo; </a>"; ?></p>
            </div>
             <div class="col-sm-4">
-              <h2>GP</h2>
-              <img src=" img/gp.jpg">
+              <h2>Voleibol</h2>
+              <img src=" img/voleibol.png">
               <p><br><?php echo "<a class='btn btn-default' href='mesas.php?filter=Tenis'> Apostar &raquo; </a>"; ?></p>
            </div>             
 
