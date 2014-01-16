@@ -33,7 +33,10 @@ if(isset($_GET['errorCode']) && isset($_GET['errorType'])){
             $error = "Atención, Usted no se puede registrar a Royal Bets, es menor de 18 años";
             break;
         case 8:
-            $error = "El usuario que intenta registrar ya existe";
+            $error = "Ya existe un usuario con esa Cédula de Identidad";
+            break;
+        case 9:
+            $error = "Ya existe un usuario con ese Correo Electrónico";
             break;
     }
     

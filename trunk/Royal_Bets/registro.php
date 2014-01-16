@@ -46,7 +46,7 @@
                     Cedula de identidad:
                   </label>
                   <div class="col-md-10">
-                      <input title="Introduzca su Cedula en el fomato: (V ó E)-12345678" type="text" class="form-control" name="cedula" id="cedula" placeholder="V-12345678" pattern="[VE]+[-]+[0-9]+" required>
+                      <input title="Introduzca su Cedula en el fomato: (V ó E)-12345678" type="text" class="form-control" name="cedula" id="cedula" placeholder="V-12345678 o E-12345678" pattern="[VE]+[-]+[0-9]+" required>
                   </div><br/><br/>
                 </div>                
                 

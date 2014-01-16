@@ -27,15 +27,28 @@
         list($hour, $minuto, $ampm)=explode('-',$datos_tiempo);
         $hora = $hour.":".$minuto." ".$ampm;        // Hora actual
         
+        $ano = $anio;
+        if (($mesU == $mes) && ($diaU > $dia)) {
+            $ano=($ano-1); }
+        if ($mesnaz > $mes) {
+            $ano=($ano-1);            
+        }
+        $edad=($ano-$anioU);
+        
         // Verifica si la Ci ingresada existe en la base de datos
         $queryCI = mysql_num_rows(mysql_query("SELECT * FROM Usuarios WHERE Ci='$cedula'"));
         $queryEmail = mysql_num_rows(mysql_query("SELECT * FROM Usuarios WHERE Correo='$emailaddress'"));
         
         if(($queryCI > 0) || ($queryEmail > 0)){    // Si la Ci o el Correo existe
-            header("Location:../../registro.php?errorCode=8&errorType=1");
+            if($queryCI > 0){
+                header("Location:../../registro.php?errorCode=8&errorType=1");
+            }
+            if($queryEmail > 0){
+                header("Location:../../registro.php?errorCode=9&errorType=1");
+            }
         }else{      // Si la Ci no existe
             
-            if (($anio-$anioU)<18){     // Si es menor a 18 
+            if ($edad<18){     // Si es menor a 18 
                 header("Location:../../registro.php?errorCode=7&errorType=1");
             }else{      // Si es mayor a 18
 
