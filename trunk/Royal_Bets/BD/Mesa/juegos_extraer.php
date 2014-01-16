@@ -5,7 +5,7 @@ include(dirname(dirname(__FILE__)).'/conexion.php');
     $consultajuegos= "SELECT * FROM juegos WHERE id_mesa='$idmesa'";
     $datosjuegos= mysql_query($consultajuegos,$conex) or die ("<p> No se ha podido ejecutar"
         . "la consulta, compurebe que la sintaxis sea correcta. <p>");
-    echo "El ID de mesa es incorrecto, deje de modificarlo por el url";
+    
 
 mysql_close();
 
