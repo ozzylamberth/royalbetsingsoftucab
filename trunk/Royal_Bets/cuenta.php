@@ -140,8 +140,7 @@ c<?php require_once('./scripts/solicitarLogin.php'); ?>
             <th>Monto</th>
             <th>Estado</th>
             <th>Fecha</th>
-            <th>Hora</th>
-            <th></th>            
+            <th>Hora</th>        
         </tr>
     </thead>
 <tbody>
