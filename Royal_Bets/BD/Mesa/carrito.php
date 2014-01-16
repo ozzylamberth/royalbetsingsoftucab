@@ -7,7 +7,7 @@ include(dirname(dirname(__FILE__)).'/conexion.php');
     }
   $juegos=0;
   $carrito=array();
-  for($i=0;$i<2;$i++){ 
+  for($i=0;$i<5;$i++){ 
       $carrito[$i]=array(); 
   }    
  $_SESSION['carrito'] = $carrito; 

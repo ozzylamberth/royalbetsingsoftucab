@@ -26,14 +26,14 @@
             </script>     
         <script>
             var arreglobd=[2];
-            for(i=0;i<2;i++){
+            for(i=0;i<5;i++){
                 arreglobd[i]=[];
             }
             
             for(i=0,cont=0;i<juegos;i++){
-                for(j=0;j<2;j++,cont++){
-                    arreglobd[j][i] = array[cont];                   
-                }
+                for(j=0;j<5;j++,cont++){
+                    arreglobd[j][i] = array[cont];                    
+                }               
             }
             
             function actualizar(cantidad){          
@@ -63,7 +63,7 @@
                 if(document.getElementById(i).checked){
                     remover = i;
                     for(j=i;j<juegos;j++){
-                        for(k=0;k<2;k++){
+                        for(k=0;k<5;k++){
                             arreglobd[k][j]=arreglobd[k][j+1];
                         }
                     }
@@ -100,30 +100,38 @@
             document.getElementById('mTotal').innerHTML = total.toString() + " Bs.";
             
         }
+
         
         function seleccion(cantidad){
                 for(cont=1; cont <= cantidad ;cont++){
                     var id_L="L"+cont;
                     var id_V="V"+cont; 
-                    var id_C="C"+cont; 
+                    var id_C="C"+cont;
+                    var id_I="I"+cont;
                     if ((document.getElementById(id_L).checked) || (document.getElementById(id_V).checked) && (document.getElementById(id_C).value>0) && (document.getElementById(id_C).value<=999999)){
                             if (document.getElementById(id_L).checked) {
                                 arreglobd[0][juegos]=document.getElementById(id_L).value; 
                                 arreglobd[1][juegos]=document.getElementById(id_C).value;
+                                arreglobd[2][juegos] = <?php echo $idmesa; ?>;
+                                arreglobd[3][juegos]=1;
+                                arreglobd[4][juegos]=document.getElementById(id_I).value;
                                     $.ajax ({
                                         type: "POST",
                                         url: "./BD/Mesa/actualizarcarrito.php" ,
-                                        data: { equipo: arreglobd[0][juegos], costo: arreglobd[1][juegos]}
+                                        data: { equipo: arreglobd[0][juegos], costo: arreglobd[1][juegos], idmesa:arreglobd[2][juegos], LoV:arreglobd[3][juegos], idjuego:arreglobd[4][juegos]}
 
                                     }).done(function(msg){      });
                                     juegos++;                               
                             }else{ 
                                 arreglobd[0][juegos]=document.getElementById(id_V).value; 
-                                arreglobd[1][juegos]=document.getElementById(id_C).value; 
+                                arreglobd[1][juegos]=document.getElementById(id_C).value;
+                                arreglobd[2][juegos] =  <?php echo $idmesa; ?>;
+                                arreglobd[3][juegos]=2;
+                                arreglobd[4][juegos]=document.getElementById(id_I).value;
                                     $.ajax ({
                                         type: "POST",
                                         url: "./BD/Mesa/actualizarcarrito.php" ,
-                                        data: { equipo: arreglobd[0][juegos], costo: arreglobd[1][juegos]}
+                                        data: { equipo: arreglobd[0][juegos], costo: arreglobd[1][juegos], idmesa:arreglobd[2][juegos], LoV:arreglobd[3][juegos], idjuego:arreglobd[4][juegos]}
 
                                     }).done(function(msg){      });
                                     juegos++;                                
@@ -178,6 +186,9 @@
                 <tbody align="center"> 
                     <?php } ?>                 
                         <tr>
+                                <td>
+                                    <input type="text" id="I<?php echo $cont; ?>" value="<?php echo $array1[0]; ?>" required>
+                                </td>
                                 <td>
                                     <input type="radio" name="<?php echo $cont; ?>" id="L<?php echo $cont; ?>" value="<?php echo $array1[2]; ?>" required>
                                 </td>
