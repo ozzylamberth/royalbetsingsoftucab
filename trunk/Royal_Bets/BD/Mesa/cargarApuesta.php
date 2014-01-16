@@ -51,8 +51,8 @@
         for($i=0;$i<5;$i++){ 
             $carrito[$i]=array(); 
         }    
-        $_SESSION['carrito'] = $carrito; 
-        $_SESSION['juegos'] = $juegos;
+       $_SESSION['carrito'] = $carrito; 
+       $_SESSION['juegos'] = $juegos;
         
                 if(!$query){
                     echo 'Error al insertar una apuesta en la BD';
