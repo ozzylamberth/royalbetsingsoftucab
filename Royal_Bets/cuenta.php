@@ -1,4 +1,4 @@
-<?php require_once('./scripts/solicitarLogin.php'); ?> 
+c<?php require_once('./scripts/solicitarLogin.php'); ?> 
 
 <?php require_once('./modulos/header.php'); ?> 
 
@@ -108,6 +108,10 @@
     
     <?php
         }
+        $contadorTransacciones++;
+        if($contadorTransacciones==0){
+            echo "<td>No ha realizado transacciones</td>";
+        }
     ?>
 </tbody> 
 </table> 
@@ -126,7 +130,87 @@
                             </div>
                             <div class="tab-pane" id="apuestas">
                                 <h3>Historial de apuestas</h3>
-                                <p>orange orange orange orange orange</p>
+<div class="table-responsive">                                
+<table id="tablaApuestas" class="table table-bordered" align="center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Juego</th>
+            <th>Apuesta</th>
+            <th>Monto</th>
+            <th>Estado</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th></th>            
+        </tr>
+    </thead>
+<tbody>
+    <?php
+        $tablaApuestas =  getTablaApuestas($_SESSION['ci']);
+        $contadorApuestas=0;
+        while($elemento = mysql_fetch_array($tablaApuestas)){
+    ?> 
+    
+    <tr>
+        <td><?php echo $elemento['Grupo']; ?></td>
+        <td><?php 
+            $equipos=  getNombresJuego($elemento['Id_juego']);
+            echo $equipos['Equipo1'];        
+        ?> Vs <?php
+            echo $equipos['Equipo2'];
+        ?>
+        </td>
+        <td><?php 
+            if($elemento['Equipo']==1){
+                echo $equipos['Equipo1']; 
+            }else{
+                echo $equipos['Equipo2'];
+            }
+        
+        ?></td>
+        <td><?php echo $elemento['Monto']; ?> Bsf</td>
+        <td><?php 
+            switch ($elemento['Estado']){
+                case 0:
+                    echo "Pendiente";
+                    break;
+                case 1:
+                    echo "Aprobada";
+                    break;
+                case 2:
+                    echo "No aprobada;";
+                    break;
+            }
+        
+        ?></td>
+        <td><?php echo $elemento['Fecha']; ?></td>
+        <td><?php echo $elemento['Hora']; ?></td>
+        
+    </tr>
+        
+    <?php
+        }
+        $contadorApuestas++;
+        if($contadorApuestas==0){
+            echo "<td>No ha realizado apuestas</td>";
+        }
+    ?>
+</tbody> 
+</table> 
+    
+</div>
+                                
+<div id="pageNavApuestas" style="padding-top: 20px" align="center">
+</div>
+                                
+<script type="text/javascript">
+    var pager3 = new Pager('tablaApuestas', 5);
+    pager3.init();
+    pager3.showPageNav('pager', 'pageNavApuestas');
+    pager3.showPage(1);
+</script>                                
+                                
+                                
                             </div>            
                         </div>
             </div>        
