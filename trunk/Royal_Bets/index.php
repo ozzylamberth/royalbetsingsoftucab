@@ -63,7 +63,7 @@
     </div>
     
     <!-- /.carousel -->
-
+ 
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
@@ -71,32 +71,32 @@
             <div class="col-sm-4">
               <h2>Fútbol</h2>
               <img src=" img/futbol3.jpg">
-              <p><br><a class="btn btn-default" href="#">Apostar &raquo;</a></p>
+              <p><br><?php echo "<a class='btn btn-default' href='mesas.php?filter=Futbol'> Apostar &raquo; </a>"; ?></p>
             </div>
             <div class="col-sm-4">
               <h2>Beísbol</h2>
               <img src=" img/beisbol.jpg">
-              <p><br><a class="btn btn-default" href="#">Apostar &raquo;</a></p>
+              <p><br><?php echo "<a class='btn btn-default' href='mesas.php?filter=Beisbol'> Apostar &raquo; </a>"; ?></p>
            </div>
             <div class="col-sm-4">
               <h2>Baloncesto</h2>
               <img src=" img/nba.jpg">
-              <p><br><a class="btn btn-default" href="#">Apostar &raquo;</a></p>
+              <p><br><?php echo "<a class='btn btn-default' href='mesas.php?filter=Baloncesto'> Apostar &raquo; </a>"; ?></p>
             </div>
             <div class="col-sm-4">
               <h2>NHL</h2>
               <img src=" img/nfl.jpg">
-              <p><br><a class="btn btn-default" href="#">Apostar &raquo;</a></p>
+              <p><br><?php echo "<a class='btn btn-default' href='mesas.php?filter=NHL'> Apostar &raquo; </a>"; ?></p>
             </div>
             <div class="col-sm-4">
               <h2>Tenis</h2>
               <img src=" img/tenis.jpg">
-              <p><br><a class="btn btn-default" href="#">Apostar &raquo;</a></p>
+              <p><br><?php echo "<a class='btn btn-default' href='mesas.php?filter=Tenis'> Apostar &raquo; </a>"; ?></p>
            </div>
             <div class="col-sm-4">
               <h2>GP</h2>
               <img src=" img/gp.jpg">
-              <p><br><a class="btn btn-default" href="#">Apostar &raquo;</a></p>
+              <p><br><?php echo "<a class='btn btn-default' href='mesas.php?filter=Tenis'> Apostar &raquo; </a>"; ?></p>
            </div>             
 
 
