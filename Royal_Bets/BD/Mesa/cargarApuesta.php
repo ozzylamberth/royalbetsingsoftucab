@@ -23,7 +23,7 @@
         list($hour, $minuto, $ampm)=explode('-',$datos_tiempo);
         $hora = $hour.":".$minuto." ".$ampm;        // Hora actual
         //
-   // if(isset($_SESSION['username'])){  //Subimos a la base de datos
+    if(isset($_SESSION['username'])){  //Subimos a la base de datos
         $consultapuesta= "SELECT `Grupo` FROM apuestas ORDER BY Grupo DESC";
         $datosapuesta= mysql_query($consultapuesta,$conex) or die ("<p> No se ha podido ejecutar"
             . "la consulta, compurebe que la sintaxis sea correcta. <p>");
@@ -32,22 +32,19 @@
         if($ultimogrupo){
             //$ultimogrupo;
             echo $ultimogrupo[0]++;
-            echo "aqui";
         }else{
-            echo "alla";
             $ultimogrupo[0]=1;
         }
         
         
         for ($i=0;$i<$_SESSION['juegos'];$i++){   
-            echo "entra";
             $monto = $_SESSION['carrito'][$i][1];
-            //$user = $_SESSION['ci'];
+            $user = $_SESSION['ci'];
             $idm = $_SESSION['carrito'][$i][2];
             $LoV = $_SESSION['carrito'][$i][3];
             $idj = $_SESSION['carrito'][$i][4];
             $query = mysql_query("INSERT INTO `apuestas`(`Id_user`,`Id_mesa`, `Id_juego`, `Equipo`, `Monto`, `Fecha`, `Hora`, `Estado`, `Grupo`) 
-                     VALUE ('','$idm','$idj','$LoV','$monto','$fecha','$hora','0','$ultimogrupo[0]]')  ");
+                     VALUE ('$user','$idm','$idj','$LoV','$monto','$fecha','$hora','0','$ultimogrupo[0]]')  ");
         }
         $juegos=0;
         $carrito=array();
@@ -70,9 +67,11 @@
         
         
         
-    //}else{  //Logeamos 
-        
-    //}
+    }else{  //Logeamos 
+      
+        $mesa = $_SESSION['carrito'][0][2];
+        header("Location: ../../login.php?idMesa=$mesa;");
+    }
         
     
  ?>
