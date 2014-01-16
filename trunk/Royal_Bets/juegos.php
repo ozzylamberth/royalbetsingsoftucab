@@ -87,7 +87,7 @@
         }
         function validarCarrito(){
             if (confirm("¿Está seguro que las apuestas almacenadas en el carrito son correctas?. Si selecciona 'Aceptar' dichas apuestas se cargaran a su cuenta.")){
-                setTimeout('delayer()', 1)
+                setTimeout('delayer()', 1);
                 
             }
         }
@@ -103,6 +103,7 @@
 
         
         function seleccion(cantidad){
+            if ((juegos===1) || ((juegos>1) && (juegos<=12))){
                 for(cont=1; cont <= cantidad ;cont++){
                     var id_L="L"+cont;
                     var id_V="V"+cont; 
@@ -144,7 +145,9 @@
                     }
                  } 
                     setTimeout("location.reload(true);",1);     
-                    
+                }else{
+                    window.alert("Recuerde: En apuestas de tipo 'Directa' debe elegir sólo un equipo. Para 'Parlay' puede seleccionar de 2 a 12 equipos.")
+                }
             }
 
         </script>
@@ -186,9 +189,7 @@
                 <tbody align="center"> 
                     <?php } ?>                 
                         <tr>
-                                <td>
-                                    <input type="text" id="I<?php echo $cont; ?>" value="<?php echo $array1[0]; ?>" required>
-                                </td>
+                            <input type='hidden' id="I<?php echo $cont; ?>" value="<?php echo $array1[0]; ?>" style=" border: transparent;">
                                 <td>
                                     <input type="radio" name="<?php echo $cont; ?>" id="L<?php echo $cont; ?>" value="<?php echo $array1[2]; ?>" required>
                                 </td>
