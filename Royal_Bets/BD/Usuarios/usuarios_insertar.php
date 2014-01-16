@@ -29,8 +29,9 @@
         
         // Verifica si la Ci ingresada existe en la base de datos
         $queryCI = mysql_num_rows(mysql_query("SELECT * FROM Usuarios WHERE Ci='$cedula'"));
+        $queryEmail = mysql_num_rows(mysql_query("SELECT * FROM Usuarios WHERE Correo='$emailaddress'"));
         
-        if($queryCI > 0){    // Si la Ci existe
+        if(($queryCI > 0) || ($queryEmail > 0)){    // Si la Ci o el Correo existe
             header("Location:../../registro.php?errorCode=8&errorType=1");
         }else{      // Si la Ci no existe
             
@@ -73,9 +74,13 @@
                             echo 'Error al crear Transaccion';
                         }else
                             echo 'Guardo Transaccion Correctamente';
-
-                        // Redireccion
-                        header("Location:../../registro.php?errorCode=5&errorType=3");	
+                        if(isset($_GET['idMesa'])){
+                            // Redireccion
+                            header("Location:../../login.php?errorCode=5&errorType=3&idMesa=".$_GET['idMesa']);	
+                        }else{
+                            // Redireccion
+                            header("Location:../../login.php?errorCode=5&errorType=3");
+                        }    
                     }else{
                         header("Location:../../registro.php");
                     }

@@ -46,7 +46,7 @@
                     Cedula de identidad:
                   </label>
                   <div class="col-md-10">
-                      <input title="Introduzca su Cedula en el fomato: (v ó e)-12345678" type="text" class="form-control" name="cedula" id="cedula" placeholder="v-12345678" pattern="[ve]+[-]+[0-9]+" required>
+                      <input title="Introduzca su Cedula en el fomato: (V ó E)-12345678" type="text" class="form-control" name="cedula" id="cedula" placeholder="V-12345678" pattern="[VE]+[-]+[0-9]+" required>
                   </div><br/><br/>
                 </div>                
                 
@@ -120,7 +120,9 @@
                     País:
                   </label>
                   <div class="col-md-10">
+                      <select tittle="Seleccione su Pais" name="country" id="country" class="form-control" required>
                       <?php require_once('./modulos/paises-ciudades/paises.php'); ?>
+                      </select>    
                   </div><br/><br/>
                 </div>
                 
@@ -163,7 +165,7 @@
                     Telefono:
                   </label>
                   <div class="col-md-10">
-                      <input title="Introduzca su numero de Telefono" type="tel" class="form-control" id="telefono" name="telefono" placeholder="Telefono" required>
+                      <input title="Introduzca su numero de Telefono" type="tel" class="form-control" id="telefono" name="telefono" placeholder="Telefono" pattern="[0-9]+" required>
                   </div><br/><br/>
                 </div>
 
@@ -187,7 +189,7 @@
                   <div class="col-md-2">
                   </div>                  
                   <div class="col-md-3">
-                      <button type="submit" name="registrar" class="btn btn-info" onclick="validarPassword();">
+                      <button type="submit" name="registrar" class="btn btn-info" onclick="validar();">
                       Registrar
                       </button>
                   </div>
