@@ -36,7 +36,7 @@
                 //echo "correo coincide";
                 
                 if(isset($_GET['idMesa'])){
-                    header("Location:../../juegos.php?idMesa=".$idMesa);
+                    header("Location:../../juegos.php?array=".$idMesa);
                 }else{
                     header("Location:../../index.php");
                 }
