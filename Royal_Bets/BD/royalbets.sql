@@ -36,6 +36,7 @@ CREATE TABLE Juegos (
 
     Id INT NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (Id),
+    Id_apuesta INT,
     Id_mesa INT,
     Equipo1 VARCHAR (50),
     Equipo2 VARCHAR (50),
@@ -47,7 +48,9 @@ CREATE TABLE Juegos (
     Fecha_de_final DATE,
     Hora_de_inicio TIME,
     Hora_de_final TIME,
-    Estado INT
+    Maxi INT,
+    Mini INT, 
+    Estado INT   
 );
 
 
