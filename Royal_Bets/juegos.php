@@ -59,9 +59,10 @@
             }
             
         function Borrar(){            
-            for(i=0,remover=-1;i<juegos;i++){
+            for(i=0,remover=-1,removidos=0;i<juegos;i++){
                 if(document.getElementById(i).checked){
                     remover = i;
+                    removidos++;
                     for(j=i;j<juegos;j++){
                         for(k=0;k<5;k++){
                             arreglobd[k][j]=arreglobd[k][j+1];
@@ -73,10 +74,10 @@
                         data: { remover:remover }
                     }).done(function(msg){     });
                     
-                    juegos--;
                     setTimeout("location.reload(true);",1);;
                 }                   
             }
+            juegos = juegos - removidos;
             if(remover===-1){
                 window.alert("No existe el equipo");
             }                      
@@ -87,7 +88,8 @@
         }
         function validarCarrito(){
             if (confirm("¿Está seguro que las apuestas almacenadas en el carrito son correctas?. Si selecciona 'Aceptar' dichas apuestas se cargaran a su cuenta.")){
-                setTimeout('delayer()', 1);   
+                setTimeout('delayer()', 1);
+                
             }
         }
         
@@ -101,25 +103,29 @@
         }
 
         function seleccion(cantidad){
+                var minimo = 0;
+                var maximo = 0;
+                var costo = 0;
                 for(cont=1; cont <= cantidad ;cont++){
                     var id_L="L"+cont;
                     var id_V="V"+cont; 
                     var id_C="C"+cont;
                     var id_I="I"+cont;
-                    var id_minimo= "Min"+cont;
-                    var id_maximo= "Max"+cont;
-                    var minimo;
-                    var maximo;
-                    
-                    minimo = document.getElementById(id_minimo).value;
-                    maximo = document.getElementById(id_maximo).value;
-                    
-                    if (((document.getElementById(id_L).checked) || (document.getElementById(id_V).checked)) && (document.getElementById(id_C).value>minimo) && (document.getElementById(id_C).value<=maximo)){
+                    var id_min="M"+cont;
+                    var id_max="T"+cont;
+                    minimo = 0;
+                    maximo = 0;
+                    costo = 0;
+                    minimo = parseFloat(document.getElementById(id_min).value);
+                    maximo = parseFloat(document.getElementById(id_max).value);
+                    costo = parseFloat(document.getElementById(id_C).value); 
+
+                    if (((document.getElementById(id_L).checked) || (document.getElementById(id_V).checked)) && ((costo>minimo) && (costo<=maximo))){
                             if (document.getElementById(id_L).checked) {
                                 arreglobd[0][juegos]=document.getElementById(id_L).value; 
-                                arreglobd[1][juegos]=document.getElementById(id_C).value;
+                                arreglobd[1][juegos]= costo;
                                 arreglobd[2][juegos] = <?php echo $idmesa; ?>;
-                                arreglobd[3][juegos]=1;
+                                arreglobd[3][juegos]=0;
                                 arreglobd[4][juegos]=document.getElementById(id_I).value;
                                     $.ajax ({
                                         type: "POST",
@@ -130,9 +136,9 @@
                                     juegos++;                               
                             }else{ 
                                 arreglobd[0][juegos]=document.getElementById(id_V).value; 
-                                arreglobd[1][juegos]=document.getElementById(id_C).value;
+                                arreglobd[1][juegos]=costo;
                                 arreglobd[2][juegos] =  <?php echo $idmesa; ?>;
-                                arreglobd[3][juegos]=2;
+                                arreglobd[3][juegos]=1;
                                 arreglobd[4][juegos]=document.getElementById(id_I).value;
                                     $.ajax ({
                                         type: "POST",
@@ -142,8 +148,8 @@
                                     }).done(function(msg){      });
                                     juegos++;                                
                             }         
-                     }else if (document.getElementById(id_C).value!== ""){
-                         if(document.getElementById(id_C).value!==""){
+                     }else{
+                         if(document.getElementById(id_C).value !== ""){
                             window.alert("Ingreso un monto inválido");
                             document.getElementById(id_C).value = "";    
                          }
@@ -190,6 +196,9 @@
                         </tr>  
                 </thead>
               <?php
+                   /* $fecha = date("Y-m-d");
+                    list($anio, $mes, $dia)=explode('-',$fecha);
+                    $hraActual = date("gis");*/
                     $cont=0;
                     while ($registro1= mysql_fetch_row($datosjuegos)){
                               $contador1=0;
@@ -202,11 +211,14 @@
                  ?>
               
                 <tbody align="center"> 
-                    <?php } ?>                 
+                    <?php } 
+                       /* $horaBD = str_replace(":", "", $array1[10]);
+                        if (($fecha!=$array1[8]) && ($hraActual<$horaBD)){*/
+                    ?>                 
                         <tr>
                             <input type='hidden' id="I<?php echo $cont; ?>" value="<?php echo $array1[0]; ?>" style=" border: transparent;">
-                            <input type='hidden' id="Min<?php echo $cont; ?>" value="<?php echo $array1[14]; ?>" style=" border: transparent;">
-                            <input type='hidden' id="Max<?php echo $cont; ?>" value="<?php echo $array1[13]; ?>" style=" border: transparent;">
+                            <input type='hidden' id="M<?php echo $cont; ?>" value="<?php echo $array1[13]; ?>" style=" border: transparent;">
+                            <input type='hidden' id="T<?php echo $cont; ?>" value="<?php echo $array1[12]; ?>" style=" border: transparent;">
                                 <td>
                                     <input type="radio" name="<?php echo $cont; ?>" id="L<?php echo $cont; ?>" value="<?php echo $array1[2]; ?>" required>
                                 </td>
@@ -221,7 +233,8 @@
                                 </td>                                  
                         </tr> 
                          
-                    <?php }if($cont!=0){ ?>      
+                    <?php //}
+                    }if($cont!=0){ ?>      
                 </tbody>         
             </table>  
              <div id="pageNavTransacciones" style="padding-top: 20px" align="center">
