@@ -27,9 +27,14 @@ function validar(){
     
 }
 
+function agregarRE(){
+     document.getElementById('agregarRE').style.display = 'block';
+}
+
 window.onload = function(){/*hace que se cargue la función lo que predetermina que div estará oculto hasta llamar a la función nuevamente*/
     document.getElementById('alertapassword').style.display = 'none';/* "contenido_a_mostrar" es el nombre de la etiqueta DIV que deseamos mostrar */
     document.getElementById('alertapassword2').style.display = 'none';
+    document.getElementById('h').style.display = 'none';
 }
 
 //Funcion para las tablas

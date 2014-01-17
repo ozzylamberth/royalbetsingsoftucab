@@ -25,17 +25,23 @@ e<?php require_once('./modulos/header.php'); ?>
            <form role="form" method="POST" action="../BD/admin/nuevojuego.php">  
                
                 <div class="form-group">
-                     <div class="col-md-10">
+                    
                   <label for="equipo1" class="col-md-2">
                     Primer equipo:
-                  </label>                
-                      <input title="Introduzca el nombre del primer equipo" type="text" class="form-control" name="equipo1" id="firstname" placeholder="Equipo" required>
-                 <label for="logro1" class="col-md-2">
+                  </label>  
+                     <div class="col-md-10">
+                  
+                        <input title="Introduzca el nombre del primer equipo" type="text" class="form-control" name="equipo1" id="firstname" placeholder="Equipo" required>
+                      </div>
+                    
+                        <label for="logro1" class="col-md-2">
                     Logro:
                   </label>   
+                     <div class="col-md-3">
                       <input title="Valor del equipo" type="text" class="form-control" name="logro1" id="lastname" placeholder="#" required>
+                    </div>
                      </div><br/><br/>
-                </div>
+              
 
                
                 <div class="form-group">
@@ -52,63 +58,95 @@ e<?php require_once('./modulos/header.php'); ?>
                      
                      </div><br/><br/>
                 </div> 
+                     
+                     
+                     
+              
                 
                
                 <div class="form-group">
-                 
+                  <div class="col-md-10">
                   <label for="fechaini" class="col-md-2">
                     Fecha de inicio:
                   </label>
-                  <div class="col-md-10">
                       <input title="Introduzca la fecha de inicio" type="date" class="form-control" name="fechaini" id="nacimiento" required>
-                  </div><br/>
+                  </div><br/><br/>
                 </div>               
                 
                 <div class="form-group">
-                  
+                  <div class="col-md-10">
                   <label for="fechafin" class="col-md-2">
                     Fecha de final:
                   </label>
-                  <div class="col-md-10">
+                 
                       <input title="Introduzca la fecha de finalizacion" type="date" class="form-control" name="fechafin" id="nacimiento" required>
-                  </div><br/>
+                  </div><br/><br/>
                 </div>
           
           
 
                 <div class="form-group">
-                   
+                   <div class="col-md-10">
                   <label for="horaini" class="col-md-2">
                     Hora de inicio:
                   </label>
-                  <div class="col-md-10">
+                 
                       <input title="Introduzca la hora de inicio" type="time" class="form-control" name="horaini" id="password" placeholder="Time" required>             
-                  </div><br/>
+                  </div><br/><br/>
                 </div>
                 
             
                 <div class="form-group">
-                   
+                      <div class="col-md-10">
                   <label for="horafin" class="col-md-2">
                     Hora de fin:
                   </label>
-                  <div class="col-md-10">
+              
                       <input title="Introduzca la hora de finalizacion" type="time" class="form-control" name="horafin" id="password" placeholder="Time" required>                  
-                  </div><br/>
+                  </div><br/><br/>
                 </div>
+                     
+                       <div class="form-group">
+                     <div class="col-md-10">
+                  <label for="min" class="col-md-2">                     
+                    Monto Minimo:
+                  </label>
+                      <input title="Monto minimo a apostar" type="text" class="form-control" name="min" id="lastname" placeholder="$" required>
+                 <label for="max" class="col-md-2">
+                    Monto Maximo:
+                  </label>   
+                      <input title="Monto Maximo a apostar" type="text" class="form-control" name="max" id="lastname" placeholder="$" required>
                 
-               
+                     
+                     </div><br/><br/>
+                </div> 
+                
+               <div class="form-group">
+                               
+                    <div class="col-md-10">
+                      <label for="sex" class="col-md-2">
+                        Estado:
+                    </label>
+                        <label class="radio">
+                            <input type="radio" name="estado" id="Estado" value="dis" required>
+                            Disponible
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="estado" id="Estado" value="esp" required>
+                            En Espera
+                        </label>
+                    </div><br /><br />
+                </div>    
            
-                
-                <div class="row">
+                 <div class="form-group">
+               <div class="col-md-10">                                     
                   <div class="col-md-2">
-                  </div>                  
-                  <div class="col-md-3">
                       <button type="submit" name="registrar" class="btn btn-info">
                       Crear
                       </button>
                   </div>
                 </div>
+               </div>
               </form> 
              
       
