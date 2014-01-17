@@ -94,7 +94,7 @@
                  ?>
                
     
-                <?php     if ( $filtro == "Todos"){ ?>
+                <?php     if ( $filtro == "Todos" && $array [5]== 1 ){ ?>
                     
                              <tr>
                                 <td data-title="Mesa"> <?php echo $array [1]; ?>  </td>
@@ -104,7 +104,7 @@
                                 
                         </tr>   
                         
-                    <?php }  else { if ( $filtro == $array [3]){ ?>
+                    <?php }  else { if ( $filtro == $array [3] && $array [5] == 1){ ?>
                         <tr>
                                 <td data-title="Mesa"> <?php echo $array [1]; ?>  </td>
                                 <td data-title="Descripcion"><?php echo $array [2]; ?></td>
