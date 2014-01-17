@@ -96,7 +96,7 @@
             <div class="col-sm-4">
               <h2>Voleibol</h2>
               <img src=" img/voleibol.png">
-              <p><br><?php echo "<a class='btn btn-default' href='mesas.php?filter=Tenis'> Apostar &raquo; </a>"; ?></p>
+              <p><br><?php echo "<a class='btn btn-default' href ='mesas.php?filter=Voleibol'> Apostar &raquo; </a>"; ?></p>
            </div>             
 
 
