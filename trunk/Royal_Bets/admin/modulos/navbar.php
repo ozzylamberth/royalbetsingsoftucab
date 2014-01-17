@@ -10,15 +10,15 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-          <li><a href="#">Menu 1</a></li>
-          <li><a href="#">Menu 2</a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gestión<b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Mesas</a></li>
-            <li><a href="juegos.php#">Juegos</a></li>            
-            <li><a href="#">Apuestas</a></li>
-            <li><a href="">Consumos</a></li>
+            <li><a href="gestionmesas.php">Mesas</a></li>
+            <li><a href="juegos.php">Juegos</a></li>            
+            <li><a href="validarApuestas.php">Apuestas</a></li>
+            <li><a href="Consumos.php">Consumos</a></li>
             <li><a href="#">Moneda virtual</a></li>     
           </ul>
         </li>
