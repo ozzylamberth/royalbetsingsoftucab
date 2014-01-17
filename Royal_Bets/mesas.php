@@ -48,13 +48,13 @@
   
   <ul class="dropdown-menu" role="menu">
   
-    <li> <?php echo "<a href ='mesas.php?filter=Tenis'> Tenis </a>"; ?></li> 
+    <li> <?php echo "<a href ='mesas.php?filter=Todos'> Todos </a>"; ?></li> 
     <li> <?php echo "<a href ='mesas.php?filter=Futbol'> Futbol </a>"; ?></li>
     <li> <?php echo "<a href ='mesas.php?filter=Beísbol'> Beísbol </a>"; ?></li>
     <li> <?php echo "<a href ='mesas.php?filter=NHL'> NHL </a>"; ?></li>
-    <li> <?php echo "<a href ='mesas.php?filter=Tenis'> Tenis </a>"; ?></li>
+    <li> <?php echo "<a href ='mesas.php?filter='> Tenis </a>"; ?></li>
     <li> <?php echo "<a href ='mesas.php?filter=Baloncesto'> Baloncesto </a>"; ?></li>
-    
+    <li> <?php echo "<a href ='mesas.php?filter=Voleibol'> Voleibol </a>"; ?></li>
     
     
   </ul>
