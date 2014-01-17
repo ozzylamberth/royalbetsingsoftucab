@@ -64,7 +64,7 @@ CREATE TABLE Apuestas (
     Id_juego INT,
     Equipo INT,
     Monto FLOAT,
-    Fecha DATE,
+    Fecha VARCHAR(10),
     Hora TIME,
     Estado INT,
     Grupo INT
