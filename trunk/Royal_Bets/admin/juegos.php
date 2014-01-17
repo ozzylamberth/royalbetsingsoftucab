@@ -134,7 +134,7 @@ e<?php require_once('./modulos/header.php'); ?>
      </div>  
            
            
-           
+       
          
       
      
@@ -144,7 +144,7 @@ e<?php require_once('./modulos/header.php'); ?>
         
       <div  id="agregarRE" class="container">
        <div class="col-lg-8">       
-           <form role="form" method="POST" action="../BD/admin/editarResultados.php?errorCode=5&errorType=3&global">
+           <form role="form" method="POST" action="./points/editarResultados.php?errorCode=5&errorType=3&global">
                 <div class="form-group">
                       
                     

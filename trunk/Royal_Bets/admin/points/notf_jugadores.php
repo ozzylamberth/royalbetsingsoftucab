@@ -1,10 +1,7 @@
 <?php
-
-      //Conexion
-        include './conexion.php';
         
       //Transacciones   
-        include'./realizar_transacciones.php';
+        include'./realizar_transaccion.php';
         
         
 
@@ -12,7 +9,7 @@
                                          //resultado es el equipo que gano estos valores son 0 ó 1
       
      //Busca el juego   
-       $sqlogros=mysql_query("SELECT * FROM Juegos WHERE Id='$id_juego' ",$conex); 
+       $sqlogros= mysql_query("SELECT * FROM Juegos WHERE Id='$id_juego' "); 
      
      //Asigna los logros a su correspondiente variable  
        $arreglo_logros=mysql_fetch_array($sqlogros); 
@@ -20,7 +17,7 @@
        $logro2= $arreglo_logros['logro2'];
         
       //Busca las apuestas con el id del juego dado
-        $sel0=mysql_query("SELECT * FROM Apuestas WHERE Id_juego='$id_juego' ",$conex);
+        $sel0=mysql_query("SELECT * FROM Apuestas WHERE Id_juego='$id_juego' ");
        
     //Verifica la busqueda de las apuesta   
       if(!$sel0){    echo 'Error al buscar apuestas';}
@@ -33,16 +30,17 @@
            //  $grupo= $arreglo['Grupo']; //datos del campo grupo
            
              if ( $equipo == $resultado ) {
-                  sendnotify ($id_user,0,id_juego);       //notifica al usuario que gano
+                 sendnotify($id_user,0,$id_juego);       //notifica al usuario que gano
                   
-                  $monto_pagar= calcular_monto ($monto_apostado,$logro1,$logro2);   //calcula el monto a pagar
+                  $monto_pagar= calcular_monto($monto_apostado,$logro1,$logro2);   //calcula el monto a pagar
                   
                   getChangeSaldo($id_user,"Premio",$monto_pagar);     //realiza las transaccion del premio
                
              } else {
-                sendnotify ($id_user,1,id_juego);
+                sendnotify ($id_user,1,$id_juego);
                }
           }
+         echo 'Apuestas Completamente procesadas'; 
        }  
     }       
     
