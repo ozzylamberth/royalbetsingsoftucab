@@ -4,7 +4,7 @@
         include(__DIR__.'/conexion.php');
         
       //Transacciones   
-        include(__DIR__.'/realziar_transacciones.php');
+        include(__DIR__.'/realizar_transacciones.php');
         
         
 
