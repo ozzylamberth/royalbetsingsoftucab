@@ -37,7 +37,7 @@
                 // SQL
                 $query = mysql_query("INSERT INTO Juegos
                                             (
-                                            Equipo1,Equipo2,logro1,logro2,Fecha_inicio ,Fecha_de_final ,Hora_de_inicio ,Hora_de_final,,Mini,Maxi,Estado
+                                            Equipo1,Equipo2,logro1,logro2,Fecha_inicio ,Fecha_de_final ,Hora_de_inicio ,Hora_de_final,Mini,Maxi,Estado
                                             )
                                             VALUES
                                             (
