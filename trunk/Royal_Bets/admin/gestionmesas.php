@@ -35,7 +35,7 @@
     <script type="text/javascript" >
         $(document).ready(function() 
     { 
-        $("#tablaGestionMesas").tablesorter(); 
+        $("#tabla").tablesorter(); 
     } 
 ); </script>
     
@@ -106,14 +106,14 @@
         
            // echo "<div >";  ?> 
       
-      <table id="tablaGestionMesas" class="table table-bordered" border="1" align="center" width="100%" border="0" cellpadding="0" cellspacing="1">
+      <table id="tabla" class="table table-bordered" border="1" align="center" width="100%" border="0" cellpadding="0" cellspacing="1">
             <thead>
                 <tr>
                                 
                                 <th>Mesa</th>
                                 <th>Descripcion</th>
                                 <th>Deporte</th>
-                                <th>Capacidad</th>
+                    <!--            <th>Capacidad</th> -->
                                 
                                 
                 </tr>
@@ -129,7 +129,7 @@
             echo "<td>".$renglon['Mesa']."</td>";
             echo "<td>". $renglon['Descripcion']."</td>";
             echo "<td>". $renglon['Deporte']."</td>";
-            echo "<td>". $renglon['Capacidad']."</td>";
+          //  echo "<td>". $renglon['Capacidad']."</td>";
            ?>
             <td><a href="editarMesa.php?mesa=<?php echo $renglon['Mesa'] ?>"/>Editar</a>
                &nbsp&nbsp<a href="../BD/Mesa/mesaBorrar.php?mesa=<?php echo $renglon['Mesa'] ?>"/>Borrar</a></td><?php
@@ -137,10 +137,11 @@
             }
            
         }
+        mysql_close();
         ?>
         </tbody>
         </table>
-        mysql_close();
+        
         
           
         

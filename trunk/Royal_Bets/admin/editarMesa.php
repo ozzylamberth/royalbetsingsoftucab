@@ -63,20 +63,21 @@
                           <option value="Beísbol">Beísbol</option>
                           <option value="NHL">NHL</option>
                           <option value="Baloncesto">Baloncesto</option>
+                          <option value="Voleibol">Voleibol</option>
                       </select>
                   </div>
                 </div>     
                 
                 <br/><br/>
                 
-                <div class="form-group">
+               <!-- <div class="form-group">
                   <label for="capacidad" class="col-md-2">
                     Capacidad:
                   </label>
                   <div class="col-md-10">
                       <input title="Capacidad" type="capacidad" class="form-control" name="capacidad" id="capacidad" placeholder="<?php echo $renglon['Capacidad']?>" required>
                   </div><br/><br/>
-                </div>
+                </div>-->
 
                 
 
