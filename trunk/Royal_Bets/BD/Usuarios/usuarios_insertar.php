@@ -73,7 +73,7 @@
                         }else
                             echo 'Guardo Usuario Correctamente';
 
-                        $queryt =  mysql_query("INSERT INTO Transacciones
+                        $queryt =  mysql_query("INSERT INTO Transacciones 
                                                     (
                                                     Ci,Tipo_de_transaccion,Monto,Saldo,Fecha,Hora
                                                     )
