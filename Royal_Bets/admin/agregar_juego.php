@@ -31,14 +31,14 @@ e<?php require_once('./modulos/header.php'); ?>
                   </label>  
                      <div class="col-md-10">
                   
-                        <input title="Introduzca el nombre del primer equipo" type="text" class="form-control" name="equipo1" id="firstname" placeholder="Equipo" required>
+                        <input title="Introduzca el nombre del primer equipo" type="text" class="form-control" name="equipo1" id="equipo1" placeholder="Equipo" required>
                       </div>
                     
                         <label for="logro1" class="col-md-2">
                     Logro:
                   </label>   
                      <div class="col-md-3">
-                      <input title="Valor del equipo" type="text" class="form-control" name="logro1" id="lastname" placeholder="#" required>
+                      <input title="Valor del equipo" type="text" class="form-control" name="logro1" id="logro1" placeholder="#" required>
                     </div>
                      </div><br/><br/>
               
@@ -49,11 +49,11 @@ e<?php require_once('./modulos/header.php'); ?>
                   <label for="equipo2" class="col-md-2">                     
                     Segundo equipo:
                   </label>
-                      <input title="Introduzca el nombre del segundo equipo" type="text" class="form-control" name="equipo2" id="lastname" placeholder="Equipo" required>
+                      <input title="Introduzca el nombre del segundo equipo" type="text" class="form-control" name="equipo2" id="equipo2" placeholder="Equipo" required>
                  <label for="logro2" class="col-md-2">
                     Logro:
                   </label>   
-                      <input title="Valor del equipo" type="text" class="form-control" name="logro2" id="lastname" placeholder="#" required>
+                      <input title="Valor del equipo" type="text" class="form-control" name="logro2" id="logro2" placeholder="#" required>
                 
                      
                      </div><br/><br/>
@@ -69,7 +69,7 @@ e<?php require_once('./modulos/header.php'); ?>
                   <label for="fechaini" class="col-md-2">
                     Fecha de inicio:
                   </label>
-                      <input title="Introduzca la fecha de inicio" type="date" class="form-control" name="fechaini" id="nacimiento" required>
+                      <input title="Introduzca la fecha de inicio" type="date" class="form-control" name="fechaini" id="fechaini" required>
                   </div><br/><br/>
                 </div>               
                 
@@ -79,7 +79,7 @@ e<?php require_once('./modulos/header.php'); ?>
                     Fecha de final:
                   </label>
                  
-                      <input title="Introduzca la fecha de finalizacion" type="date" class="form-control" name="fechafin" id="nacimiento" required>
+                      <input title="Introduzca la fecha de finalizacion" type="date" class="form-control" name="fechafin" id="fechafin" required>
                   </div><br/><br/>
                 </div>
           
@@ -91,7 +91,7 @@ e<?php require_once('./modulos/header.php'); ?>
                     Hora de inicio:
                   </label>
                  
-                      <input title="Introduzca la hora de inicio" type="time" class="form-control" name="horaini" id="password" placeholder="Time" required>             
+                      <input title="Introduzca la hora de inicio" type="time" class="form-control" name="horaini" id="horaini" placeholder="Time" required>             
                   </div><br/><br/>
                 </div>
                 
@@ -102,7 +102,7 @@ e<?php require_once('./modulos/header.php'); ?>
                     Hora de fin:
                   </label>
               
-                      <input title="Introduzca la hora de finalizacion" type="time" class="form-control" name="horafin" id="password" placeholder="Time" required>                  
+                      <input title="Introduzca la hora de finalizacion" type="time" class="form-control" name="horafin" id="horafin" placeholder="Time" required>                  
                   </div><br/><br/>
                 </div>
                      
@@ -111,11 +111,11 @@ e<?php require_once('./modulos/header.php'); ?>
                   <label for="min" class="col-md-2">                     
                     Monto Minimo:
                   </label>
-                      <input title="Monto minimo a apostar" type="text" class="form-control" name="min" id="lastname" placeholder="$" required>
+                      <input title="Monto minimo a apostar" type="text" class="form-control" name="min" id="min" placeholder="$" required>
                  <label for="max" class="col-md-2">
                     Monto Maximo:
                   </label>   
-                      <input title="Monto Maximo a apostar" type="text" class="form-control" name="max" id="lastname" placeholder="$" required>
+                      <input title="Monto Maximo a apostar" type="text" class="form-control" name="max" id="max" placeholder="$" required>
                 
                      
                      </div><br/><br/>
