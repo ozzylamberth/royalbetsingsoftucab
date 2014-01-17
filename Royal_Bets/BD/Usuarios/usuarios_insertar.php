@@ -28,10 +28,12 @@
         $hora = $hour.":".$minuto." ".$ampm;        // Hora actual
         
         $ano = $anio;
-        if (($mesU == $mes) && ($diaU > $dia)) {
-            $ano=($ano-1); }
-        if ($mesnaz > $mes) {
-            $ano=($ano-1);            
+        if (($ano - $anioU) == 18){
+            if (($mesU == $mes) && ($diaU > $dia)) {
+                $ano=($ano-1); }
+            if ($mesU > $mes) {
+                $ano=($ano-1);            
+            }
         }
         $edad=($ano-$anioU);
         
