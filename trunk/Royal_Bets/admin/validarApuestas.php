@@ -47,6 +47,7 @@ echo"
                  <th>Id Juego</th>
                  <th>Monto</th>
                  <th>Fecha</th>
+                 <th>Opciones</th>
                                 
                                 
            </tr>
@@ -61,7 +62,11 @@ while ($renglonConsulta = mysql_fetch_assoc($datos)){
       echo "<td>". $renglonConsulta['Id_juego']."</td>";
       echo "<td>". $renglonConsulta['Monto']."</td>";
       echo "<td>". $renglonConsulta['Fecha']."</td>";
-      echo "<td><input type=checkbox name=". $renglonConsulta['Id']." >". $renglonConsulta['Id_user']."<br></td>"; 
+     // echo "<td><input type=checkbox name=". $renglonConsulta['Id']." >". $renglonConsulta['Id_user']."<br></td>"; 
+      echo "<td><Input type = 'Radio' name =". $renglonConsulta['Id']." value= 'valida'>Validar&nbsp&nbsp";
+      echo "<Input type = 'Radio' name =". $renglonConsulta['Id']." value= 'no valida'>No Validar</td>";
+
+
       
       echo "</tr>";
 } 
@@ -70,7 +75,7 @@ echo "
 </table>
 
 <div class=\"span6\" style=\"text-align:center\">
-<input TYPE=submit class=\"btn btn-default\" NAME=OK VALUE=\"Validar\"><BR>
+<input TYPE=submit class=\"btn btn-default\" NAME=OK VALUE=\"Continuar\"><BR>
 </div>
 </FORM>";         
 echo "</div>";

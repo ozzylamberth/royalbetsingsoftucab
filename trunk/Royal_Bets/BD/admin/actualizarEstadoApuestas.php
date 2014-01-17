@@ -18,6 +18,7 @@ $datos = mysql_query($sql);
             echo "no entro bien x.x";
         
 while ($renglonConsulta = mysql_fetch_assoc($datos)){
+    $Estado = 0;
     $id = $renglonConsulta['Id'];
     $Ci = $renglonConsulta['Id_user'];
     $sqlSaldo = "SELECT * FROM `Transacciones` WHERE `Ci`='$Ci' ORDER BY Id DESC";
@@ -26,16 +27,21 @@ while ($renglonConsulta = mysql_fetch_assoc($datos)){
             echo "no entro bien x.x con el saldo";
     
     $Array = mysql_fetch_assoc($datosSaldo);
-    echo $Array['Saldo'];
-    //echo $saldo."epale";
-    if (isset($_REQUEST[$renglonConsulta['Id']])){
+    //echo $Array['Saldo'];
+    $seleccion =$_POST[$renglonConsulta['Id']];
+    if ($seleccion == 'valida'){
         
         $Estado = 1;
     }
-    else{
-        $Tipo = "Reembolso: Apuesta Rechazada"; $Monto = $renglonConsulta['Monto']; $Fecha = $renglonConsulta['Fecha']; $Hora = $renglonConsulta['Hora']; $nuevoSaldo = $Array['Saldo'] + $Monto;
+    else if ($seleccion == 'no valida'){
+        $Tipo = "Reembolso: Apuesta Rechazada, Id: ".$renglonConsulta['Id']; $Monto = $renglonConsulta['Monto']; $Fecha = $renglonConsulta['Fecha']; $Hora = $renglonConsulta['Hora']; $nuevoSaldo = $Array['Saldo'] + $Monto;
         $sqlTransaccion = "INSERT INTO `Transacciones`(`Ci`, `Tipo_de_transaccion`, `Monto`, `Fecha`, `Hora`, `Saldo`) VALUES ('$Ci','$Tipo','$Monto','$Fecha','$Hora','$nuevoSaldo')";
         mysql_query($sqlTransaccion);
+        $Mensaje = "Su apuesta: ".$renglonConsulta['Id']." Ha sido rechazada.";
+        $noLeido = FALSE;
+        $sqlAlerta = "INSERT INTO `Alertas`(`Ci`, `Mensaje`,`Leido`) VALUES ('$Ci','$Mensaje','$noLeido')";
+        
+        mysql_query($sqlAlerta);
         $Estado = -1;
     }
     
@@ -46,16 +52,7 @@ while ($renglonConsulta = mysql_fetch_assoc($datos)){
 mysql_close();
 
 header("Location: ../../admin/validarApuestas.php");
-/*if (isset($_REQUEST['']))
-  {
-    $suma=$_REQUEST['valor1'] + $_REQUEST['valor2'];
-    echo "La suma es:".$suma."<br>";
-  }
-  if (isset($_REQUEST['check2']))
-  {
-    $resta=$_REQUEST['valor1'] - $_REQUEST['valor2'];
-    echo "La resta es:".$resta;
-  }*/
+
 ?>
 
  
