@@ -1,5 +1,5 @@
 <?php
-    function getChangeSaldo($ci,$tran_type,$monto,$fecha,$hora){
+    function getChangeSaldo($ci,$tran_type,$monto){
         
         // Conexion
         include(__DIR__.'/conexion.php');
@@ -16,12 +16,20 @@
                   
          $arreglo=mysql_fetch_array($sel0);
         
-     //Comprueb a que el monto a operar no sea mayor que el saldo en caso de un cobro o retiro    
-        if ( $arreglo['Saldo'] <= ($monto*(-1)) ) { echo 'El Saldo del cliente no es suficiente para realizar esta operacion';}
+     //Comprueba que el monto a operar no sea mayor que el saldo en caso de un cobro o retiro    
+        if ( $arreglo['Saldo'] < ($monto*(-1)) ) { echo 'El Saldo del cliente no es suficiente para realizar esta operacion';}
          else {
          
            $saldo=$arreglo['Saldo']+$monto;
           
+         //Conseguir fecha actual  
+           $fecha = date("d/m/Y");
+           
+         //Conseguir hora actual  
+           $datos_tiempo = date("g-i-A"); 
+            list($hour, $minuto, $ampm)=explode('-',$datos_tiempo);
+             $hora = $hour.":".$minuto." ".$ampm;        // Hora actual
+           
          //inserta la nueva fila de transacciones   
            $sql = "INSERT INTO Transacciones "."(Ci, Tipo_de_transaccion, Monto, Saldo, Fecha, Hora) ".
                   "VALUES " . "('$ci','$tran_type','$monto','$saldo','$fecha','$hora')";  
