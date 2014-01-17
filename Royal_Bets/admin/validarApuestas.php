@@ -9,11 +9,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-echo "<div class=\"jumbotron\">";
+ ?>
+
+<div class="page-header">
+  <h1>Gestion de Apuestas</h1>
+</div>
+
+<?php 
 echo "<div class=\"row\">";
+echo "<div class=\"col-lg-12\">";
       echo "  <div class=\"col-lg-12\">";
 
-echo "APROBADAS TODAS LAS APUESTAS";
+//echo "APROBADAS TODAS LAS APUESTAS";
 
 echo "</div>";
 $pendiente= 0;
@@ -62,8 +69,9 @@ echo "
 </tbody>    
 </table>
 
-<input TYPE=submit NAME=OK VALUE=\"Validar\"><BR>
-
+<div class=\"span6\" style=\"text-align:center\">
+<input TYPE=submit class=\"btn btn-default\" NAME=OK VALUE=\"Validar\"><BR>
+</div>
 </FORM>";         
 echo "</div>";
 echo "</div>";

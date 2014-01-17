@@ -28,15 +28,16 @@ while ($renglonConsulta = mysql_fetch_assoc($datos)){
     $Array = mysql_fetch_assoc($datosSaldo);
     echo $Array['Saldo'];
     //echo $saldo."epale";
-    if (isset($_REQUEST[$renglonConsulta['Id']]) and ($Array['Saldo'] >= $renglonConsulta['Monto'])){
+    if (isset($_REQUEST[$renglonConsulta['Id']])){
         
-        $Tipo = "Descuento Credito"; $Monto = $renglonConsulta['Monto']; $Fecha = $renglonConsulta['Fecha']; $Hora = $renglonConsulta['Hora']; $nuevoSaldo = $Array['Saldo'] - $Monto;
-        $sqlTransaccion = "INSERT INTO `Transacciones`(`Ci`, `Tipo_de_transaccion`, `Monto`, `Fecha`, `Hora`, `Saldo`) VALUES ('$Ci','$Tipo','$Monto','$Fecha','$Hora','$nuevoSaldo')";
-        mysql_query($sqlTransaccion);
         $Estado = 1;
     }
-    else
+    else{
+        $Tipo = "Reembolso: Apuesta Rechazada"; $Monto = $renglonConsulta['Monto']; $Fecha = $renglonConsulta['Fecha']; $Hora = $renglonConsulta['Hora']; $nuevoSaldo = $Array['Saldo'] + $Monto;
+        $sqlTransaccion = "INSERT INTO `Transacciones`(`Ci`, `Tipo_de_transaccion`, `Monto`, `Fecha`, `Hora`, `Saldo`) VALUES ('$Ci','$Tipo','$Monto','$Fecha','$Hora','$nuevoSaldo')";
+        mysql_query($sqlTransaccion);
         $Estado = -1;
+    }
     
     $sql = "UPDATE `Apuestas` SET `Estado`='$Estado' WHERE `Id`=$id";
     mysql_query($sql);

@@ -35,7 +35,7 @@
     <script type="text/javascript" >
         $(document).ready(function() 
     { 
-        $("#tabla").tablesorter(); 
+        $("#tablaGestionMesas").tablesorter(); 
     } 
 ); </script>
     
@@ -106,7 +106,7 @@
         
            // echo "<div >";  ?> 
       
-      <table id="tabla" class="table table-bordered" border="1" align="center" width="100%" border="0" cellpadding="0" cellspacing="1">
+      <table id="tablaGestionMesas" class="table table-bordered" border="1" align="center" width="100%" border="0" cellpadding="0" cellspacing="1">
             <thead>
                 <tr>
                                 
@@ -157,8 +157,8 @@
         <div class="span6" style="text-align:center">
             
             <button type="button" class="btn btn-default" onclick="location.href='crearMesa.php'">Crear</button>
-            <button type="button" class="btn btn-default">Editar</button>
-            <button type="button" class="btn btn-default">Eliminar</button>
+           <!-- <button type="button" class="btn btn-default">Editar</button>
+            <button type="button" class="btn btn-default">Eliminar</button>-->
         </div>
       </div>
 </div>
