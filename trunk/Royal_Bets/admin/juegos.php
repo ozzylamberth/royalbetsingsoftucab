@@ -1,4 +1,5 @@
 <?php require_once('../BD/admin/extJuegos.php'); ?>
+ 
 e<?php require_once('./modulos/header.php'); ?> 
 
 
@@ -10,6 +11,7 @@ e<?php require_once('./modulos/header.php'); ?>
     function agregarRE(){
      document.getElementById('agregarRE').style.display = 'block';
 }
+   
 
     window.onload = function(){/*hace que se cargue la función lo que predetermina que div estará oculto hasta llamar a la función nuevamente*/
   
@@ -81,6 +83,7 @@ e<?php require_once('./modulos/header.php'); ?>
                                  $contador ++;                        
                                 } 
                                 $vari = "vs";
+                                $global;
 
                  ?>
                
@@ -91,7 +94,7 @@ e<?php require_once('./modulos/header.php'); ?>
                                  <td data-title="Informacion"> <div align="center"> <?php echo $array [3]; echo " ";  echo $vari; echo " ";  echo $array [4]; ?>  </td>
                                 <td data-title=" Logro" class="numeric"> <div align="center"> <?php  echo $array [6]; ?></td>
                                
-                                <td data-title="Resultado" class="btn-default" onclick="agregarRE();"><a</a> <div align="center"> <?php echo $array [7]; echo " "; echo "-"; echo ""; echo $array[8]; ?></td>
+                                <td data-title="Resultado" class="btn-default" onclick="agregarRE(); <?php $global=$array[0]; ?>" ><a</a> <div align="center"> <?php  $global=$array[0]; echo $array [7]; echo " "; echo "-"; echo ""; echo $array[8];  ?></td>
                                
                                 <td data-title="Estado" class="numeric"> <div align="center"> <?php echo $array [15]; ?></td>
                                 <td data-title="Fecha Inicio" class="date"> <div align="center"> <?php echo $array [9]; ?></td>
@@ -136,39 +139,50 @@ e<?php require_once('./modulos/header.php'); ?>
       
      
        
-                  
+            
+                                    
         
       <div  id="agregarRE" class="container">
-       <div class="col-lg-8">                                        
+       <div class="col-lg-8">       
+           <form role="form" method="POST" action="../BD/admin/editarResultados.php?errorCode=5&errorType=3&global">
                 <div class="form-group">
+                      
                     
-                  <label for="equipo1" class="col-md-20">
-                    Primer equipo:
-                  </label>  
-                     <div class="col-md-20">
+                      <div class="col-md-20">
                   
-                        <input title="Introduzca el nombre del primer equipo" type="text" class="form-control" name="equipo1" id="firstname" placeholder="Equipo" required>
+                        <input title="Id de Juego" type="text" class="form-control" name="id" id="id" placeholder="Id de Juego" required>
                       </div>
                     
-                        <label for="logro1" class="col-md-20">
-                    resultado:
-                  </label>   
+                  <label for="equipo1" class="col-md-20">
+                    Resultados:
+                  </label> 
+                    
+                   
+                    
                      <div class="col-md-20">
-                      <input title="Valor del equipo" type="text" class="form-control" name="logro1" id="lastname" placeholder="#" required>
+                  
+                        <input title="Primer Equipo" type="text" class="form-control" name="resul1" id="resul1" placeholder="Resultado" required>
+                      </div>
+                    
+                      
+                     <div class="col-md-20">
+                      <input title="Segundo Equipo" type="text" class="form-control" name="resul2" id="resul2" placeholder="Resultado" required>
                     </div>
                      </div><br/><br/> 
                    
                     <div class="form-group">
                <div class="col-md-10">                                     
                   <div class="col-md-2">
-                      <button type="submit" name="registrar" class="btn btn-info">
+                      <button type="submit" name="registrar" class="btn btn-info" >
                       Crear
                       </button>
                   </div>
                 </div>
                </div> 
-                     
-                 </div>     
+                  </form>    
+                 </div> 
+          
+               </div>       
                </div>       
           
       </div>
