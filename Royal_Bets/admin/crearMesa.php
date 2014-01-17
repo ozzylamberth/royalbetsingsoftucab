@@ -50,12 +50,12 @@
                           <option value="Tenis">Tenis</option>
                           <option value="Beísbol">Beísbol</option>
                           <option value="NHL">NHL</option>
-                          <option value="NHL">NHL</option>
                           <option value="Baloncesto">Baloncesto</option>
                       </select>
                   </div>
                 </div>  
-                    <br/><br/>
+                
+                <br/><br/>
                 
                 <div class="form-group">
                   <label for="capacidad" class="col-md-2">
