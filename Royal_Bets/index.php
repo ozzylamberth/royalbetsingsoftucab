@@ -43,7 +43,7 @@
             <div class="carousel-caption">
               <h1>Juega Ahora!</h1>
               <p>vive, disfruta y gana...</p>
-              <p><a class="btn btn-lg btn-warning" href='juegos.php' role="button">Apostar</a></p>
+              <p><a class="btn btn-lg btn-warning" href='mesas.php' role="button">Apostar</a></p>
             </div>
           </div>
         </div>
