@@ -28,7 +28,7 @@
             
             $renglon = mysql_fetch_row($datos,MYSQL_ASSOC);
             $id = $renglon['Id'];
-            echo $id;
+            //echo $id;
            //echo $renglon['Id'];
            
             ?>
@@ -52,14 +52,22 @@
                   </div><br/><br/>
                 </div> 
                 
-                <div class="form-group">
+                 <div class="form-group">
                   <label for="Deporte" class="col-md-2">
                     Deporte:
                   </label>
                   <div class="col-md-10">
-                      <input title="Deporte" type="text" class="form-control" name="deporte" id="deporte" placeholder="<?php echo $renglon['Deporte']?>" required>
-                  </div><br/><br/>
-                </div>                
+                      <select name="deporte">
+                          <option value="Futbol">Futbol</option> 
+                          <option value="Tenis">Tenis</option>
+                          <option value="Beísbol">Beísbol</option>
+                          <option value="NHL">NHL</option>
+                          <option value="Baloncesto">Baloncesto</option>
+                      </select>
+                  </div>
+                </div>     
+                
+                <br/><br/>
                 
                 <div class="form-group">
                   <label for="capacidad" class="col-md-2">
@@ -95,11 +103,11 @@
       <hr>
 
 
-<?php require_once('../modulos/footer.php'); ?>       
+<?php //require_once('../modulos/footer.php'); ?>       
       
     </div> <!-- /container -->
     
-<?php require_once('./modulos/scriptjs.php'); ?>     
+<?php //require_once('./modulos/scriptjs.php'); ?>     
     
     </body>
 </html>
