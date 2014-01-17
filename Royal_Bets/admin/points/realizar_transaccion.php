@@ -1,14 +1,15 @@
 <?php
-    function getChangeSaldo($ci,$tran_type,$monto){
-        
-        // Conexion
+
+     //Conexion
         include './conexion.php';
+
+    function getChangeSaldo($ci,$tran_type,$monto){
         
         //$ci=$_SESSION['ci'];
         
         
       //Busca el saldo del cliente  
-        $sel0=mysql_query("SELECT Saldo FROM Transacciones WHERE Ci='$ci' ORDER BY Id DESC LIMIT 1 ",$conex);
+        $sel0=mysql_query("SELECT Saldo FROM Transacciones WHERE Ci='$ci' ORDER BY Id DESC LIMIT 1 ");
        
     //Verifica busqueda de saldo    
       if(!$sel0){    echo 'Error al buscar cliente';}
@@ -34,7 +35,7 @@
            $sql = "INSERT INTO Transacciones (Ci, Tipo_de_transaccion, Monto, Saldo, Fecha, Hora)
                   VALUES ('$ci','$tran_type','$monto','$saldo','$fecha','$hora')";  
         
-            $sel= mysql_query($sql, $conex);
+            $sel= mysql_query($sql);
          
           //Ultimo Comprobante para verificar que se halla realizado la transaccion correctamente  
             if(!$sel){    echo 'Error al procesar la Transaccion';}

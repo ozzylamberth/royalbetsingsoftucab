@@ -1,10 +1,7 @@
 <script src="js/main.js"></script>
 
 <?php   
-        // Conexion
-        
-        include './conexion.php';
-        
+
         include './notf_jugadores.php';     
 
 	// Recibe las Variables
@@ -18,7 +15,15 @@
         
         
        
-       if ($re1>$re2) { $resultado=0;} else {$resultado=1;}
+       if ($re1>$re2) {
+             $resultado=0;
+             
+       } else { if ($re2>$re1){
+                     $resultado=1;
+                     
+                } else {$resultado=10;
+                  }  
+         }
 	
        proc_apuesta ($id3,$resultado); 
        
