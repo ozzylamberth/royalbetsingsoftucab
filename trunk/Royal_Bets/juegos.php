@@ -171,7 +171,7 @@
         <div class="col-lg-8"> 
          <div class="table-responsive"> 
              <!--<form>-->
-             <table class="table table-bordered" > 
+             <table id="tablajuegos" class="table table-bordered" > 
               <?php
                     $cont=0;
                     while ($registro1= mysql_fetch_row($datosjuegos)){
@@ -205,7 +205,17 @@
                          
                     <?php }if($cont!=0){ ?>      
                 </tbody>         
-            </table>            
+            </table>  
+             <div id="pageNavTransacciones" style="padding-top: 20px" align="center">
+             </div>
+                                
+            <script type="text/javascript">
+                var pager = new Pager('tablajuegos', 3);
+                pager.init();
+                pager.showPageNav('pager', 'pageNavTransacciones');
+                pager.showPage(1);
+            </script>
+             
             <div align="right">
                 <button type="submit" class="btn btn-warning"  onclick="seleccion(<?php echo $cont ?>)">  Agregar al Carrito </button>                              
             </div>
