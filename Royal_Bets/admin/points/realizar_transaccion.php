@@ -2,7 +2,7 @@
     function getChangeSaldo($ci,$tran_type,$monto){
         
         // Conexion
-        include(__DIR__.'/conexion.php');
+        include './conexion.php';
         
         //$ci=$_SESSION['ci'];
         
@@ -31,8 +31,8 @@
              $hora = $hour.":".$minuto." ".$ampm;        // Hora actual
            
          //inserta la nueva fila de transacciones   
-           $sql = "INSERT INTO Transacciones "."(Ci, Tipo_de_transaccion, Monto, Saldo, Fecha, Hora) ".
-                  "VALUES " . "('$ci','$tran_type','$monto','$saldo','$fecha','$hora')";  
+           $sql = "INSERT INTO Transacciones (Ci, Tipo_de_transaccion, Monto, Saldo, Fecha, Hora)
+                  VALUES ('$ci','$tran_type','$monto','$saldo','$fecha','$hora')";  
         
             $sel= mysql_query($sql, $conex);
          

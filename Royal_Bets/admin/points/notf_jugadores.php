@@ -1,10 +1,10 @@
 <?php
 
       //Conexion
-        include(__DIR__.'/conexion.php');
+        include './conexion.php';
         
       //Transacciones   
-        include(__DIR__.'/realizar_transacciones.php');
+        include'./realizar_transacciones.php';
         
         
 
@@ -56,12 +56,10 @@
       } else { 
           $mensaje="La Apuesta del juego ".$id_juego." no la gano, pero no se desanime y siga intentado";
         }
-      
-      $leido=False;
-        
+       
       //Busca el saldo del cliente  
-        $sql_msg_user = "INSERT INTO Alertas "."(Ci, Mensaje, Leido) ".
-                  "VALUES " . "('$ci','$mensaje','$leido')"; 
+        $sql_msg_user = mysql_query("INSERT INTO Alertas (Ci, Mensaje)
+                  VALUES ('$ci','$mensaje')"); 
          
       //Verifica el envio de los mensajes   
         if(!$sql_msg_user) {echo 'Error al mandar el mensaje usuario con la ci = '."$ci";}
