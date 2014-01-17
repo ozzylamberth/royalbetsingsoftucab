@@ -78,8 +78,19 @@
              header("Location: ../../index.php");            
         }else{
             $mesa = $_SESSION['carrito'][0][2];
-            mysql_close();
-            header("Location: ../../juegos.php?array=$mesa");  
+        ?>    <script> 
+                function delayer(){
+                    window.location = "../../juegos.php?array=<?php echo $mesa; ?>";
+                }
+                function validarCarrito(){
+                        window.alert("Su saldo no es suficiente para apostar sobre el monto del carrito"); 
+                        setTimeout('delayer()', 1);    
+                }
+                validarCarrito();
+                 
+            </script>
+           <?php mysql_close();
+            
         }
        
     
