@@ -172,6 +172,16 @@
          <div class="table-responsive"> 
              <!--<form>-->
              <table id="tablajuegos" class="table table-bordered" > 
+                 <thead>
+                        <tr>
+                                <th></th>
+                                <th>Local</th>
+                                <th>vs.</th>
+                                <th>Visitante</th>
+                                <th></th>
+                                <th>Monto de apuesta</th>
+                        </tr>  
+                </thead>
               <?php
                     $cont=0;
                     while ($registro1= mysql_fetch_row($datosjuegos)){
@@ -184,7 +194,6 @@
                               if($cont==1){  
                  ?>
               
-                <div align="center" id="titulo"><strong>Descripción De Los Juegos</strong></div>
                 <tbody align="center"> 
                     <?php } ?>                 
                         <tr>
