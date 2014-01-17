@@ -21,6 +21,7 @@
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/carousel.css">
+        <link rel="shortcut icon" href="favicon.ico?v=2" />
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src="js/main.js"></script>
