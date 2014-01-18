@@ -38,9 +38,10 @@ if(isset($_GET['errorCode']) && isset($_GET['errorType'])){
         case 9:
             $error = "Ya existe un usuario con ese Correo Electrónico";
             break;
+        case 10:
+            $error = "Operación exitosa";
+            break;
     }
-    
-    
     
 ?>
 

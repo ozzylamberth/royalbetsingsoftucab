@@ -10,8 +10,8 @@ e<?php require_once('./modulos/header.php'); ?>
    <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Administracion de juegos</h1>
-        <p> hola administrador</p>
+        <h1>Gestión de Juegos</h1>
+        <p>Para crear un nuevo juego, es necesario rellenar los siguientes cambios:</p>
         <!--<p><a class="btn btn-primary btn-lg">Learn more &raquo;</a></p>-->
       </div>
     </div>
@@ -26,7 +26,7 @@ e<?php require_once('./modulos/header.php'); ?>
                
                 <div class="form-group">
                     
-                  <label for="equipo1" class="col-md-2">
+                  <label for="equipo1" class="col-md-5">
                     Primer equipo:
                   </label>  
                      <div class="col-md-10">

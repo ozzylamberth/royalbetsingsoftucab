@@ -51,10 +51,10 @@
                         <div class="form-group">
                           <a href="cuenta.php" > </a>
                         </div>
+                        -->  
                         
                         
-                        
-                    </form>   -->  
+                    </form>     
                     
                     <p class="navbar-text navbar-right">Bienvenido <a href="cuenta.php" class="navbar-link"><?php echo $_SESSION['nombre']; echo' '; echo $_SESSION['apellido'];?></a>
                         

@@ -1,7 +1,6 @@
 
 
 function validar(){
-    
     // Validar que password1 sea igual a password2
 	if(document.getElementById("password").value != document.getElementById("password2").value){
             document.getElementById('alertapassword').style.display = 'block';

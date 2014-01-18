@@ -16,18 +16,18 @@
     </div>-->
 
     <div class="jumbotron">
-      <div class="container" >
+      <div class="container"  >
         <h1>Consumos </h1>
         <p>Esta área es permite añadir los consumos del cliente. Es necesario rellenar los siguientes campos:</p>
       </div>
     </div> 
     
-<div class="row">  
-    <div class="panel-default">
+<div class="row"  > 
+    <div class="panel-default" >
         <div class="panel-heading">
           <h3 class="panel-title" align="center">Formulario</h3>
         </div>
-        <div class="panel-body">
+        <div class="panel-body" >
             <?php require_once('../scripts/alertas.php'); ?>
             
             <form role="form" method="POST" action="../BD/admin/agregarConsumo.php">           
@@ -40,11 +40,11 @@
                   </div><br/><br/>
                 </div>
 
-                <div class="form-group">
-                  <label for="producto" class="col-md-2">
+                <div class="form-group" >
+                  <label for="producto" class="col-md-2" >
                     Producto:
                   </label>
-                  <div class="col-md-5">
+                  <div class="col-md-5" >
                       <input title="Introduzca el identificador del producto" type="text" class="form-control" name="producto" id="producto" placeholder="123456" required>
                   </div><br/><br/>
                 </div>
@@ -64,7 +64,7 @@
     
     
 <div class="row">
-  <div class="col-md-2">
+  <div class="col-md-2" >
   </div>                  
   <div class="col-md-3">
       <button type="submit" name="cargar" class="btn btn-info" onclick="">
