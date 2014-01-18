@@ -2,12 +2,14 @@
 
       //Transacciones   
         include'./realizar_transaccion.php';
+        require_once('../modulos/navbar.php');
 
       //Parametros pasados por editar_saldo.php
         $cedula         = $_POST['cedula'];
         $monto    	= $_POST['monto'];
         $transaccion	= $_POST['transaccion'];
-        $ciAdmin        = $_POST['ciAdmin'];
+        $ciAdmin        = $_SESSION['ci'];
+        
         
         
       //La   
