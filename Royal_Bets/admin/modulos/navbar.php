@@ -34,7 +34,7 @@
             if(isset($_SESSION['username']) && $_SESSION['permisos']==255){
         ?> 
                     
-                    <p class="navbar-text navbar-right">Bienvenido <a href="cuenta.php" class="navbar-link"><?php echo $_SESSION['nombre']; echo' '; echo $_SESSION['apellido'];?></a>
+                    <p class="navbar-text navbar-right">Bienvenido <a href="../cuenta.php" role="button"><?php echo $_SESSION['nombre']; echo' '; echo $_SESSION['apellido'];?></a>
                         
                       
                         <a class="btn btn-xs btn-danger" href="../scripts/usuarios/cerrarsesion.php" role="button">Cerrar sesión</a>
