@@ -90,15 +90,15 @@ e<?php require_once('./modulos/header.php'); ?>
     
                         <tr>
                               
-                                 <td data-title="Logro" class="numeric"> <div align="center"> <?php echo $array [5]; ?></td>
-                                 <td data-title="Informacion"> <div align="center"> <?php echo $array [3]; echo " ";  echo $vari; echo " ";  echo $array [4]; ?>  </td>
-                                <td data-title=" Logro" class="numeric"> <div align="center"> <?php  echo $array [6]; ?></td>
+                                 <td data-title="Logro" class="numeric"> <div align="center"> <?php echo $array [4]; ?></td>
+                                 <td data-title="Informacion"> <div align="center"> <?php echo $array [2]; echo " ";  echo $vari; echo " ";  echo $array [3]; ?>  </td>
+                                <td data-title=" Logro" class="numeric"> <div align="center"> <?php  echo $array [5]; ?></td>
                                
-                                <td data-title="Resultado" class="btn-default" onclick="agregarRE(); <?php $global=$array[0]; ?>" ><a</a> <div align="center"> <?php  $global=$array[0]; echo $array [7]; echo " "; echo "-"; echo ""; echo $array[8];  ?></td>
+                                <td data-title="Resultado" class="btn-default" onclick="agregarRE(); <?php $global=$array[0]; ?>" ><a</a> <div align="center"> <?php  $global=$array[0]; echo $array [6]; echo " "; echo "-"; echo ""; echo $array[7];  ?></td>
                                
-                                <td data-title="Estado" class="numeric"> <div align="center"> <?php echo $array [15]; ?></td>
-                                <td data-title="Fecha Inicio" class="date"> <div align="center"> <?php echo $array [9]; ?></td>
-                                <td data-title="Hora Inicio/Fin" class="time"> <div align="center"> <?php echo $array [11]; echo "/"; echo $array [12];?></td>
+                                <td data-title="Estado" class="numeric"> <div align="center"> <?php echo $array [14]; ?></td>
+                                <td data-title="Fecha Inicio" class="date"> <div align="center"> <?php echo $array [8]; ?></td>
+                                <td data-title="Hora Inicio/Fin" class="time"> <div align="center"> <?php echo $array [10]; echo "/"; echo $array [11];?></td>
                             <!--    <td data-title="equis" class="date"> <div align="center"> <a href ="juegos.php?array=  <?php  ?> "  class="btn btn-primary"> Entrar </a> </div> </td>            -->                    
                         </tr>         
     
@@ -144,12 +144,16 @@ e<?php require_once('./modulos/header.php'); ?>
         
       <div  id="agregarRE" class="container">
        <div class="col-lg-8">       
+
+           <form role="form" method="POST" action="../BD/admin/editarResultados.php?g=<?php echo $global; ?> ">
+
            <form role="form" method="POST" action="./points/editarResultados.php?errorCode=5&errorType=3&global">
+
                 <div class="form-group">
                       
                     
                       <div class="col-md-20">
-                  
+                   
                         <input title="Id de Juego" type="text" class="form-control" name="id" id="id" placeholder="Id de Juego" required>
                       </div>
                     

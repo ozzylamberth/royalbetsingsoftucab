@@ -12,11 +12,11 @@
         $id3= $_POST['id'];
         $e=0;
         
-         
        
 	
         
        
+        
         
         if ( !resul1 || !resul2 || !id3 ){
             header("Location:../../admin/juegos.php");   
