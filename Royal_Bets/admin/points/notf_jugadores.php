@@ -17,7 +17,7 @@
        $logro2= $arreglo_logros['logro2'];
         
       //Busca las apuestas con el id del juego dado
-        $sel0=mysql_query("SELECT * FROM Apuestas WHERE Id_juego='$id_juego' ");
+        $sel0=mysql_query("SELECT * FROM Apuestas WHERE Id_juego='$id_juego' AND Estado='1'");
        
     //Verifica la busqueda de las apuesta   
       if(!$sel0){    echo 'Error al buscar apuestas';}
@@ -55,7 +55,7 @@
           $mensaje="La Apuesta del juego ".$id_juego." no la gano, pero no se desanime y siga intentado";
         }
        
-      //Busca el saldo del cliente  
+      //Manda el mensaje al cliente
         $sql_msg_user = mysql_query("INSERT INTO Alertas (Ci, Mensaje)
                   VALUES ('$ci','$mensaje')"); 
          
