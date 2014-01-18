@@ -10,14 +10,9 @@
             echo'Error';
          }
          else{
-              $queryCI = mysql_num_rows(mysql_query("SELECT * FROM Usuarios WHERE Ci='$cedula'"));
-        
-             /* if($queryCI > 0){    // Si la Ci existe
-                    header("Location:../../consumo.php?errorCode=8&errorType=1");
-              }else{      // Si la Ci no existe
-                    if (($anio-$anioU)<18){     // Si es menor a 18 
-                        header("Location:../../consumo.php?errorCode=7&errorType=1");*/
-             
+             $queryCI = mysql_num_rows(mysql_query("SELECT * FROM Usuarios WHERE Ci='$id_usr'"));
+   
+             if($queryCI > 0){    // Si la Ci existe          
                     //Consumo realizado
                      // SQL
                         $query = mysql_query("INSERT INTO Consumos
@@ -34,15 +29,14 @@
                             echo 'Error al insertar un producto';
                         }else{
                             echo 'Guardo Correctamente';
+                            \header("Location:../../admin/Consumos.php?errorCode=10&errorType=3");
                         }
 
 
                         // Redireccion
-                //    header("Location:../../admin/consumos.php?errorCode=6&errorType=1");  
-               }	
-             // }
-
-     //    }
+                 //  header("Location:../../consumos.php?errorCode=6&errorType=1");  
+              }
+         }
     
  ?>
  
