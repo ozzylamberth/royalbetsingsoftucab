@@ -22,8 +22,8 @@ e<?php require_once('./modulos/header.php'); ?>
  <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Administracion de juegos</h1>
-        <p> hola administrador</p>
+        <h1>Gestión de Juegos</h1>
+        <p>Bienvenido administrador.</p>
         <!--<p><a class="btn btn-primary btn-lg">Learn more &raquo;</a></p>-->
       </div>
     </div>
@@ -56,7 +56,7 @@ e<?php require_once('./modulos/header.php'); ?>
                                
                                 <th>Logro</th>
                                 <th>Informacion</th>
-                                <th> Logro</th>   
+                                <th>Logro</th>   
                                 <th>Resultado</th>  
                                 <th>Estado</th>   
                                 <th>Fecha Inicio</th> 

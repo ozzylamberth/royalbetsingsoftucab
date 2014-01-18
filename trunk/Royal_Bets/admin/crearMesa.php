@@ -10,8 +10,8 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Crear Una mesa</h1>
-        <p>Para crear una mesa solo rellena los siguientes campos y listo yeah baby</p>
+        <h1>Gestión de Mesas</h1>
+        <p>Creación: para crear una mesa sólo rellena los siguientes campos.</p>
       </div>
     </div>
 
@@ -19,8 +19,15 @@
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
-        <div class="col-lg-12">
+        <div class="panel-default" >
+            <div class="panel-heading">
+            <h3 class="panel-title" align="center">Formulario</h3>
+            </div>
             
+            <div class="panel-body" >
+          
+        <div class="col-lg-12">
+          
             <form role="form" method="POST" action="../BD/Mesa/mesasInsertar.php">
                 <div class="form-group">
                   <label for="nombreMesa" class="col-md-2">
@@ -76,7 +83,7 @@
                   <div class="col-md-2">
                   </div>                  
                   <div class="col-md-3">
-                      <button type="submit" name="Crear" class="btn btn-info">
+                      <button type="submit" name="Crear" class="btn btn-info" >
                         Crear
                       </button>
                   </div>
