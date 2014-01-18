@@ -6,3 +6,12 @@ Cobro     ---> Cuando se le cobra a el usuario por participar en una apuesta
 
 Devolucion ---> Cuando por "x" motivo se cancelo un juego y la apuesta es cancelada por lo tanto se
                  reembolsa el dinero a los clientes.
+
+
+
+SELECT * 
+FROM `Registrations`  
+WHERE `Role` = "Attendee" 
+    AND `RegistrationStatus_ID` = "1" 
+    AND `DigSignature` IS NULL 
+    AND `Event_ID` in ("147", "155", "160")
