@@ -36,7 +36,6 @@ CREATE TABLE Juegos (
 
     Id INT NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (Id),
-    Id_apuesta INT,
     Id_mesa INT,
     Equipo1 VARCHAR (50),
     Equipo2 VARCHAR (50),
