@@ -13,6 +13,7 @@ include(dirname(dirname(__FILE__)).'/conexion.php');
         }    
        $_SESSION['carrito'] = $carrito; 
        $_SESSION['juegos'] = $juegos;
+       $_SESSION['jugados']=0;
   }
 
   

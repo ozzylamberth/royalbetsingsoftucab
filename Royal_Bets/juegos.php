@@ -1,7 +1,7 @@
 <?php require_once('./modulos/header.php'); ?>
 <?php require_once('./BD/Mesa/juegos_extraer.php'); ?> 
 <?php require_once('./BD/Mesa/carrito.php'); ?>
-<?php //require_once('./BD/Mesa/actualizarcarrito.php')?>
+<?php require_once('./BD/Mesa/jugadosbd.php'); ?>
     <body>
 
                    <?php  if (session_status() !== PHP_SESSION_ACTIVE) {
@@ -15,13 +15,20 @@
                 $js_juegos = json_encode($_SESSION['juegos']);
                         echo "var javascript_array = ". $js_array . ";";
                         echo "var juegos = ". $js_juegos . ";";
+                $js_array1 = json_encode($_SESSION['arrayjugados']);
+                $js_juegos1 = json_encode($_SESSION['jugados']);
+                        echo "var javascript_array1 = ". $js_array1 . ";";
+                        echo "var jugados = ". $js_juegos1 . ";";
             ?>
                 
                 var lineaTexto="";
+                var lineaTexto1="";
                 var array;
+                var array1;
                 lineaTexto = javascript_array.toString();
-                
+                lineaTexto1 = javascript_array1.toString();
                 array = lineaTexto.split(",");
+                array1 = lineaTexto1.split(",");
                 
             </script>     
         <script>
@@ -29,21 +36,32 @@
             for(i=0;i<5;i++){
                 arreglobd[i]=[];
             }
-            
+            var arreglojugados=[];
+            for(i=0;i<jugados;i++){
+                arreglojugados[i] = array1[i];
+            }
             for(i=0,cont=0;i<juegos;i++){
                 for(j=0;j<5;j++,cont++){
                     arreglobd[j][i] = array[cont];                    
                 }               
             }
             
-            function actualizar(cantidad){          
-                for(i=0;i<juegos;i++){      
+            function actualizar(cantidad){
+                entra = 0;
+                for(i=0;i<juegos || entra === 0;i++){      
                     for(cont=1; cont <= cantidad ;cont++){
                     var id_L="L"+cont;
                     var id_V="V"+cont;
-                    var id_C="C"+cont;     
-                        if(document.getElementById(id_L).value===arreglobd[0][i] || document.getElementById(id_V).value===arreglobd[0][i]){
-                            if(document.getElementById(id_L).value===arreglobd[0][i]){
+                    var id_C="C"+cont; 
+                    var id_I="I"+cont;
+                    id = document.getElementById(id_I).value;
+                    for(j=0,jugado=0;j<jugados;j++){
+                        if(arreglojugados[j]===id){
+                            jugado=1;
+                        }                        
+                    }
+                        if(document.getElementById(id_L).value===arreglobd[0][i] || document.getElementById(id_V).value===arreglobd[0][i] || jugado === 1  ){
+                            if(document.getElementById(id_L).value===arreglobd[0][i] || jugado === 1){
                                 document.getElementById(id_L).disabled=true; 
                                 document.getElementById(id_V).disabled=true;
                                 document.getElementById(id_C).disabled=true;
@@ -53,7 +71,10 @@
                                 document.getElementById(id_C).disabled=true;
                             }
                         }
-                    }                                                     
+                    }
+                    if(i===juegos){
+                        entra = 1;
+                    }
                 } 
                 calcularTotal();
             }
@@ -62,24 +83,25 @@
             for(i=0,remover=-1,removidos=0;i<juegos;i++){
                 if(document.getElementById(i).checked){
                     remover = i;
-                    removidos++;
-                    for(j=i;j<juegos;j++){
+                    for(j=i-removidos;j<juegos;j++){
                         for(k=0;k<5;k++){
                             arreglobd[k][j]=arreglobd[k][j+1];
                         }
-                    }
+                    }                    
                     $.ajax ({
                         type: "POST",
                         url: "./BD/Mesa/removercarrito.php" ,
-                        data: { remover:remover }
+                        data: { remover: remover-removidos }
                     }).done(function(msg){     });
                     
-                    setTimeout("location.reload(true);",1);;
+                    
+                    removidos++;
                 }                   
             }
+            setTimeout("location.reload(true);",1);
             juegos = juegos - removidos;
             if(remover===-1){
-                window.alert("No existe el equipo");
+                window.alert("No ha escogido ningun equipo a remover");
             }                      
         }
         
@@ -96,7 +118,7 @@
         function calcularTotal(){
             var total=0;
             for (i=0; i<juegos; i++){               
-                total += parseFloat(arreglobd[1][i]);               
+                total += parseInt(arreglobd[1][i]);               
             } 
             document.getElementById('mTotal').innerHTML = total.toString() + " Bs.";
             
@@ -113,15 +135,15 @@
                     var id_I="I"+cont;
                     var id_min="M"+cont;
                     var id_max="T"+cont;
-                    minimo = 0;
-                    maximo = 0;
-                    costo = 0;
-                    minimo = parseFloat(document.getElementById(id_min).value);
-                    maximo = parseFloat(document.getElementById(id_max).value);
-                    costo = parseFloat(document.getElementById(id_C).value); 
-
+                    minimo = parseInt(document.getElementById(id_min).value);
+                    maximo = parseInt(document.getElementById(id_max).value);
+                    costo = parseInt(document.getElementById(id_C).value); 
+//                    window.alert(minimo);
+//                    window.alert(maximo);
+//                    window.alert(costo);
                     if (((document.getElementById(id_L).checked) || (document.getElementById(id_V).checked)) && ((costo>minimo) && (costo<=maximo))){
                             if (document.getElementById(id_L).checked) {
+//                                window.alert("local");
                                 arreglobd[0][juegos]=document.getElementById(id_L).value; 
                                 arreglobd[1][juegos]= costo;
                                 arreglobd[2][juegos] = <?php echo $idmesa; ?>;
@@ -135,6 +157,7 @@
                                     }).done(function(msg){      });
                                     juegos++;                               
                             }else{ 
+//                                window.alert("visitante");
                                 arreglobd[0][juegos]=document.getElementById(id_V).value; 
                                 arreglobd[1][juegos]=costo;
                                 arreglobd[2][juegos] =  <?php echo $idmesa; ?>;
@@ -155,7 +178,7 @@
                          }
                     }
                  }
-                 if ((juegos===1) || ((juegos>1) && (juegos<=12))){
+                 if ((juegos>=1) && (juegos<=12)){
                     setTimeout("location.reload(true);",1); 
                  }else{
                     window.alert("Recuerde: Para apostar debe seleccionar un equipo con su monto respectivo. En apuestas de tipo 'Directa' debe elegir sólo un equipo. Para 'Parlay' puede seleccionar de 2 a 12 equipos.");
@@ -196,9 +219,9 @@
                         </tr>  
                 </thead>
               <?php
-                   /* $fecha = date("Y-m-d");
+                    $fecha = date("Y-m-d");
                     list($anio, $mes, $dia)=explode('-',$fecha);
-                    $hraActual = date("gis");*/
+                    $hraActual = date("gis");
                     $cont=0;
                     while ($registro1= mysql_fetch_row($datosjuegos)){
                               $contador1=0;
@@ -207,13 +230,12 @@
                                 $array1[$contador1]= $clave1;  
                                 $contador1++;
                               }
-                              if($cont==1){  
                  ?>
               
                 <tbody align="center"> 
-                    <?php } 
-                       /* $horaBD = str_replace(":", "", $array1[10]);
-                        if (($fecha!=$array1[8]) && ($hraActual<$horaBD)){*/
+                    <?php 
+                        $horaBD = str_replace(":", "", $array1[10]);
+                        if (($fecha!=$array1[8]) && ($hraActual<$horaBD)){
                     ?>                 
                         <tr>
                             <input type='hidden' id="I<?php echo $cont; ?>" value="<?php echo $array1[0]; ?>" style=" border: transparent;">
@@ -233,7 +255,7 @@
                                 </td>                                  
                         </tr> 
                          
-                    <?php //}
+                    <?php }
                     }if($cont!=0){ ?>      
                 </tbody>         
             </table>  
@@ -248,7 +270,7 @@
             </script>
              
             <div align="right">
-                <button type="submit" class="btn btn-warning"  onclick="seleccion(<?php echo $cont ?>)">  Agregar al Carrito </button>                              
+                <button type="submit" class="btn btn-warning"  onclick="seleccion(<?php echo $cont; ?>)">  Agregar al Carrito </button>                              
             </div>
             <!--</form>-->
      
@@ -264,9 +286,7 @@
                  <strong style='padding-left: 125px ;'>Monto</strong> 
               <?php
                     $conta=0;
-                    for ($i=0; $i<$_SESSION['juegos']; $i++){
-                              $contCa=0;
-                              $conta++;                    
+                    for ($i=0; $i<$_SESSION['juegos']; $i++){                 
                  ?>       
                  <tbody>
                      <tr>
