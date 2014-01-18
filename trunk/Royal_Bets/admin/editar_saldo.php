@@ -53,17 +53,6 @@
                   </div><br/><br/>
                 </div>
 
-
-<div class="form-group">
-                  <label for="cedula del Admin" class="col-md-2">
-                    Cedula de identidad del Administrador:
-                  </label>
-                  <div class="col-md-4">
-                      <input title="Introduzca su Cedula" type="text" class="form-control" name="ciAdmin" id="ciAdmin" placeholder="V-12345678 o E-12345678" pattern="[VE]+[-]+[0-9]+" required>
-                  </div><br/><br/>
-                </div>
-
-
 <div class="row">
                   <div class="col-md-2">
                   </div>                  
