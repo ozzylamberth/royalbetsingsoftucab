@@ -225,7 +225,7 @@
                     $cont=0;
                     while ($registro1= mysql_fetch_row($datosjuegos)){
                               $contador1=0;
-                              $cont++;
+                              
                               foreach ($registro1 as $clave1){
                                 $array1[$contador1]= $clave1;  
                                 $contador1++;
@@ -236,6 +236,7 @@
                     <?php 
                         $horaBD = str_replace(":", "", $array1[10]);
                         if (($fecha!=$array1[8]) && ($hraActual<$horaBD)){
+                                $cont++;
                     ?>                 
                         <tr>
                             <input type='hidden' id="I<?php echo $cont; ?>" value="<?php echo $array1[0]; ?>" style=" border: transparent;">
