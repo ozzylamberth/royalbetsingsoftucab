@@ -21,8 +21,9 @@
         <p>Esta área es permite añadir los consumos del cliente. Es necesario rellenar los siguientes campos:</p>
       </div>
     </div> 
-    
-<div class="row"  > 
+<div class="container" >
+       <div class="col-lg-8 ">    
+    <div class="row" > 
     <div class="panel-default" >
         <div class="panel-heading">
           <h3 class="panel-title" align="center">Formulario</h3>
@@ -57,7 +58,8 @@
                       <input title="Monto del producto" type="text" class="form-control" name="monto" id="monto" placeholder="Moneda virtual" required>
                   </div><br/><br/>
                 </div>
-          
+                </div>
+          </div>
         </div>
     </div>
 </div>
