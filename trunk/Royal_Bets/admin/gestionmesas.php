@@ -54,7 +54,6 @@
       <div class="container">
         <h1>Gestión de Mesas</h1>
         <p>Parte encargada de toda la administración de las mesas que darán base a los juegos y apuestas del usuario.</p>
-        <p><a class="btn btn-primary btn-lg">Tutorial &raquo;</a></p>
       </div>
     </div>
 
