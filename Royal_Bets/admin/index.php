@@ -13,24 +13,45 @@ e<?php require_once('./modulos/header.php'); ?>
         
    <div class="container">
         <h1>Area administrativa</h1>
-        <p>Bienvenido al área administrativa, este sitio solo puede ser visualizado por el perosnal autorizado por el administrador.  </p>
+        <p>Bienvenido al área administrativa, este sitio solo puede ser visualizado por el personal autorizado por el administrador.  </p>
       </div>
     </div>
 
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
-        <div class="col-lg-4">
-          <h2>Herramientas</h2>
-          <p>Desde el menú superior puede acceder a las diferentes herramientas de gestion del sitio.</p>
-        </div>
-        <div class="col-lg-4">
+        <div class="col-lg-3">
           <h2>Inicio del sitio</h2>
           <p>En este momento está ubicado en el área administrativa, si desea volver a la parte visible por los usuarios, presione "Salir" en el menú superior.</p>
+          <img src=" ../img/guia.png">
         </div>  
-      </div>
+          <h2>Herramientas</h2>
+        <div class="col-lg-9">     
+            
+            <div class="col-sm-3">
+              <h4>Gestión de Mesas</h4>
+              <img src=" ../img/mesa.png">
+              <p><br><?php  echo "<a class='btn btn-default' href='gestionmesas.php'> Ir &raquo; </a>"; ?></p>
+            </div>
+            <div class="col-sm-3">
+              <h4>Gestión de Juegos</h4>
+              <img src=" ../img/juegos.png">
+              <p><br><?php echo "<a class='btn btn-default' href='juegos.php'> Ir &raquo; </a>"; ?></p>
+            </div>
+             <div class="col-sm-3">
+              <h4>Gestión de Apuestas</h4>
+              <img src=" ../img/apuesta.png">
+              <p><br><?php echo "<a class='btn btn-default' href='validarApuestas.php'> Ir &raquo; </a>"; ?></p>
+            </div>
+            <div class="col-sm-3">
+              <h4>Gestión de Moneda V.</h4>
+              <img src=" ../img/moneda.png">
+              <p><br><?php echo "<a class='btn btn-default' href='editar_saldo.php'> Ir &raquo; </a>"; ?></p>
+            </div>
+        </div>
+      </div><!--
 
-      <hr>
+      --><hr>
 
 <?php require_once('../modulos/footer.php'); ?>
       

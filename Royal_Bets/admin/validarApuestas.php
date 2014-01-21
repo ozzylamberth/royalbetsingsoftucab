@@ -7,10 +7,12 @@
 
  ?>
 
-<div class="page-header">
-  <h1>Gestion de Apuestas</h1>
-</div>
-
+<div class="jumbotron">
+      <div class="container"  >
+        <h1>Gestión de consumos </h1>
+        <p>Esta área es permite aceptar o rechazar las apuestas del cliente. Es necesario rellenar los siguientes campos:</p>
+      </div>
+    </div> 
 <?php 
 echo "<div class=\"row\">";
 echo "<div class=\"col-lg-12\">";
