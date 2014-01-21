@@ -2,7 +2,7 @@
 
       //Transacciones   
         include'./realizar_transaccion.php';
-        require_once('../modulos/navbar.php');
+        require_once('../../../admin/modulos/navbar.php');
 
       //Parametros pasados por editar_saldo.php
         $cedula         = $_POST['cedula'];
@@ -23,16 +23,16 @@
          
       switch ($resp) {
     case 0:
-        $mensaje='No se encontro al usuario en la base de datos' ;
+        $mensaje='Error al buscar el usuario' ;
         break;
     case 1:
-        $mensaje='El Monto que se desea retirar es superior a su saldo actual' ;
+        $mensaje='Saldo insuficiente o usuario invalido' ;
         break;
     case 2:
         $mensaje='No se pudo realizar la transaccion por un error en la BD' ;
         break;
     case 3:
-        $mensaje='La Trasaccion por un monto de '."$monto".' fue realizada exitosamente';
+        $mensaje='La Trasaccion por un monto de '."$monto".' fue realizada';
         break;
 }  
        
@@ -43,6 +43,6 @@
       //Verifica el envio de los mensajes   
         if(!$sql_msg_user) {echo 'Error al mandar el mensaje usuario con la ci = '."$ciAdmin";}
       
-      header("Location: ../../cuenta.php");  
+      header("Location: ../../../cuenta.php");  
         
-?>        
+?>

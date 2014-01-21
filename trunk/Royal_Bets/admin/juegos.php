@@ -1,9 +1,5 @@
 <?php require_once('../BD/admin/extJuegos.php'); ?>
- 
-e<?php require_once('./modulos/header.php'); ?> 
-
-
-   
+<?php require_once('./modulos/header.php'); ?> 
 <?php require_once('./modulos/navbar.php'); ?> 
 
 <script>
@@ -152,9 +148,7 @@ e<?php require_once('./modulos/header.php'); ?>
       <div  id="agregarRE" class="container">
        <div class="col-lg-8">       
 
-           <form role="f-orm" method="POST" action="../BD/admin/editarResultados.php?g=<?php echo $global; ?> ">
-
-           <form role="form" method="POST" action="./points/editarResultados.php?errorCode=5&errorType=3&global">
+           <form role="f-orm" method="POST" action="../BD/admin/points/editarResultados.php?g=<?php echo $global; ?> ">
 
                 <div class="form-group">
                       
