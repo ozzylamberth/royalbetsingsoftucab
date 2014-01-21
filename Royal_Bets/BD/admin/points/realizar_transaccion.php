@@ -1,7 +1,7 @@
 <?php
 
      //Conexion
-        include './conexion.php';
+        include '../../conexion.php';
 
     function getChangeSaldo($ci,$tran_type,$monto){
         
@@ -9,7 +9,7 @@
         $sel0=mysql_query("SELECT Saldo FROM Transacciones WHERE Ci='$ci' ORDER BY Id DESC LIMIT 1 ");
        
     //Verifica busqueda de saldo    
-      if(!$sel0){    echo 'Error al buscar cliente';   return 0;}
+      if(!$sel0){   return 0; echo 'Error al buscar cliente';   }
        else  {
                   
          $arreglo=mysql_fetch_array($sel0);

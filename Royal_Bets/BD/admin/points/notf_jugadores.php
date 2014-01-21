@@ -24,13 +24,14 @@
        else  {
        
           while ( $arreglo=mysql_fetch_array($sel0) ) { //Bucle para usar todos los registros
+             $id_apuestas=$arreglo['Id'];   //id de la apuesta
              $id_user= $arreglo['Id_user']; //datos del campo id_user
              $equipo= $arreglo['Equipo']; //datos del campo equipo
              $monto_apostado= $arreglo['Monto']; //datos del campo monto
            //  $grupo= $arreglo['Grupo']; //datos del campo grupo
            
              if ( $equipo == $resultado ) {
-                 sendnotify($id_user,0,$id_juego);       //notifica al usuario que gano
+                 sendnotify($id_user,0,$id_apuestas);       //notifica al usuario que gano
                   
                   $monto_pagar= calcular_monto($monto_apostado,$logro1,$logro2);   //calcula el monto a pagar
                   
@@ -39,20 +40,21 @@
              } else {
                 sendnotify ($id_user,1,$id_juego);
                }
+            $sql_apuestas = "UPDATE `Apuestas` SET `Estado`='2' WHERE `Id`=$id_apuestas";
+             mysql_query($sql_apuestas);   
           }
          echo 'Apuestas Completamente procesadas'; 
        }  
     }       
     
   //Funcion encargada de mandar las notificaciones a los usuarios acerca del resultado de la apuesta
-    function sendnotify ($ci,$resp,$id_juego){
+    function sendnotify ($ci,$resp,$id_apuesta){
       
       if ($resp==0) {
-          $mensaje="Felicidades por haber ganado la apuesta del juego ".$id_juego.". "
-                  . " El Dinero del premio a sido depositado a su cuenta. " ;
+          $mensaje='Felicidades gano la apuesta '.$id_apuesta;
           
       } else { 
-          $mensaje="La Apuesta del juego ".$id_juego." no la gano, pero no se desanime y siga intentado";
+          $mensaje="La Apuesta ".$id_apuesta." no la gano";
         }
        
       //Manda el mensaje al cliente

@@ -30,7 +30,7 @@
                 <img src=" ../img/moneda1.jpg">   
         </div>
 
-    <form role=form method="POST" action="./points/trans_helper.php">
+            <form role=form method="POST" action="../BD/admin/points/trans_helper.php">
     <table id=Validar class="table table-bordered">
     </FORM>
 

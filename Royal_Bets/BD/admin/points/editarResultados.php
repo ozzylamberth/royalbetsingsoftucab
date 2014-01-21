@@ -31,7 +31,7 @@
        
         
         if ( !resul1 || !resul2 || !id3 ){
-            header("Location:../juegos.php");   
+            header("Location:../../../admin/juegos.php");   
             echo'entra todo';
         }else{
            
@@ -56,11 +56,10 @@
                 
                 
                 // Redireccion
-                header("Location:../juegos.php?errorCode=5&errorType=3");	
+                header("Location:../../../admin/juegos.php?errorCode=5&errorType=3");	
               
                 
             }
         
 ?>
-
 
