@@ -156,9 +156,11 @@ e<?php require_once('./modulos/header.php'); ?>
               </div>      
             </div> 
            </div> 
+           
          </div> 
+          <?php require_once('../modulos/sidebar.php'); //twitter?> 
        </div>   
-       <?php require_once('../modulos/sidebar.php'); //twitter?> 
+      
      </div>    
         
            

@@ -32,11 +32,14 @@ e<?php require_once('./modulos/header.php'); ?>
   <div class="container">
       <!-- Example row of columns -->
      
-       <div class="row">
-           
-           
-                 <div class="col-lg-8">
-
+   <div class="row">
+       <div class="col-lg-12">
+          <div class="row" > 
+            <div class="panel-default" >
+                <div class="panel-heading">
+                    <h3 class="panel-title" align="center">Formulario</h3>
+                </div>
+                <div class="panel-body" >
                
             
          <div class="table-responsive" align="center">   
