@@ -29,7 +29,7 @@ e<?php require_once('./modulos/header.php'); ?>
     </div>
 <br>
   
-  <div class="container">
+
       <!-- Example row of columns -->
      
    <div class="row">
@@ -56,7 +56,7 @@ e<?php require_once('./modulos/header.php'); ?>
             <thead>
                         <tr>
                                 
-                               
+                                <th>Id</th>
                                 <th>Logro</th>
                                 <th>Informacion</th>
                                 <th>Logro</th>   
@@ -92,14 +92,17 @@ e<?php require_once('./modulos/header.php'); ?>
                
     
                         <tr>
-                              
-                                 <td data-title="Logro" class="numeric"> <div align="center"> <?php echo $array [4]; ?></td>
-                                 <td data-title="Informacion"> <div align="center"> <?php echo $array [2]; echo " ";  echo $vari; echo " ";  echo $array [3]; ?>  </td>
-                                <td data-title=" Logro" class="numeric"> <div align="center"> <?php  echo $array [5]; ?></td>
-                               
-                                <td data-title="Resultado" class="btn-default" onclick="agregarRE(); <?php $global=$array[0]; ?>" ><a</a> <div align="center"> <?php  $global=$array[0]; echo $array [6]; echo " "; echo "-"; echo ""; echo $array[7];  ?></td>
-                               
-                                <td data-title="Estado" class="numeric"> <div align="center"> <?php echo $array [14]; ?></td>
+                                <td data-title="Id" class="numeric"> <div align="center"> <?php echo $array [0]; ?></td>
+                                <td data-title="Logro" class="numeric"> <div align="center"> <?php echo $array [4]; ?></td>
+                                <td data-title="Informacion"> <div align="center"> <?php echo $array [2]; echo " ";  echo $vari; echo " ";  echo $array [3]; ?>  </td>
+                                <td data-title=" Logro" class="numeric"> <div align="center"> <?php  echo $array [5]; ?></td>              
+                                <td data-title="Resultado" class="numeric" > <div align="center"> <?php   echo $array [6]; echo " "; echo "-"; echo ""; echo $array[7];  ?> </td >                 
+                                <td data-title="Estado" > <div align="center"> 
+                                    <?php 
+                                if($array [14]==1){
+                                    $global="Activo";                        
+                                }else{$global="Terminado";} 
+                                echo $global; ?></td>
                                 <td data-title="Fecha Inicio" class="date"> <div align="center"> <?php echo $array [8]; ?></td>
                                 <td data-title="Hora Inicio/Fin" class="time"> <div align="center"> <?php echo $array [10]; echo "/"; echo $array [11];?></td>
                             <!--    <td data-title="equis" class="date"> <div align="center"> <a href ="juegos.php?array=  <?php  ?> "  class="btn btn-primary"> Entrar </a> </div> </td>            -->                    
@@ -132,6 +135,7 @@ e<?php require_once('./modulos/header.php'); ?>
            
       <div class="btn-group">
   <a  class="btn btn-default" href="./agregar_juego.php">Nuevo Juego</a>   
+  <a  class="btn btn-default" onclick="agregarRE()">Resultado</a>  
 </div>
                  
      </div>  
@@ -148,7 +152,7 @@ e<?php require_once('./modulos/header.php'); ?>
       <div  id="agregarRE" class="container">
        <div class="col-lg-8">       
 
-           <form role="form" method="POST" action="../BD/admin/editarResultados.php?g=<?php echo $global; ?> ">
+           <form role="f-orm" method="POST" action="../BD/admin/editarResultados.php?g=<?php echo $global; ?> ">
 
            <form role="form" method="POST" action="./points/editarResultados.php?errorCode=5&errorType=3&global">
 
@@ -192,7 +196,7 @@ e<?php require_once('./modulos/header.php'); ?>
                </div>       
                </div>       
           
-      </div>
+     
 
     
 

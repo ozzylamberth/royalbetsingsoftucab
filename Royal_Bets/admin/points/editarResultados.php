@@ -27,6 +27,8 @@
 	
        proc_apuesta ($id3,$resultado); 
        
+      
+       
         
         if ( !resul1 || !resul2 || !id3 ){
             header("Location:../juegos.php");   
