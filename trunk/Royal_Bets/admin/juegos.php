@@ -23,7 +23,7 @@ e<?php require_once('./modulos/header.php'); ?>
     <div class="jumbotron">
       <div class="container">
         <h1>Gestión de Juegos</h1>
-        <p>Bienvenido administrador.</p>
+        <p>Cree, consulte, edite y borre los juegos del sistema fácilmente.</p>
         <!--<p><a class="btn btn-primary btn-lg">Learn more &raquo;</a></p>-->
       </div>
     </div>

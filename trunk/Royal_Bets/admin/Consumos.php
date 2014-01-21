@@ -21,8 +21,10 @@
         <p>Esta área es permite añadir los consumos del cliente. Es necesario rellenar los siguientes campos:</p>
       </div>
     </div> 
-<div class="container" >
-       <div class="col-lg-8 ">    
+<div class="container">
+    
+    
+      <div class="col-lg-6 ">  
     <div class="row" > 
     <div class="panel-default" >
         <div class="panel-heading">
@@ -58,19 +60,25 @@
                       <input title="Monto del producto" type="text" class="form-control" name="monto" id="monto" placeholder="Moneda virtual" required>
                   </div><br/><br/>
                 </div>
+                
                 </div>
           </div>
+            <div class="col-md-10" >                 
+             <button type="submit" name="cargar" class="btn btn-info" onclick="">
+            Cargar
+            </button>
         </div>
     </div>
+        </div>
+        <div class="col-md-6">   
+        <img src=" ../img/consumo.jpg">   
+    </div>
+    
+    </div>
+      
 </div>
-    
-    
+ 
 <div class="row">
-  <div class="col-md-2" >
-  </div>                  
-  <div class="col-md-3">
-      <button type="submit" name="cargar" class="btn btn-info" onclick="">
-      Cargar
-      </button>
-  </div>
-</div>
+  
+    
+  
