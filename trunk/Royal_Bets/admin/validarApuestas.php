@@ -9,11 +9,19 @@
 
 <div class="jumbotron">
       <div class="container"  >
-        <h1>Gestión de consumos </h1>
+        <h1>Gestión de Apuestas </h1>
         <p>Esta área es permite aceptar o rechazar las apuestas del cliente. Es necesario rellenar los siguientes campos:</p>
       </div>
     </div> 
+    <div class="container" >
+    <div class="col-lg-12 ">    
+      <div class="row" > 
+         <div class="panel-default" >
+          <div class="panel-heading">
+           <h3 class="panel-title" align="center">Formulario</h3>
+         </div>
 <?php 
+
 echo "<div class=\"row\">";
 echo "<div class=\"col-lg-12\">";
       echo "  <div class=\"col-lg-12\">";
