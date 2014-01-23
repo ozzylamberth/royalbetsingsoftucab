@@ -27,9 +27,11 @@ e<?php require_once('./modulos/header.php'); ?>
             </div>
             
             <div class="panel-body" >
-          
+          <form role="form" method="POST" action="../BD/admin/nuevojuego.php">
+              <?php require_once('../scripts/alertas.php'); ?>
+              
         <div class="col-lg-12">
-           <form role="form" method="POST" action="../BD/admin/nuevojuego.php">  
+           
                
                 <div class="form-group">
                   <label for="equipo1" class="col-md-2">
@@ -119,14 +121,22 @@ e<?php require_once('./modulos/header.php'); ?>
                       <input title="Monto minimo a apostar" type="text" class="form-control" name="min" id="min" placeholder="$" required>
                     </div><br/><br/>
                     </div>
+            
                   <label for="max" class="col-md-2">
                     Monto Maximo:
                   </label>  
                       <div class="col-md-5">
                       <input title="Monto Maximo a apostar" type="text" class="form-control" name="max" id="max" placeholder="$" required>
                     </div><br/><br/>
-
-                </div> 
+                    
+                  <label for="mesa" class="col-md-2">
+                    Id de mesa:
+                  </label>  
+                      <div class="col-md-2">
+                      <input title="Id de Mesa" type="text" class="form-control" name="mesa" id="mesa" placeholder="$" required>
+                    </div><br/><br/>
+                   </div>
+               
                 
                <div class="form-group">
                                
