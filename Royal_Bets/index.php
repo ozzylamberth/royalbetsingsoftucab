@@ -20,6 +20,7 @@
 -->
     <!-- Carousel
     ================================================== -->
+    <!--<div class="col-lg-12"> -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
@@ -61,42 +62,44 @@
       <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
       <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div>
+    <!--</div>--> 
+    <?php //require_once('./modulos/sidebar.php'); ?> 
     
     <!-- /.carousel -->
  
-    <div class="container">
-      <!-- Example row of columns -->
+    <!--<div class="container">-->
+      <!-- Example row of columns --
       <div class="row">
           <div class="col-lg-8">
             <div class="col-sm-4">
               <h2>Fútbol</h2>
               <img src=" img/futbol3.jpg">
-              <p><br><?php echo "<a class='btn btn-default' href='mesas.php?filter=Futbol'> Apostar &raquo; </a>"; ?></p>
+              <p><br><?php// echo "<a class='btn btn-default' href='mesas.php?filter=Futbol'> Apostar &raquo; </a>"; ?></p>
             </div>
             <div class="col-sm-4">
               <h2>Beísbol</h2>
               <img src=" img/beisbol.jpg">
-              <p><br><?php echo "<a class='btn btn-default' href='mesas.php?filter=Beisbol'> Apostar &raquo; </a>"; ?></p>
+              <p><br><?php //echo "<a class='btn btn-default' href='mesas.php?filter=Beisbol'> Apostar &raquo; </a>"; ?></p>
            </div>
             <div class="col-sm-4">
               <h2>Baloncesto</h2>
               <img src=" img/nba.jpg">
-              <p><br><?php echo "<a class='btn btn-default' href='mesas.php?filter=Baloncesto'> Apostar &raquo; </a>"; ?></p>
+              <p><br><?php //echo "<a class='btn btn-default' href='mesas.php?filter=Baloncesto'> Apostar &raquo; </a>"; ?></p>
             </div>
             <div class="col-sm-4">
               <h2>NHL</h2>
               <img src=" img/nfl.jpg">
-              <p><br><?php echo "<a class='btn btn-default' href='mesas.php?filter=NHL'> Apostar &raquo; </a>"; ?></p>
+              <p><br><?php //echo "<a class='btn btn-default' href='mesas.php?filter=NHL'> Apostar &raquo; </a>"; ?></p>
             </div>
             <div class="col-sm-4">
               <h2>Tenis</h2>
               <img src=" img/tenis.jpg">
-              <p><br><?php echo "<a class='btn btn-default' href='mesas.php?filter=Tenis'> Apostar &raquo; </a>"; ?></p>
+              <p><br><?php// echo "<a class='btn btn-default' href='mesas.php?filter=Tenis'> Apostar &raquo; </a>"; ?></p>
            </div>
             <div class="col-sm-4">
               <h2>Voleibol</h2>
               <img src=" img/voleibol.png">
-              <p><br><?php echo "<a class='btn btn-default' href ='mesas.php?filter=Voleibol'> Apostar &raquo; </a>"; ?></p>
+              <p><br><?php //echo "<a class='btn btn-default' href ='mesas.php?filter=Voleibol'> Apostar &raquo; </a>"; ?></p>
            </div>             
 
 
@@ -105,15 +108,18 @@
 
           
         
-<?php require_once('./modulos/sidebar.php'); ?> 
+<?php //require_once('./modulos/sidebar.php'); ?> 
           
-          
-      </div>
-      <hr>
-
-<?php require_once('./modulos/footer.php'); ?> 
-      
-    </div> <!-- /container -->        
+          -->
+      <!--</div>-->
+    <div class="col-lg-4"></div>
+    <div class="col-lg-1"></div>
+    <div class="col-lg-3">
+        <?php require_once('./modulos/footer.php'); ?> 
+    </div>
+    <div class="col-lg-1"></div>
+    <div class="col-lg-4"></div>
+    <!--</div>  /container -->        
     
 <?php require_once('./modulos/scriptjs.php') ;?> 
     
