@@ -1,5 +1,7 @@
 <script src="js/main.js"></script>
 <?php   
+        
+        include '../BD/Mesas_extraer.php';
         // Conexion
         include '../conexion.php';
 
@@ -15,9 +17,27 @@
         $estado	        = $_POST['estado'];
         $min      	= $_POST['min'];
         $max            = $_POST['max'];
-         
+        $mesa            = $_POST['mesa'];
          
         
+        
+        
+                  while ($registro= mysql_fetch_row($datos)){
+                      
+                        $contador=0;
+                        
+                        $i=1;
+                                foreach ($registro as $clave){
+
+                                 $array[$contador]= $clave;  
+                                 $contador ++;                        
+                                }                     
+             $i++; } 
+
+        
+        
+     
+   
          
          if($estado=="dis"){
              $aux=1;
@@ -28,20 +48,20 @@
         
        
         
-        if (!id || !producto || !monto ){
+       if (!equipo2 || !equipo1 || !min ){
             header("Location:../../admin/agregar_juego.php");   
             echo'entra todo';
         }else{
            
-
+           if( ($mesa<=$i) && ($mesa>0) && (min<max) ){
                 // SQL
                 $query = mysql_query("INSERT INTO Juegos
                                             (
-                                            Equipo1,Equipo2,logro1,logro2,Fecha_inicio ,Fecha_de_final ,Hora_de_inicio ,Hora_de_final,Mini,Maxi,Estado
+                                            Id_mesa,Equipo1,Equipo2,logro1,logro2,Fecha_inicio ,Fecha_de_final ,Hora_de_inicio ,Hora_de_final,Mini,Maxi,Estado
                                             )
                                             VALUES
                                             (
-                                            '$equipo1','$equipo2','$logro1','$logro2','$fechaini','$fechafin','$horaini','$horafin','$min','$max','$aux'
+                                            '$mesa','$equipo1','$equipo2','$logro1','$logro2','$fechaini','$fechafin','$horaini','$horafin','$min','$max','$aux'
                                             )
                                     ");
 
@@ -51,11 +71,13 @@
                     echo 'Guardo Correctamente';
                 }
                 
+                  // Redireccion
+                header("Location:../../admin/agregar_juego.php?errorCode=12&errorType=2");
+           }   else{
+                header("Location:../../admin/agregar_juego.php?errorCode=11&errorType=1");
+           }
                 
-                // Redireccion
-                header("Location:../../admin/agregar_juego.php?errorCode=5&errorType=3");	
-              
-                
+           
             }
         
 ?>

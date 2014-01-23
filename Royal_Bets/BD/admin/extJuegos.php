@@ -19,6 +19,14 @@ $host	= "localhost";
 		echo "No se pudo conectar correctamente con la Base de datos";
 		exit();
 	}
+        
+  $filtro="Todos";        
+        
+ if(isset($_GET['filter'])){   
+     
+$filtro= $_GET['filter'];
+
+ }
 
 $tabla= "Juegos";
 
@@ -31,13 +39,4 @@ $datos= mysql_query($consulta,$conex) or die ("<p> No se ha podido ejecutar"
 
 
 mysql_close();
-
-
-         
-   
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 

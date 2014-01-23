@@ -41,6 +41,13 @@ if(isset($_GET['errorCode']) && isset($_GET['errorType'])){
         case 10:
             $error = "Operación exitosa";
             break;
+                case 11:
+            $error = "La mesa no existe bro";
+            break;
+            case 12:
+            $error = "Se creo el juego correctamente";
+            break;
+        
     }
     
 ?>

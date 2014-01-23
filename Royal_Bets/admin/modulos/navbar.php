@@ -16,7 +16,7 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gestión<b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="gestionmesas.php">Mesas</a></li>
-            <li><a href="juegos.php">Juegos</a></li>            
+            <li><a href="juegos.php?filter=Todos">Juegos</a></li>            
             <li><a href="validarApuestas.php">Apuestas</a></li>
             <li><a href="Consumos.php">Consumos</a></li>
             <li><a href="editar_saldo.php">Moneda virtual</a></li>     
