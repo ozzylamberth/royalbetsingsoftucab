@@ -37,7 +37,7 @@ include '../BD/conexion.php';
 <?php
 
 $ciPermisos="";
-if ($_REQUEST['Buscar']=="Buscar"){
+if ($_REQUEST){
 $ciPermisos = $_POST['Id_usuario'];
 //echo $ciPermisos;
 
@@ -60,8 +60,8 @@ $ciPermisos = $_POST['Id_usuario'];
                 </tr>
                 </thead>
                 <tbody> <?php
+    
     while ($datos = mysql_fetch_assoc($busqueda)){
-       
         echo "<tr>";
         echo "<td>".$datos['Ci']."</td>";
         echo "<td>".$datos['Nombre']."</td>";
