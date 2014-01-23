@@ -10,7 +10,6 @@
                     ?>
          <script type='text/javascript'>
             <?php
-                $php_array = array('abc','def','ghi');
                 $js_array = json_encode($_SESSION['carrito']);
                 $js_juegos = json_encode($_SESSION['juegos']);
                         echo "var javascript_array = ". $js_array . ";";
@@ -219,25 +218,40 @@
                         </tr>  
                 </thead>
               <?php
-                    $fecha = date("Y-m-d");
-                    list($anio, $mes, $dia)=explode('-',$fecha);
-                    $hraActual = date("gis");
+                     date_default_timezone_set ("America/Caracas");
+                    $fecha = date("y-m-d"); //Fecha Actual
+                    $hraActual = date("G:i"); //Hora Actual
                     $cont=0;
                     while ($registro1= mysql_fetch_row($datosjuegos)){
-                              $contador1=0;
-                              
+                              $contador1 = 0;
+                              $juegoquitado = 1;
                               foreach ($registro1 as $clave1){
                                 $array1[$contador1]= $clave1;  
                                 $contador1++;
                               }
+                              
                  ?>
-              
+
                 <tbody align="center"> 
-                    <?php 
-                        $horaBD = str_replace(":", "", $array1[10]);
-                        if (($fecha!=$array1[8]) && ($hraActual<$horaBD)){
-                                $cont++;
-                    ?>                 
+                    <?php   
+                         if (strtotime($array1[9] ) >= strtotime($fecha) && strtotime($array1[8] ) <= strtotime($fecha) ){
+                             $juegoquitado = 0;
+                             if(strtotime($array1[9]) == strtotime($fecha)){
+                                 if(strtotime($array1[11] ) <= strtotime($hraActual)){
+                                     $juegoquitado = 1;
+                                 }
+                             }
+                             if(strtotime($array1[8]) == strtotime($fecha)){
+                                 if(strtotime($array1[10] ) >= strtotime($hraActual)){
+                                     $juegoquitado = 1;
+                                 }
+                             }
+                         }
+                         
+                         if($juegoquitado==0){
+                             $cont++;                                                
+                    ?>  
+                
                         <tr>
                             <input type='hidden' id="I<?php echo $cont; ?>" value="<?php echo $array1[0]; ?>" style=" border: transparent;">
                             <input type='hidden' id="M<?php echo $cont; ?>" value="<?php echo $array1[13]; ?>" style=" border: transparent;">
@@ -256,7 +270,9 @@
                                 </td>                                  
                         </tr> 
                          
-                    <?php }
+                    <?php
+                          
+                         }     
                     }if($cont!=0){ ?>      
                 </tbody>         
             </table>  
