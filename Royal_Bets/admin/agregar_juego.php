@@ -150,7 +150,7 @@ e<?php require_once('./modulos/header.php'); ?>
                         </label>
                         <label class="radio" >
                             <input type="radio" name="estado" id="Estado" value="esp" required">
-                            En Espera
+                            Terminado
                         </label>
                     </div><br/><br/>
                 </div> <br/><br/>
