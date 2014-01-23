@@ -40,7 +40,7 @@
                     C.I de Usuario:
                   </label>
                   <div class="col-md-5">
-                      <input title="Introduzca la cédula" type="text" class="form-control" name="id_usr" id="id_usr" placeholder="V-12345678" required>
+                      <input title="Introduzca la cédula" type="text" class="form-control" name="id_usr" id="id_usr" placeholder="V-12345678" pattern="[VE]+[0-9]+" required>
                   </div><br/><br/>
                 </div>
 
@@ -58,7 +58,7 @@
                     Monto:
                   </label>
                   <div class="col-md-5">
-                      <input title="Monto del producto" type="text" class="form-control" name="monto" id="monto" placeholder="Moneda virtual" required>
+                      <input title="Monto del producto" type="text" class="form-control" name="monto" id="monto" placeholder="Moneda virtual" pattern="[0-9]+" required>
                   </div><br/><br/>
                 </div>
                 

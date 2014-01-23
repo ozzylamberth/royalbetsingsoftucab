@@ -18,7 +18,7 @@
         $min      	= $_POST['min'];
         $max            = $_POST['max'];
         $mesa            = $_POST['mesa'];
-         
+        $bandera=0;
         
         
         
@@ -35,7 +35,12 @@
              $i++; } 
 
         
-        
+        if( ($mesa<=$i) && ($mesa>0) ){
+            $bandera=1;
+        }
+        if($min>$max){
+            $bandera=2;
+        }
      
    
          
@@ -53,7 +58,7 @@
             echo'entra todo';
         }else{
            
-           if( ($mesa<=$i) && ($mesa>0) && (min<max) ){
+           if( $bandera==0 ){
                 // SQL
                 $query = mysql_query("INSERT INTO Juegos
                                             (
@@ -74,7 +79,14 @@
                   // Redireccion
                 header("Location:../../admin/agregar_juego.php?errorCode=12&errorType=2");
            }   else{
+               
+           if($bandera==1){
+          
                 header("Location:../../admin/agregar_juego.php?errorCode=11&errorType=1");
+               }
+            if($bandera==2){
+                header("Location:../../admin/agregar_juego.php?errorCode=15&errorType=1");
+            }   
            }
                 
            

@@ -13,7 +13,11 @@
         $id3= $_POST['id'];
         $e=0;
         
-        
+        	
+     
+    $consultajuegos= "SELECT * FROM Juegos WHERE Id_mesa='$id3'";
+    $datos= mysql_query($consultajuegos);
+     $datosjuegos=mysql_fetch_array($datos);
        
        if ($re1>$re2) {
              $resultado=0;
@@ -35,7 +39,7 @@
             echo'entra todo';
         }else{
            
-
+        if($datosjuegos['Estado']==1 ){
                // SQL
 	$query = mysql_query("UPDATE Juegos
 						SET
@@ -53,12 +57,15 @@
                 }else{
                     echo 'Guardo Correctamente';
                 }
-                
-                
+                            
                 // Redireccion
-                header("Location:../../../admin/juegos.php?errorCode=5&errorType=3");	
-              
+                header("Location:../../../admin/juegos.php?errorCode=13&errorType=2");	
+       }else{
+           
+                header("Location:../../../admin/juegos.php?errorCode=14&errorType=1");	
                 
+             }
+             
             }
         
 ?>
