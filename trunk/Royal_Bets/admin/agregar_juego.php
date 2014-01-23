@@ -1,4 +1,4 @@
-e<?php require_once('./modulos/header.php'); ?> 
+<?php require_once('./modulos/header.php'); ?> 
 
     <body>
         <!--[if lt IE 7]>
@@ -46,7 +46,7 @@ e<?php require_once('./modulos/header.php'); ?>
                     Logro:
                   </label>   
                      <div class="col-md-3">
-                      <input title="Valor del equipo" type="text" class="form-control" name="logro1" id="logro1" placeholder="#" required>
+                      <input title="Valor del equipo" type="text" class="form-control" name="logro1" id="logro1" placeholder="+212 o -121" pattern="[-+]+[0-9]+"  required>
                     </div><br/><br/>
                  </div>
               
@@ -63,7 +63,7 @@ e<?php require_once('./modulos/header.php'); ?>
                     Logro:
                   </label>   
                      <div class="col-md-3">
-                      <input title="Valor del equipo" type="text" class="form-control" name="logro2" id="logro2" placeholder="#" required>
+                      <input title="Valor del equipo" type="text" class="form-control" name="logro2" id="logro2" placeholder="+212 o -121" pattern="[-+]+[0-9]+" required>
                      </div><br/><br/>
                      
                      <!--</div><br/><br/>-->
@@ -111,6 +111,13 @@ e<?php require_once('./modulos/header.php'); ?>
                       <input title="Introduzca la hora de finalizacion" type="time" class="form-control" name="horafin" id="horafin" placeholder="Time" required>                  
                   </div><br/><br/>
                 </div>
+               
+                  <label for="mesa" class="col-md-2">
+                    Id de mesa:
+                  </label>  
+                      <div class="col-md-2">
+                      <input title="Id de Mesa" type="text" class="form-control" name="mesa" id="mesa" placeholder="#" required>
+                    </div><br/><br/>
                      
                  <div class="form-group">
                      <!--<div class="col-md-10">-->
@@ -118,7 +125,7 @@ e<?php require_once('./modulos/header.php'); ?>
                     Monto Minimo:
                   </label>
                      <div class="col-md-5">
-                      <input title="Monto minimo a apostar" type="text" class="form-control" name="min" id="min" placeholder="$" required>
+                      <input title="Monto minimo a apostar" type="text" class="form-control" name="min" id="min" placeholder="$" pattern="[0-9]+" required>
                     </div><br/><br/>
                     </div>
             
@@ -126,34 +133,31 @@ e<?php require_once('./modulos/header.php'); ?>
                     Monto Maximo:
                   </label>  
                       <div class="col-md-5">
-                      <input title="Monto Maximo a apostar" type="text" class="form-control" name="max" id="max" placeholder="$" required>
+                      <input title="Monto Maximo a apostar" type="text" class="form-control" name="max" id="max" placeholder="$" pattern="[0-9]+" required>
                     </div><br/><br/>
-                    
-                  <label for="mesa" class="col-md-2">
-                    Id de mesa:
-                  </label>  
-                      <div class="col-md-2">
-                      <input title="Id de Mesa" type="text" class="form-control" name="mesa" id="mesa" placeholder="$" required>
-                    </div><br/><br/>
-                   </div>
-               
-                
-               <div class="form-group">
-                               
+                    <br/>
+                  <div class="form-group">
+                   
                     <div class="col-md-2">
-                      <label for="sex"  class="col-md-2">
+                    <label for="est"  class="col-md-5">
                         Estado:
-                    </label> <br/>                   
-                        <label class="radio">
+                    </label> <br/>              
+                        <label class="radio" >
                             <input type="radio" name="estado" id="Estado" value="dis" required>
                             Disponible
                         </label>
-                        <label class="radio" >
-                            <input type="radio" name="estado" id="Estado" value="esp" required">
+                        <label class="radio">
+                            <input type="radio" name="estado" id="Estado" value="esp" required>
                             Terminado
                         </label>
                     </div><br/><br/>
-                </div> <br/><br/>
+                </div> <br/><br/>   
+                    
+                    
+                   </div>
+               
+                            
+              
            
                  <div class="form-group" style="text-align:center">
                <!--<div class="col-md-10">-->                                     

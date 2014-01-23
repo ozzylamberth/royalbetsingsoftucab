@@ -103,10 +103,10 @@ function Pager(tableName, itemsPerPage) {
       <!-- Example row of columns -->
        <div class="container">
    
-          
+           <?php require_once('../scripts/alertas.php'); ?>
             <div class="panel-default" >
                 <div class="panel-heading">
-                    <h3 class="panel-title" align="center">Formulario</h3>
+                    <h3 class="panel-title" align="center">Juegos</h3>
                 </div>
                 <div class="panel-body" >
                
@@ -296,14 +296,13 @@ function Pager(tableName, itemsPerPage) {
       <div  id="agregarRE" class="container">
        <div class="col-lg-3">       
 
-           <form role="f-orm" method="POST" action="../BD/admin/points/editarResultados.php">
-
+           <form role="form" method="POST" action="../BD/admin/points/editarResultados.php">
+                
                 <div class="form-group">
                       
                     
-                      <div class="col-md-40">
-                   
-                        <input title="Id de Juego" type="text" class="form-control" name="id" id="id" placeholder="Id de Juego" required>
+                      <div class="col-md-40">              
+                        <input title="Id de Juego" type="text" class="form-control" name="id" id="id" placeholder="Id de Juego"   pattern="[0-9]+" required>
                       </div>
                     
                   <label for="equipo1" class="col-md-40">
@@ -314,19 +313,19 @@ function Pager(tableName, itemsPerPage) {
                     
                      <div class="col-md-40">
                   
-                        <input title="Primer Equipo" type="text" class="form-control" name="resul1" id="resul1" placeholder="Resultado" required>
+                        <input title="Primer Equipo" type="text" class="form-control" name="resul1" id="resul1" placeholder="Resultado"   pattern="[0-9]+" required>
                       </div>
                     
                       
                      <div class="col-md-40">
-                      <input title="Segundo Equipo" type="text" class="form-control" name="resul2" id="resul2" placeholder="Resultado" required>
+                      <input title="Segundo Equipo" type="text" class="form-control" name="resul2" id="resul2" placeholder="Resultado" pattern="[0-9]+" required>
                     </div>
                      </div><br/><br/> 
                    
                     <div class="form-group">
                <div class="col-md-20">                                     
                   <div class="col-md-2">
-                      <button type="submit" name="registrar" class="btn btn-info" >
+                      <button type="submit" name="cambiar" class="btn btn-info" >
                       Cambiar
                       </button>
                   </div>
