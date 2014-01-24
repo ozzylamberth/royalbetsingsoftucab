@@ -96,15 +96,13 @@
        
           
       </div>
-
-      <hr>
-
-
-<!--<?php require_once('../modulos/footer.php'); ?> -->      
       
     </div> <!-- /container -->
     
-  
+     <hr>
+
+
+<!--<?php require_once('../modulos/footer.php'); ?> -->     
     
     </body>
 </html>
