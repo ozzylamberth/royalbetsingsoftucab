@@ -17,6 +17,8 @@
         $telefono	= $_POST['telefono'];
         $direccion	= $_POST['direccion'];
         
+        date_default_timezone_set ("America/Caracas");
+        
         // Nacimiento del usuario
         list($diaU, $mesU, $anioU)=explode('/',$nacimiento);
         // Fecha Actual
