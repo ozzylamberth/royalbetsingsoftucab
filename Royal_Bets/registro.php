@@ -61,7 +61,7 @@
 
                 <div class="form-group">
                     <label for="password" class="col-md-2">
-                      Password:
+                      Contraseña:
                     </label>
                     <div class="col-md-10">
                         <input title="Introduzca un Password" type="password" class="form-control" name="password" id="password" placeholder="Password" pattern="[a-zA-Z0-9]+" required>
