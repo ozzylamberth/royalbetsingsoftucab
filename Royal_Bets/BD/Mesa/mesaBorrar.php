@@ -8,11 +8,12 @@
 
 include '../conexion.php';
 
-$m = $_GET['mesa'];
+//$m = $_GET['mesa'];
+$id = $_GET['Id'];
 
 $inactivo= 0;
 
-$sql="UPDATE `Mesas` SET `Estado`='$inactivo' WHERE `Mesa`='$m'";
+$sql="UPDATE `Mesas` SET `Estado`='$inactivo' WHERE `Id` = '$id'";
 mysql_query($sql);
 echo $m;
 mysql_close();
