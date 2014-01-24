@@ -5,6 +5,8 @@ include '../BD/conexion.php';
     
         
  require_once('./modulos/navbar.php'); 
+ 
+ require_once('../modulos/scriptjs.php'); 
 
 
 ?>
@@ -85,3 +87,11 @@ $ciPermisos = $_POST['Id_usuario'];
 
 ?>
   </div>
+
+
+<?php require_once('../modulos/footer.php'); ?>
+      
+      
+   
+
+ 

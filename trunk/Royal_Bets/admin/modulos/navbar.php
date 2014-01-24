@@ -19,7 +19,8 @@
             <li><a href="juegos.php?filter=Todos">Juegos</a></li>            
             <li><a href="validarApuestas.php">Apuestas</a></li>
             <li><a href="Consumos.php">Consumos</a></li>
-            <li><a href="editar_saldo.php">Moneda virtual</a></li>     
+            <li><a href="editar_saldo.php">Moneda virtual</a></li>  
+            <li><a href="permisosUsuarios.php">Permisos</a></li>
           </ul>
         </li>
       </ul>

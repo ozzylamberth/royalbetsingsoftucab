@@ -4,6 +4,8 @@
     
         
  require_once('./modulos/navbar.php'); 
+ 
+ require_once('../modulos/scriptjs.php');  
 
  ?>
 
@@ -89,5 +91,5 @@ echo "</div>";
 echo "</div>";
 require_once('../modulos/footer.php');       
       
-require_once('../modulos/scriptjs.php');  
+
 ?>

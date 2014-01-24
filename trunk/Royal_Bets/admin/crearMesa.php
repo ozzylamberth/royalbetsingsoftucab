@@ -6,6 +6,7 @@
         <![endif]-->
         
 <?php require_once('./modulos/navbar.php'); ?> 
+<?php require_once('../modulos/scriptjs.php'); ?> 
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
@@ -99,11 +100,11 @@
       <hr>
 
 
-<!--<?php require_once('./modulos/footer.php'); ?> -->      
+<!--<?php require_once('../modulos/footer.php'); ?> -->      
       
     </div> <!-- /container -->
     
-<!--?php require_once('./modulos/scriptjs.php'); ?>  -->   
+  
     
     </body>
 </html>
