@@ -134,8 +134,8 @@
             echo "<td>". $renglon['Deporte']."</td>";
           //  echo "<td>". $renglon['Capacidad']."</td>";
            ?>
-            <td><a href="editarMesa.php?mesa=<?php echo $renglon['Mesa'] ?>"/>Editar</a>
-               &nbsp&nbsp<a href="../BD/Mesa/mesaBorrar.php?mesa=<?php echo $renglon['Mesa'] ?>"/>Borrar</a></td><?php
+            <td><a href="editarMesa.php?mesa=<?php echo $renglon['Id'] ?>"/>Editar</a>
+               &nbsp&nbsp<a href="../BD/Mesa/mesaBorrar.php?Id=<?php echo $renglon['Id'] ?>"/>Borrar</a></td><?php
             echo "</tr>";
             }
            

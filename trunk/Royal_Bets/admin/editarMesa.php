@@ -25,7 +25,7 @@
             <?php
             require_once("../BD/conexion.php");
             $m = $_GET['mesa'];
-            $sql = "SELECT * FROM Mesas WHERE Mesa='$m'";
+            $sql = "SELECT * FROM Mesas WHERE Id='$m'";
             $datos = \mysql_query($sql); 
             
             $renglon = mysql_fetch_row($datos,MYSQL_ASSOC);
