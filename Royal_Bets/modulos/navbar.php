@@ -23,9 +23,6 @@
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Información<b class="caret"></b></a>
           <ul class="dropdown-menu">
-              <li><a href="informacion.php">¿Cómo jugar?</a></li>
-              <li><a href="informacion.php">¿Cómo apostar?</a></li>
-            <li class="divider"></li>
             <li class="dropdown-header">La Empresa</li>
             <li><a href="empresa.php">Quiénes somos</a></li>
             <li><a href="empresa.php">Contacto</a></li>
