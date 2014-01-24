@@ -1,3 +1,6 @@
 <footer align="center">
-  <p >&copy;Royal Bets | Diseño: HTML5</p>
+     <!--<img src="img/boot.png">-->
+   <div class="col-md-8">
+    <img src="img/foobar.png" align="center">
+    </div>
 </footer>
