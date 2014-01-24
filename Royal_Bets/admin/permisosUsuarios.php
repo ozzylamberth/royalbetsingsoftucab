@@ -10,9 +10,14 @@ include '../BD/conexion.php';
 
 
 ?>
-<div class="page-header">
-  <h1>Permisos de Usuarios</h1>
-</div>
+<div class="jumbotron">
+        
+        
+      <div class="container">
+        <h1>Permisos de Usuarios</h1>
+        <p>En esta parte puede otorgar y remover permisos de administrador a los Usuarios.</p>
+      </div>
+    </div>
 <form role="form" method="POST" action="permisosUsuarios.php">
             <div class="form-group">
                   <label for="Id_usuario" class="col-md-2">
@@ -87,7 +92,7 @@ $ciPermisos = $_POST['Id_usuario'];
 
 ?>
   </div>
-
+<hr>
 
 <?php require_once('../modulos/footer.php'); ?>
       

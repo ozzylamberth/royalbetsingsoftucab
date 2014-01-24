@@ -18,10 +18,7 @@
     <div class="container" >
     <div class="col-lg-12 ">    
       <div class="row" > 
-         <div class="panel-default" >
-          <div class="panel-heading">
-           <h3 class="panel-title" align="center">Formulario</h3>
-         </div>
+         
 <?php 
 
 echo "<div class=\"row\">";
@@ -89,6 +86,7 @@ echo "
 echo "</div>";
 echo "</div>";
 echo "</div>";
+echo "<hr>";
 require_once('../modulos/footer.php');       
       
 

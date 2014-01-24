@@ -111,7 +111,7 @@
       <table id="tabla" class="table table-bordered" border="1" align="center" width="100%" border="0" cellpadding="0" cellspacing="1">
             <thead>
                 <tr>
-                                
+                                <th>Id</th>
                                 <th>Mesa</th>
                                 <th>Descripcion</th>
                                 <th>Deporte</th>
@@ -128,6 +128,7 @@
             
             if ($renglon['Estado']){
                 echo "<tr>";
+            echo "<td>".$renglon['Id']."</td>";        
             echo "<td>".$renglon['Mesa']."</td>";
             echo "<td>". $renglon['Descripcion']."</td>";
             echo "<td>". $renglon['Deporte']."</td>";
@@ -165,7 +166,7 @@
         </div>
       </div>
 </div>
-
+<hr>
 <?php require_once('../modulos/footer.php'); ?>
       
       
