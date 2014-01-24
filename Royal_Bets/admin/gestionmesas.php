@@ -46,10 +46,10 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
      <!--  <p>epale</p>-->
-        
+
 <?php require_once('./modulos/navbar.php'); ?> 
 <?php require_once('../modulos/scriptjs.php'); ?>  
-
+ 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
         

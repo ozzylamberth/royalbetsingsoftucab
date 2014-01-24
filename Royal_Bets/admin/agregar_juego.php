@@ -85,7 +85,7 @@
                     Fecha de final:
                   </label>
                      <div class="col-md-5">
-                      <input title="Introduzca la fecha de finalizacion" type="date" class="form-control" name="fechafin" id="fechafin" required>
+                      <input title="Introduzca la fecha de finalizacion" type="date" class="form-control" name="fechafin" id="fechafin"  required>
                   </div><br/><br/>
                 </div>
           
