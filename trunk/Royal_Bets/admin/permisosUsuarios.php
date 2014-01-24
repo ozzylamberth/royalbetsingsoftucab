@@ -45,7 +45,9 @@ include '../BD/conexion.php';
       <!-- Example row of columns -->
       <div class="row">
         <div class="panel-default" >
-             <div class="panel-heading">
+            <div class="panel-heading">
+                <h3 class="panel-title" align="center">Usuarios</h3>
+            </div>
             <div class="span6" style="text-align:center">
 <?php
 
