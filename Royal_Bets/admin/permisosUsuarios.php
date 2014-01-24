@@ -18,7 +18,7 @@ include '../BD/conexion.php';
         <p>En esta parte puede otorgar y remover permisos de administrador a los Usuarios.</p>
       </div>
     </div>
-<form role="form" method="POST" action="permisosUsuarios.php">
+    <form role="form" method="POST" action="permisosUsuarios.php">
             <div class="form-group">
                   <label for="Id_usuario" class="col-md-2">
                     Introduzca el id del usuario:
@@ -39,8 +39,14 @@ include '../BD/conexion.php';
                     <br>
                     <br>
             </div>
-</form>
-  <div class="span6" style="text-align:center">
+</form><br/><br/><br/><br/>
+
+ <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="panel-default" >
+             <div class="panel-heading">
+            <div class="span6" style="text-align:center">
 <?php
 
 $ciPermisos="";

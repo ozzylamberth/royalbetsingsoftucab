@@ -30,22 +30,22 @@ e<?php require_once('./modulos/header.php'); ?>
           <h2>Herramientas</h2>
         <div class="col-lg-9">     
             
-            <div class="col-sm-3">
+            <div class="col-lg-3">
               <h4>Gestión de Mesas</h4>
               <img src=" ../img/mesa.png">
               <p><br><?php  echo "<a class='btn btn-default' href='gestionmesas.php'> Ir &raquo; </a>"; ?></p>
             </div>
-            <div class="col-sm-3">
+            <div class="col-lg-3">
               <h4>Gestión de Juegos</h4>
               <img src=" ../img/juegos.png">
               <p><br><?php echo "<a class='btn btn-default' href='juegos.php'> Ir &raquo; </a>"; ?></p>
             </div>
-             <div class="col-sm-3">
+             <div class="col-lg-3">
               <h4>Gestión de Apuestas</h4>
               <img src=" ../img/apuesta.png">
               <p><br><?php echo "<a class='btn btn-default' href='validarApuestas.php'> Ir &raquo; </a>"; ?></p>
             </div>
-            <div class="col-sm-3">
+            <div class="col-lg-3">
               <h4>Gestión de Moneda V.</h4>
               <img src=" ../img/moneda.png">
               <p><br><?php echo "<a class='btn btn-default' href='editar_saldo.php'> Ir &raquo; </a>"; ?></p>
