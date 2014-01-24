@@ -194,8 +194,8 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Sección de Juegos</h1> <?php //echo $_SESSION['juegos']; ?> 
-        <p></p>
+        <h1>Apuesta</h1> <?php //echo $_SESSION['juegos']; ?> 
+        <p>En esta sección encontrarás los juegos disponibles de la mesa especifificada.</p>
       </div>
     </div> 
     
