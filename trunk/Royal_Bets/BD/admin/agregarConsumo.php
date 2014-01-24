@@ -27,16 +27,21 @@
 
                         if(!$query){
                             echo 'Error al insertar un producto';
+                            
                         }else{
                             echo 'Guardo Correctamente';
-                            \header("Location:../../admin/Consumos.php?errorCode=10&errorType=3");
+                            header("Location:../../admin/Consumos.php?errorCode=10&errorType=3");
                         }
 
 
                         // Redireccion
-                 //  header("Location:../../consumos.php?errorCode=6&errorType=1");  
+                  // header("Location:../../consumos.php?errorCode=6&errorType=1");  
               }
-         }
+              else{
+              header("Location:../../admin/Consumos.php?errorCode=1&errorType=1");  
+              }
+          }
+         
     
  ?>
  

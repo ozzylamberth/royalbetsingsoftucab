@@ -40,7 +40,7 @@
                     C.I de Usuario:
                   </label>
                   <div class="col-md-5">
-                      <input title="Introduzca la cédula" type="text" class="form-control" name="id_usr" id="id_usr" placeholder="V-12345678" pattern="[VE]+[0-9]+" required>
+                      <input title="Introduzca su Cedula en el fomato: (V ó E)-12345678" type="text" class="form-control" name="id_usr" id="id_usr" placeholder="V-12345678 o E-12345678" pattern="[VE]+[-]+[0-9]+" required>
                   </div><br/><br/>
                 </div>
 
